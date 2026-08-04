@@ -6,10 +6,10 @@ on:
     # de verano. Ajusta la hora segun cuando quieras recibir el mensaje
     # (antes de que empiecen los juegos del dia). Formato: minuto hora * * *
     - cron: "0 17 * * *"
-  workflow_dispatch: {}  # te deja correrlo manualmente desde la pestaña Actions
+  workflow_dispatch: {}
 
 permissions:
-  contents: write  # necesario para que el workflow pueda guardar el historial actualizado
+  contents: write
 
 jobs:
   run-bet-builder:
@@ -26,16 +26,21 @@ jobs:
       - name: Instalar dependencias
         run: pip install -r requirements.txt
 
+      - name: Correr tests
+        run: pytest -q
+
       - name: Correr bet builder
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
+          BANKROLL_USD: ${{ secrets.BANKROLL_USD }}
+          KELLY_FRACTION: ${{ secrets.KELLY_FRACTION }}
           MAX_GAMES_PER_DAY: "15"
           TIMEZONE: "America/Mexico_City"
         run: python -m src.main
 
-- name: Guardar historial, calibracion y bankroll actualizados en el repo
+      - name: Guardar historial, calibracion y bankroll actualizados en el repo
         run: |
           git config user.name "mlb-bet-builder-bot"
           git config user.email "actions@github.com"
