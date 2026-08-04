@@ -35,10 +35,11 @@ jobs:
           TIMEZONE: "America/Mexico_City"
         run: python -m src.main
 
-      - name: Guardar historial actualizado en el repo
+- name: Guardar historial, calibracion y bankroll actualizados en el repo
         run: |
           git config user.name "mlb-bet-builder-bot"
           git config user.email "actions@github.com"
-          git add data/picks_history.json data/calibration.json
-          git diff --quiet --cached || git commit -m "Actualiza historial y calibracion [skip ci]"
+          git add data/picks_history.json data/calibration.json data/bankroll.json
+          git diff --quiet --cached || git commit -m "Actualiza historial, calibracion y bankroll [skip ci]"
+          git pull --rebase origin main
           git push
