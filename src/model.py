@@ -2,11 +2,27 @@
 model.py
 El "cerebro": proyecta carreras esperadas por equipo, calcula probabilidad de
 cada pick con una distribucion de Poisson, compara contra la cuota real del
-mercado cuando esta disponible, y aplica la calibracion aprendida de dias
-anteriores (ver storage.py / settle.py).
+mercado cuando esta disponible, aplica la calibracion aprendida de dias
+anteriores (ver storage.py / settle.py), y sugiere cuanto apostar (Kelly
+fraccionado) segun tu bankroll.
 """
 
 import math
+
+# Ventaja de jugar en casa: en MLB los equipos locales anotan en promedio
+# ~4-5% mas carreras que de visitante (factor de cancha, rutina, sin viaje,
+# ultimo turno al bate). La codificamos como un bono fijo de carreras en vez
+# de un %, para que sea facil de entender y ajustar.
+HOME_FIELD_RUN_BONUS = 0.15
+
+# Cuanto pesa el ERA del abridor probable vs. el ERA de todo el staff
+# (abridores + bullpen) del equipo rival al proyectar carreras en contra.
+# Un abridor tira ~5-6 entradas; el resto del juego lo cubre el bullpen, que
+# puede ser mucho mejor o peor que el abridor. Sin datos de bullpen
+# separados (no los trae la API sin llamadas extra), usamos el ERA de
+# equipo completo como proxy de "que tan bueno es el bullpen en promedio".
+STARTER_WEIGHT_IN_OPPONENT_FACTOR = 0.65
+TEAM_STAFF_WEIGHT_IN_OPPONENT_FACTOR = 1 - STARTER_WEIGHT_IN_OPPONENT_FACTOR
 
 
 def poisson_pmf(k, lam):
@@ -24,11 +40,19 @@ def poisson_over_prob(lam, line):
     return max(0.0, min(1.0, 1 - cumulative))
 
 
-def project_team_runs(season_stats, recent_form, opp_pitcher_stats, league_avg_era=4.20):
+def project_team_runs(
+    season_stats,
+    recent_form,
+    opp_pitcher_stats,
+    league_avg_era=4.20,
+    is_home=False,
+    opp_team_era=None,
+):
     """Proyeccion simple de carreras esperadas para un equipo en un juego:
     60% peso a temporada completa, 40% a forma reciente (mas sensible a
-    rachas), ajustado por que tan bueno/malo es el pitcher rival vs el
-    promedio de la liga.
+    rachas), ajustado por que tan bueno/malo es el pitcheo rival (abridor +
+    bullpen del equipo contrario) vs. el promedio de la liga, mas un bono
+    fijo si el equipo juega de local.
 
     Es un modelo deliberadamente simple y transparente (no una caja negra)
     para que puedas ver exactamente por que salio cada numero y ajustarlo
@@ -43,17 +67,26 @@ def project_team_runs(season_stats, recent_form, opp_pitcher_stats, league_avg_e
     if base is None:
         base = season_rs or recent_rs
 
-    pitcher_era = None
+    starter_era = None
     if opp_pitcher_stats:
-        pitcher_era = opp_pitcher_stats.get("era")
+        starter_era = opp_pitcher_stats.get("era")
 
-    if pitcher_era:
-        # si el pitcher rival tiene ERA mejor que el promedio de liga, baja la
-        # proyeccion de carreras; si es peor, la sube. Factor acotado para no
-        # que un solo dato dispare numeros irreales con poca muestra.
-        factor = pitcher_era / league_avg_era
+    effective_opp_era = _weighted_avg(
+        starter_era, STARTER_WEIGHT_IN_OPPONENT_FACTOR,
+        opp_team_era, TEAM_STAFF_WEIGHT_IN_OPPONENT_FACTOR,
+    )
+
+    if effective_opp_era:
+        # si el pitcheo rival (abridor + bullpen) tiene ERA mejor que el
+        # promedio de liga, baja la proyeccion de carreras; si es peor, la
+        # sube. Factor acotado para no que un solo dato dispare numeros
+        # irreales con poca muestra.
+        factor = effective_opp_era / league_avg_era
         factor = max(0.7, min(1.4, factor))
         base = base * factor
+
+    if is_home:
+        base += HOME_FIELD_RUN_BONUS
 
     return round(base, 2)
 
@@ -70,9 +103,10 @@ def _weighted_avg(a, wa, b, wb):
 
 def risk_label(edge, sample_size):
     """Semaforo de riesgo. 'edge' = diferencia entre probabilidad del modelo
-    y probabilidad implicita del mercado (si hay cuota). Sin cuota, usamos
-    solo que tan lejos de 50% esta la probabilidad del modelo, con penalidad
-    si el tamano de muestra (juegos recientes disponibles) es chico."""
+    y probabilidad implicita del mercado sin vig (si hay cuota). Sin cuota,
+    usamos solo que tan lejos de 50% esta la probabilidad del modelo, con
+    penalidad si el tamano de muestra (juegos recientes disponibles) es
+    chico."""
     confidence = abs(edge)
     if sample_size is not None and sample_size < 5:
         confidence *= 0.6  # poca muestra = menos confianza aunque el numero se vea bonito
@@ -127,3 +161,62 @@ def _bucket_for(prob):
     pct = int(prob * 100)
     lower = (pct // 10) * 10
     return f"{lower}-{lower+10}"
+
+
+# ---------- Bankroll / Kelly Criterion ----------
+
+# Kelly "puro" apuesta el % matematicamente optimo, pero asume que tu
+# probabilidad estimada es exacta -- en la practica nunca lo es, y Kelly
+# puro te puede llevar a apuestas enormes con variancia brutal si te
+# equivocas un poco. Un cuarto de Kelly (25%) es el estandar de la industria
+# para bajar esa variancia a cambio de crecer un poco mas lento.
+DEFAULT_KELLY_FRACTION = 0.25
+
+# Tope duro: sin importar que tan grande salga Kelly, nunca sugerir apostar
+# mas de este % del bankroll en un solo pick. Proteccion contra errores del
+# modelo o de la cuota.
+MAX_STAKE_PCT_OF_BANKROLL = 0.05
+
+
+def american_to_decimal_odds(price):
+    """Convierte cuota americana a cuota decimal (ej. -150 -> 1.667,
+    +150 -> 2.5). Cuota decimal es la que usa la formula de Kelly."""
+    if price is None:
+        return None
+    if price > 0:
+        return 1 + (price / 100)
+    return 1 + (100 / -price)
+
+
+def kelly_fraction(model_prob, price, fraction=DEFAULT_KELLY_FRACTION):
+    """Fraccion del bankroll a apostar segun el criterio de Kelly, aplicando
+    un multiplicador fraccional (Kelly a 1/4 por default) y un tope maximo
+    por pick. Regresa 0.0 si no hay edge (no conviene apostar) o si falta la
+    cuota."""
+    decimal_odds = american_to_decimal_odds(price)
+    if decimal_odds is None or decimal_odds <= 1:
+        return 0.0
+
+    b = decimal_odds - 1  # ganancia neta por unidad apostada
+    p = model_prob
+    q = 1 - p
+
+    full_kelly = (b * p - q) / b
+    if full_kelly <= 0:
+        return 0.0  # el modelo no ve edge suficiente para que Kelly recomiende apostar
+
+    stake_pct = full_kelly * fraction
+    return round(min(stake_pct, MAX_STAKE_PCT_OF_BANKROLL), 4)
+
+
+def suggested_stake(model_prob, price, bankroll, fraction=DEFAULT_KELLY_FRACTION):
+    """Regresa (stake_pct, stake_amount) redondeado a 2 decimales. Si no hay
+    bankroll configurado o no hay cuota, regresa (0.0, None) para que el
+    caller sepa que no se puede sugerir un monto."""
+    if not bankroll or bankroll <= 0 or price is None:
+        return 0.0, None
+    pct = kelly_fraction(model_prob, price, fraction)
+    if pct <= 0:
+        return 0.0, None
+    amount = round(bankroll * pct, 2)
+    return pct, amount

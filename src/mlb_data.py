@@ -8,24 +8,36 @@ necesita API key. La documentacion no es oficial pero es muy usada por la
 comunidad de analytics de beisbol.
 """
 
+import time
+
 import requests
 from datetime import datetime, timedelta
 
 BASE_URL = "https://statsapi.mlb.com/api/v1"
 SPORT_ID = 1  # MLB
 
+MAX_RETRIES = 3
+RETRY_BACKOFF_SECONDS = 1.5
+
 
 def _get(path, params=None):
-    """Wrapper simple con manejo de errores para no tumbar todo el script
-    si un endpoint falla (ej: un pitcher sin stats todavia en la temporada)."""
+    """Wrapper con manejo de errores y reintentos (backoff simple) para no
+    tumbar todo el script si un endpoint falla temporalmente (timeout de
+    red, hiccup del lado de MLB, etc.). Si tras varios intentos sigue
+    fallando, regresa {} y quien llama debe tratarlo como "sin datos"."""
     url = f"{BASE_URL}{path}"
-    try:
-        resp = requests.get(url, params=params or {}, timeout=15)
-        resp.raise_for_status()
-        return resp.json()
-    except requests.RequestException as e:
-        print(f"[mlb_data] WARNING: fallo {url} -> {e}")
-        return {}
+    last_error = None
+    for attempt in range(1, MAX_RETRIES + 1):
+        try:
+            resp = requests.get(url, params=params or {}, timeout=15)
+            resp.raise_for_status()
+            return resp.json()
+        except requests.RequestException as e:
+            last_error = e
+            if attempt < MAX_RETRIES:
+                time.sleep(RETRY_BACKOFF_SECONDS * attempt)
+    print(f"[mlb_data] WARNING: fallo {url} tras {MAX_RETRIES} intentos -> {last_error}")
+    return {}
 
 
 def get_schedule(date_str):
@@ -70,7 +82,9 @@ def _extract_pitcher(team_block):
 
 
 def get_team_season_stats(team_id, season):
-    """Runs por juego a favor y en contra en la temporada."""
+    """Runs por juego a favor y en contra en la temporada, mas el ERA de
+    equipo completo (abridores + bullpen), que usamos como proxy de "que tan
+    bueno es el pitcheo completo del rival" mas alla del abridor del dia."""
     hitting = _get(
         f"/teams/{team_id}/stats",
         {"stats": "season", "group": "hitting", "season": season},

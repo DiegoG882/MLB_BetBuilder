@@ -4,13 +4,36 @@ Trae las cuotas reales de las casas de apuestas via The Odds API
 (https://the-odds-api.com/) - gratis hasta 500 requests/mes.
 
 Con esto podemos comparar la probabilidad que calcula nuestro modelo contra
-la probabilidad implicita de la cuota del mercado, y asi detectar "valor"
-(edge) real, no solo una proyeccion en el aire.
+la probabilidad implicita "justa" (sin vig) de la cuota del mercado, y asi
+detectar "valor" (edge) real, no solo una proyeccion en el aire.
 """
+
+import time
 
 import requests
 
 BASE_URL = "https://api.the-odds-api.com/v4/sports/baseball_mlb/odds"
+
+MAX_RETRIES = 3
+RETRY_BACKOFF_SECONDS = 1.5
+
+
+def _get_with_retry(url, params, timeout=15):
+    """GET con reintentos y backoff exponencial simple. Una consulta de
+    cuotas fallida no deberia tumbar el reporte del dia entero -- reintenta
+    un par de veces antes de rendirse."""
+    last_error = None
+    for attempt in range(1, MAX_RETRIES + 1):
+        try:
+            resp = requests.get(url, params=params, timeout=timeout)
+            resp.raise_for_status()
+            return resp.json()
+        except requests.RequestException as e:
+            last_error = e
+            if attempt < MAX_RETRIES:
+                time.sleep(RETRY_BACKOFF_SECONDS * attempt)
+    print(f"[odds_data] WARNING: fallo la consulta de cuotas tras {MAX_RETRIES} intentos -> {last_error}")
+    return None
 
 
 def get_mlb_odds(api_key, regions="us", markets="h2h,totals"):
@@ -19,22 +42,16 @@ def get_mlb_odds(api_key, regions="us", markets="h2h,totals"):
     y el resto del sistema sigue funcionando solo con probabilidad del modelo."""
     if not api_key:
         return []
-    try:
-        resp = requests.get(
-            BASE_URL,
-            params={
-                "apiKey": api_key,
-                "regions": regions,
-                "markets": markets,
-                "oddsFormat": "american",
-            },
-            timeout=15,
-        )
-        resp.raise_for_status()
-        return resp.json()
-    except requests.RequestException as e:
-        print(f"[odds_data] WARNING: fallo la consulta de cuotas -> {e}")
-        return []
+    data = _get_with_retry(
+        BASE_URL,
+        {
+            "apiKey": api_key,
+            "regions": regions,
+            "markets": markets,
+            "oddsFormat": "american",
+        },
+    )
+    return data if data is not None else []
 
 
 def match_game_odds(odds_events, home_team_name, away_team_name):
@@ -98,10 +115,30 @@ def best_total(event):
 
 
 def american_to_implied_prob(price):
-    """Convierte cuota americana a probabilidad implicita (0-1), sin quitar
-    el vig/comision de la casa (eso es aproximado, no probabilidad 'justa')."""
+    """Convierte cuota americana a probabilidad implicita (0-1), SIN quitar
+    el vig/comision de la casa. Esta es la probabilidad "cruda" del mercado,
+    no la probabilidad "justa" -- para eso usa remove_vig_two_way."""
     if price is None:
         return None
     if price > 0:
         return 100 / (price + 100)
     return -price / (-price + 100)
+
+
+def remove_vig_two_way(prob_a, prob_b):
+    """Quita el vig (comision de la casa) de un mercado de dos resultados
+    (ej. Over/Under, o Home/Away). Las casas de apuestas fijan cuotas para
+    que la suma de probabilidades implicitas sea > 100% (esa diferencia es
+    su ganancia garantizada). Normalizamos dividiendo cada probabilidad
+    entre la suma, para que el edge que calculamos despues sea contra la
+    probabilidad "justa" del mercado, no contra una inflada a favor de la
+    casa.
+
+    Regresa (prob_a_justa, prob_b_justa) que suman 1.0. Si falta algun dato,
+    regresa (None, None)."""
+    if prob_a is None or prob_b is None:
+        return None, None
+    total = prob_a + prob_b
+    if total <= 0:
+        return None, None
+    return prob_a / total, prob_b / total
