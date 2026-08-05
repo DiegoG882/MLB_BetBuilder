@@ -188,15 +188,31 @@ def get_pitcher_stats(pitcher_id, season):
 
 
 def get_final_score(game_pk):
-    """Para settlement: resultado final ya jugado."""
-    data = _get(f"/game/{game_pk}/linescore")
-    if not data:
-        return None
-    home_runs = data.get("teams", {}).get("home", {}).get("runs")
-    away_runs = data.get("teams", {}).get("away", {}).get("runs")
-    if home_runs is None or away_runs is None:
-        return None
-    return {"home_runs": home_runs, "away_runs": away_runs}
+    """Para settlement: resultado final ya jugado.
+
+    OJO: usamos el endpoint de /schedule filtrado por gamePk (no
+    /game/{id}/linescore a secas) porque el linescore por si solo regresa
+    el marcador aunque el juego siga EN VIVO -- no distingue entre un
+    partido a la mitad y uno terminado. Usar un marcador parcial como si
+    fuera el resultado final settleaba picks mal y corrompia la
+    calibracion (fue justo lo que paso: picks se marcaron ganados/perdidos
+    con el juego todavia en curso). Aqui SI revisamos que
+    abstractGameState sea 'Final' antes de regresar algo."""
+    data = _get("/schedule", {"gamePk": game_pk, "hydrate": "linescore"})
+    for date_block in data.get("dates", []):
+        for g in date_block.get("games", []):
+            if g.get("gamePk") != game_pk:
+                continue
+            if g.get("status", {}).get("abstractGameState") != "Final":
+                return None  # todavia en curso, pospuesto, suspendido, etc.
+            home = g.get("teams", {}).get("home", {})
+            away = g.get("teams", {}).get("away", {})
+            home_runs = home.get("score")
+            away_runs = away.get("score")
+            if home_runs is None or away_runs is None:
+                return None
+            return {"home_runs": home_runs, "away_runs": away_runs}
+    return None
 
 
 # ---------- helpers ----------
