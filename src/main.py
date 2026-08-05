@@ -10,13 +10,14 @@ Orquestador diario:
      implicita del mercado SIN vig (probabilidad "justa") para medir edge
      real.
   4. Genera picks (moneyline + total de carreras) con probabilidad ajustada
-     por calibracion y semaforo de riesgo.
-  5. Si hay bankroll configurado, calcula Kelly fraccionado por pick y
-     escala TODOS los montos si la suma del dia pasa el tope de exposicion
-     diaria (para nunca sugerir apostar mas de lo razonable en un solo dia).
-  6. Manda el reporte completo a Telegram, y si hay bankroll, un SEGUNDO
-     mensaje corto con nada mas los picks que si tienen monto sugerido y
-     cuanto meterle a cada uno.
+     por calibracion y semaforo de riesgo, para TODOS los juegos del dia.
+  5. Si hay bankroll configurado, elige nada mas los TOP_PICKS_COUNT picks
+     mas fuertes del dia (primero por semaforo de riesgo, despues por edge)
+     y les reparte el bankroll con Kelly fraccionado -- en vez de diluir el
+     monto entre 20+ picks, concentra el dinero en las mejores oportunidades.
+  6. Manda el reporte completo a Telegram (con el monto sugerido nada mas
+     debajo de los picks elegidos), y si hay bankroll, un SEGUNDO mensaje
+     corto solo con esos picks fuertes y cuanto meterle a cada uno.
   7. Guarda los picks nuevos en el historial (status pending) para que
      manana se puedan revisar.
 
@@ -65,14 +66,29 @@ def _env_float(name, default):
         return default
 
 
+def _env_int(name, default):
+    raw = os.getenv(name)
+    if raw is None or raw.strip() == "":
+        return default
+    try:
+        return int(raw)
+    except ValueError:
+        return default
+
+
 KELLY_FRACTION = _env_float("KELLY_FRACTION", model_module.DEFAULT_KELLY_FRACTION)
 # Tope de cuanto del bankroll se sugiere exponer EN TOTAL en un solo dia,
-# sumando todos los picks. Sin esto, cada pick se topa individual en 5%
-# (ver model.MAX_STAKE_PCT_OF_BANKROLL) pero con muchos juegos la suma
-# facil pasa de 100% del bankroll, lo cual no tiene sentido. Si la suma
-# cruda pasa este tope, escalamos TODOS los montos hacia abajo
-# proporcionalmente.
+# sumando los picks elegidos. Cada pick ya se topa individual en 5% (ver
+# model.MAX_STAKE_PCT_OF_BANKROLL); este tope adicional es sobre todos los
+# picks del dia juntos.
 DAILY_EXPOSURE_CAP_PCT = _env_float("DAILY_EXPOSURE_CAP_PCT", 0.20)
+# Cuantos picks "fuertes" elegir por dia para sugerirles monto. El resto de
+# los juegos del reporte se siguen mostrando con probabilidad/edge/riesgo,
+# nada mas sin monto sugerido -- no tiene sentido repartir el bankroll entre
+# 20+ picks el mismo dia.
+TOP_PICKS_COUNT = _env_int("TOP_PICKS_COUNT", 4)
+
+RISK_ORDER = {"🟢": 0, "🟡": 1, "🔴": 2}
 
 
 def main():
@@ -81,7 +97,10 @@ def main():
 
     bankroll = storage.load_bankroll(default_from_env=os.getenv("BANKROLL_USD"))
     if bankroll:
-        print(f"Bankroll configurado: ${bankroll:,.2f} (Kelly fraccionado: {KELLY_FRACTION*100:.0f}%, tope diario: {DAILY_EXPOSURE_CAP_PCT*100:.0f}%)")
+        print(
+            f"Bankroll configurado: ${bankroll:,.2f} (Kelly fraccionado: {KELLY_FRACTION*100:.0f}%, "
+            f"top {TOP_PICKS_COUNT} picks, tope diario: {DAILY_EXPOSURE_CAP_PCT*100:.0f}%)"
+        )
     else:
         print("Sin bankroll configurado -- el mensaje no va a incluir montos sugeridos. "
               "Usa 'python -m src.set_bankroll <monto>' para configurarlo.")
@@ -116,8 +135,8 @@ def main():
         if data:
             all_game_data.append(data)
 
-    # 5) Sizing de bankroll (Kelly + tope de exposicion diaria total)
-    scaled = _apply_stake_sizing(all_game_data, bankroll)
+    # 5) Elegir los picks mas fuertes del dia y repartirles el bankroll
+    scaled, top_picks = _apply_stake_sizing(all_game_data, bankroll)
 
     # 6) Armar y mandar el reporte completo
     message_lines = [f"⚾ <b>Bet Builder MLB - {today}</b>\n"]
@@ -125,7 +144,7 @@ def main():
         message_lines.append(_render_game_block(data))
 
     if bankroll:
-        message_lines.append(_exposure_summary(all_game_data, bankroll, scaled))
+        message_lines.append(_exposure_summary(top_picks, bankroll, scaled))
 
     message_lines.append(
         "\n⚠️ Esto es un modelo estadistico, no una garantia. "
@@ -136,9 +155,9 @@ def main():
     sent = telegram_bot.send_message(TELEGRAM_TOKEN, TELEGRAM_CHAT_ID, full_message)
     print(f"Mensaje enviado a Telegram: {sent}")
 
-    # 6b) Segundo mensaje: solo los picks con monto sugerido, bien resumido
+    # 6b) Segundo mensaje: solo los picks fuertes elegidos, bien resumido
     if bankroll:
-        summary_message = _render_summary_message(all_game_data, bankroll, today)
+        summary_message = _render_summary_message(top_picks, bankroll, today)
         sent_summary = telegram_bot.send_message(TELEGRAM_TOKEN, TELEGRAM_CHAT_ID, summary_message)
         print(f"Resumen de apuestas enviado a Telegram: {sent_summary}")
 
@@ -153,9 +172,8 @@ def main():
 
 def _compute_game(game, odds_events, calibration):
     """Calcula proyecciones y picks (moneyline + total) de un juego, sin
-    montos de apuesta todavia -- eso se calcula despues, en conjunto con
-    todos los juegos del dia, para poder aplicar el tope de exposicion
-    diaria total."""
+    montos de apuesta todavia -- eso se decide despues, en conjunto con
+    todos los juegos del dia, para elegir nada mas los mejores picks."""
     home_id = game["home_team_id"]
     away_id = game["away_team_id"]
 
@@ -194,6 +212,7 @@ def _compute_game(game, odds_events, calibration):
     away_ml_price = odds_data.best_moneyline(odds_event, "away") if odds_event else None
     total_info = odds_data.best_total(odds_event) if odds_event else None
 
+    matchup = f"{game['away_team_name']} @ {game['home_team_name']}"
     picks = []
 
     # --- Moneyline ---
@@ -220,6 +239,7 @@ def _compute_game(game, odds_events, calibration):
             away_prob_raw, away_implied_fair, sample_size,
             extra={"side": "away", "price": away_ml_price},
         )
+    pick["matchup"] = matchup
     picks.append(pick)
 
     # --- Total de carreras ---
@@ -242,6 +262,7 @@ def _compute_game(game, odds_events, calibration):
             "total_under", f"Under {line}", under_prob, under_implied_fair, sample_size,
             extra={"line": line, "price": total_info["under_price"] if total_info else None},
         )
+    pick2["matchup"] = matchup
     picks.append(pick2)
 
     return {
@@ -253,43 +274,49 @@ def _compute_game(game, odds_events, calibration):
 
 
 def _apply_stake_sizing(all_game_data, bankroll):
-    """Calcula Kelly fraccionado por pick (ya topado individualmente en
-    model.MAX_STAKE_PCT_OF_BANKROLL) y despues, si la suma de TODOS los
-    picks del dia pasa DAILY_EXPOSURE_CAP_PCT, escala todos los montos
-    hacia abajo proporcionalmente para que la suma nunca pase ese tope.
-    Regresa True si hubo que escalar."""
+    """Elige los TOP_PICKS_COUNT picks mas fuertes del dia (primero por
+    semaforo de riesgo -- verde antes que amarillo antes que rojo -- y
+    dentro de cada semaforo, por edge de mayor a menor) y les reparte el
+    bankroll con Kelly fraccionado, respetando el tope de exposicion diaria.
+    Regresa (huvo_que_escalar, lista_de_picks_elegidos)."""
+    flat_picks = [p for data in all_game_data for p in data["picks"]]
+    for p in flat_picks:
+        p["stake_pct"] = 0.0
+        p["stake_amount"] = None
+
     if not bankroll:
-        for data in all_game_data:
-            for p in data["picks"]:
-                p["stake_pct"] = 0.0
-                p["stake_amount"] = None
-        return False
+        return False, []
 
-    raw_total_pct = 0.0
-    for data in all_game_data:
-        for p in data["picks"]:
-            price = p["extra"].get("price")
-            pct = model_module.kelly_fraction(p["model_prob"], price, KELLY_FRACTION) if price is not None else 0.0
-            p["_raw_stake_pct"] = pct
-            raw_total_pct += pct
+    # solo picks con cuota real pueden calcular Kelly correctamente
+    candidates = [p for p in flat_picks if p["extra"].get("price") is not None]
+    candidates.sort(key=lambda p: (RISK_ORDER.get(p["risk"].split()[0], 3), -abs(p["edge"])))
 
+    top_picks = []
+    for p in candidates:
+        pct = model_module.kelly_fraction(p["model_prob"], p["extra"]["price"], KELLY_FRACTION)
+        if pct <= 0:
+            continue  # sin edge real contra esa cuota especifica, se salta
+        p["_raw_stake_pct"] = pct
+        top_picks.append(p)
+        if len(top_picks) >= TOP_PICKS_COUNT:
+            break
+
+    if not top_picks:
+        return False, []
+
+    raw_total_pct = sum(p["_raw_stake_pct"] for p in top_picks)
     scale = 1.0
     scaled = False
     if raw_total_pct > DAILY_EXPOSURE_CAP_PCT and raw_total_pct > 0:
         scale = DAILY_EXPOSURE_CAP_PCT / raw_total_pct
         scaled = True
 
-    for data in all_game_data:
-        for p in data["picks"]:
-            final_pct = p.pop("_raw_stake_pct") * scale
-            if final_pct > 0:
-                p["stake_pct"] = round(final_pct, 4)
-                p["stake_amount"] = round(bankroll * final_pct, 2)
-            else:
-                p["stake_pct"] = 0.0
-                p["stake_amount"] = None
+    for p in top_picks:
+        final_pct = p.pop("_raw_stake_pct") * scale
+        p["stake_pct"] = round(final_pct, 4)
+        p["stake_amount"] = round(bankroll * final_pct, 2)
 
-    return scaled
+    return scaled, top_picks
 
 
 def _render_game_block(data):
@@ -320,50 +347,40 @@ def _render_game_block(data):
     return "\n".join(lines)
 
 
-def _exposure_summary(all_game_data, bankroll, scaled):
-    total_stake_amount = sum(
-        p["stake_amount"] for data in all_game_data for p in data["picks"] if p.get("stake_amount")
-    )
+def _exposure_summary(top_picks, bankroll, scaled):
+    total_stake_amount = sum(p["stake_amount"] for p in top_picks if p.get("stake_amount"))
     pct_of_bankroll = total_stake_amount / bankroll if bankroll else 0
     lines = [
-        f"\n💰 <b>Exposición sugerida hoy:</b> ${total_stake_amount:,.2f} "
+        f"\n💰 <b>Exposición sugerida hoy ({len(top_picks)} picks fuertes):</b> ${total_stake_amount:,.2f} "
         f"({pct_of_bankroll*100:.1f}% de tu bankroll de ${bankroll:,.2f})"
     ]
     if scaled:
         lines.append(
             f"ℹ️ Los montos se escalaron porque la suma cruda pasaba el tope diario de "
-            f"{DAILY_EXPOSURE_CAP_PCT*100:.0f}% de tu bankroll -- así no te sugiere apostar más de lo razonable en un solo día."
+            f"{DAILY_EXPOSURE_CAP_PCT*100:.0f}% de tu bankroll."
         )
     return "\n".join(lines)
 
 
-def _render_summary_message(all_game_data, bankroll, today):
-    """Segundo mensaje, corto: solo los picks que sí tienen monto sugerido
-    y cuánto meterle a cada uno -- para no tener que releer el reporte
-    completo para saber qué apostar."""
-    lines = [f"📋 <b>Picks de hoy - {today}</b>\n"]
-    total = 0.0
-    any_pick = False
+def _render_summary_message(top_picks, bankroll, today):
+    """Segundo mensaje, corto: solo los picks mas fuertes del dia y cuanto
+    meterle a cada uno."""
+    lines = [f"📋 <b>Top {len(top_picks)} picks de hoy - {today}</b>\n"]
 
-    for data in all_game_data:
-        game = data["game"]
-        matchup = f"{game['away_team_name']} @ {game['home_team_name']}"
-        for p in data["picks"]:
-            if not p.get("stake_amount"):
-                continue
-            any_pick = True
-            total += p["stake_amount"]
-            risk_emoji = p["risk"].split()[0]
-            lines.append(
-                f"{risk_emoji} <b>{p['selection']}</b> ({matchup}) — ${p['stake_amount']:,.2f} "
-                f"({p['stake_pct']*100:.1f}%)"
-            )
-
-    if not any_pick:
+    if not top_picks:
         lines.append("Ningún pick tuvo edge suficiente hoy para sugerir apuesta.")
-    else:
-        lines.append(f"\n💰 <b>Total a meter hoy: ${total:,.2f}</b> ({total/bankroll*100:.1f}% de tu bankroll)")
+        return "\n".join(lines)
 
+    total = 0.0
+    for p in top_picks:
+        total += p["stake_amount"]
+        risk_emoji = p["risk"].split()[0]
+        lines.append(
+            f"{risk_emoji} <b>{p['selection']}</b> ({p.get('matchup', '')}) — ${p['stake_amount']:,.2f} "
+            f"({p['stake_pct']*100:.1f}%)"
+        )
+
+    lines.append(f"\n💰 <b>Total a meter hoy: ${total:,.2f}</b> ({total/bankroll*100:.1f}% de tu bankroll)")
     return "\n".join(lines)
 
 
