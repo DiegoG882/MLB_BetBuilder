@@ -207,10 +207,21 @@ def _compute_game(game, odds_events, calibration):
         away_recent.get("sample") or 0,
     )
 
-    odds_event = odds_data.match_game_odds(odds_events, game["home_team_name"], game["away_team_name"])
+    odds_event = odds_data.match_game_odds(
+        odds_events, game["home_team_name"], game["away_team_name"],
+        start_time_utc=game.get("start_time_utc"),
+    )
     home_ml_price = odds_data.best_moneyline(odds_event, "home") if odds_event else None
     away_ml_price = odds_data.best_moneyline(odds_event, "away") if odds_event else None
     total_info = odds_data.best_total(odds_event) if odds_event else None
+    # log de diagnostico: si algun edge vuelve a verse imposible (30%+),
+    # esto deja ver en el log del workflow si la cuota cruda ya venia rara
+    # desde The Odds API o si el problema esta en otro lado del calculo.
+    print(
+        f"[main] {game['away_team_name']} @ {game['home_team_name']}: "
+        f"home_price={home_ml_price} away_price={away_ml_price} "
+        f"matched_event={'si' if odds_event else 'no'}"
+    )
 
     matchup = f"{game['away_team_name']} @ {game['home_team_name']}"
     picks = []

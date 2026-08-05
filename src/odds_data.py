@@ -9,10 +9,18 @@ detectar "valor" (edge) real, no solo una proyeccion en el aire.
 """
 
 import time
+from datetime import datetime
 
 import requests
 
 BASE_URL = "https://api.the-odds-api.com/v4/sports/baseball_mlb/odds"
+
+# Si dos juegos entre los mismos equipos (serie de varios partidos, muy
+# comun en MLB) tienen cuotas en la misma respuesta de The Odds API, solo
+# aceptamos el evento como "el mismo juego" si su hora de inicio esta a
+# menos de esto de la hora real del juego. Si no, mejor no usar cuotas
+# (None) que usar las de otro partido.
+MAX_MATCH_TIME_DIFF_HOURS = 4
 
 MAX_RETRIES = 3
 RETRY_BACKOFF_SECONDS = 1.5
@@ -54,16 +62,56 @@ def get_mlb_odds(api_key, regions="us", markets="h2h,totals"):
     return data if data is not None else []
 
 
-def match_game_odds(odds_events, home_team_name, away_team_name):
+def match_game_odds(odds_events, home_team_name, away_team_name, start_time_utc=None):
     """Empareja un juego de la MLB Stats API con su evento en The Odds API
-    por nombre de equipo (los nombres suelen coincidir, pero por si acaso
-    hacemos match parcial)."""
-    for event in odds_events:
-        h = event.get("home_team", "")
-        a = event.get("away_team", "")
-        if _names_match(h, home_team_name) and _names_match(a, away_team_name):
-            return event
-    return None
+    por nombre de equipo Y por hora de inicio.
+
+    Solo por nombre NO alcanza: si los mismos dos equipos juegan una serie
+    de varios partidos (algo normal en MLB, series de 3-4 juegos), The Odds
+    API puede traer cuotas de MAS de un juego entre ellos en la misma
+    respuesta. Sin filtrar por hora, se podia agarrar el evento equivocado
+    (el de otro dia de la serie) -- eso se veia como un "edge" gigante y
+    sin sentido contra la proyeccion del dia, cuando en realidad se estaba
+    comparando contra el mercado de OTRO juego.
+
+    Si se pasa start_time_utc y hay mas de un evento candidato, nos
+    quedamos con el que empiece mas cerca de esa hora; si el mas cercano
+    sigue estando a mas de MAX_MATCH_TIME_DIFF_HOURS, mejor regresamos None
+    (sin cuotas) que arriesgarnos a comparar contra el juego equivocado."""
+    candidates = [
+        event for event in odds_events
+        if _names_match(event.get("home_team", ""), home_team_name)
+        and _names_match(event.get("away_team", ""), away_team_name)
+    ]
+
+    if not candidates:
+        return None
+    if not start_time_utc:
+        return candidates[0]
+
+    game_dt = _parse_iso(start_time_utc)
+    if game_dt is None:
+        return candidates[0]
+
+    def _hours_apart(event):
+        event_dt = _parse_iso(event.get("commence_time"))
+        if event_dt is None:
+            return float("inf")
+        return abs((event_dt - game_dt).total_seconds()) / 3600
+
+    best = min(candidates, key=_hours_apart)
+    if _hours_apart(best) > MAX_MATCH_TIME_DIFF_HOURS:
+        return None
+    return best
+
+
+def _parse_iso(value):
+    if not value:
+        return None
+    try:
+        return datetime.fromisoformat(value.replace("Z", "+00:00"))
+    except (ValueError, TypeError):
+        return None
 
 
 def _names_match(a, b):
