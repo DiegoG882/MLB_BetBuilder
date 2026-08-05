@@ -5,7 +5,7 @@ on:
     # 17:00 UTC = 11:00 AM hora Ciudad de Mexico (CST) / 12:00 PM en horario
     # de verano. Ajusta la hora segun cuando quieras recibir el mensaje
     # (antes de que empiecen los juegos del dia). Formato: minuto hora * * *
-    - cron: "0 17 * * *"
+    - cron: "0 13 * * *"
   workflow_dispatch: {}
 
 permissions:
