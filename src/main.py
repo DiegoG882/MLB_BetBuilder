@@ -44,10 +44,20 @@ TELEGRAM_CHAT_ID = os.getenv("TELEGRAM_CHAT_ID")
 ODDS_API_KEY = os.getenv("ODDS_API_KEY")
 MAX_GAMES = int(os.getenv("MAX_GAMES_PER_DAY", "15"))
 TZ = os.getenv("TIMEZONE", "America/Mexico_City")
-KELLY_FRACTION = float(os.getenv("KELLY_FRACTION", str(model_module.DEFAULT_KELLY_FRACTION)))
+def _env_float(name, default):
+    raw = os.getenv(name)
+    if raw is None or raw.strip() == "":
+        return default
+    try:
+        return float(raw)
+    except ValueError:
+        return default
+
+
+KELLY_FRACTION = _env_float("KELLY_FRACTION", model_module.DEFAULT_KELLY_FRACTION)
 # % del bankroll total a partir del cual avisamos que la exposicion del dia
 # es alta (no bloquea nada, solo te avisa para que decidas tu).
-EXPOSURE_WARNING_PCT = float(os.getenv("EXPOSURE_WARNING_PCT", "0.15"))
+EXPOSURE_WARNING_PCT = _env_float("EXPOSURE_WARNING_PCT", 0.15)
 
 SEASON = datetime.now().year
 
