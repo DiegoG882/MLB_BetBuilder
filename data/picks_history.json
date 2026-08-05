@@ -988,5 +988,455 @@
     },
     "status": "pending",
     "result": null
+  },
+  {
+    "date": "2026-08-05",
+    "game_pk": 824158,
+    "market_type": "moneyline",
+    "selection": "Houston Astros gana (ML)",
+    "model_prob": 0.8146,
+    "implied_prob": 0.6602,
+    "risk": "🟢 Riesgo bajo",
+    "extra": {
+      "side": "home",
+      "price": -203
+    },
+    "status": "pending",
+    "result": null
+  },
+  {
+    "date": "2026-08-05",
+    "game_pk": 824158,
+    "market_type": "total_over",
+    "selection": "Over 8.0",
+    "model_prob": 0.6419,
+    "implied_prob": 0.5217,
+    "risk": "🟢 Riesgo bajo",
+    "extra": {
+      "line": 8.0,
+      "price": -120
+    },
+    "status": "pending",
+    "result": null
+  },
+  {
+    "date": "2026-08-05",
+    "game_pk": 824646,
+    "market_type": "moneyline",
+    "selection": "Chicago Cubs gana (ML)",
+    "model_prob": 0.5341,
+    "implied_prob": 0.5332,
+    "risk": "🔴 Riesgo alto",
+    "extra": {
+      "side": "home",
+      "price": -118
+    },
+    "status": "pending",
+    "result": null
+  },
+  {
+    "date": "2026-08-05",
+    "game_pk": 824646,
+    "market_type": "total_under",
+    "selection": "Under 10.0",
+    "model_prob": 0.649,
+    "implied_prob": 0.5108,
+    "risk": "🟢 Riesgo bajo",
+    "extra": {
+      "line": 10.0,
+      "price": -115
+    },
+    "status": "pending",
+    "result": null
+  },
+  {
+    "date": "2026-08-05",
+    "game_pk": 822866,
+    "market_type": "moneyline",
+    "selection": "Texas Rangers gana (ML)",
+    "model_prob": 0.5047,
+    "implied_prob": 0.6006,
+    "risk": "🟡 Riesgo medio",
+    "extra": {
+      "side": "home",
+      "price": -154
+    },
+    "status": "pending",
+    "result": null
+  },
+  {
+    "date": "2026-08-05",
+    "game_pk": 822866,
+    "market_type": "total_over",
+    "selection": "Over 8.5",
+    "model_prob": 0.6535,
+    "implied_prob": 0.4797,
+    "risk": "🟢 Riesgo bajo",
+    "extra": {
+      "line": 8.5,
+      "price": -105
+    },
+    "status": "pending",
+    "result": null
+  },
+  {
+    "date": "2026-08-05",
+    "game_pk": 824322,
+    "market_type": "moneyline",
+    "selection": "Tampa Bay Rays gana (ML)",
+    "model_prob": 0.5842,
+    "implied_prob": 0.5996,
+    "risk": "🔴 Riesgo alto",
+    "extra": {
+      "side": "away",
+      "price": -154
+    },
+    "status": "pending",
+    "result": null
+  },
+  {
+    "date": "2026-08-05",
+    "game_pk": 824322,
+    "market_type": "total_under",
+    "selection": "Under 11.5",
+    "model_prob": 0.8201,
+    "implied_prob": 0.5108,
+    "risk": "🟢 Riesgo bajo",
+    "extra": {
+      "line": 11.5,
+      "price": -115
+    },
+    "status": "pending",
+    "result": null
+  },
+  {
+    "date": "2026-08-05",
+    "game_pk": 824806,
+    "market_type": "moneyline",
+    "selection": "Baltimore Orioles gana (ML)",
+    "model_prob": 0.704,
+    "implied_prob": 0.5332,
+    "risk": "🟢 Riesgo bajo",
+    "extra": {
+      "side": "home",
+      "price": -118
+    },
+    "status": "pending",
+    "result": null
+  },
+  {
+    "date": "2026-08-05",
+    "game_pk": 824806,
+    "market_type": "total_under",
+    "selection": "Under 8.0",
+    "model_prob": 0.5814,
+    "implied_prob": 0.5108,
+    "risk": "🟡 Riesgo medio",
+    "extra": {
+      "line": 8.0,
+      "price": -115
+    },
+    "status": "pending",
+    "result": null
+  },
+  {
+    "date": "2026-08-05",
+    "game_pk": 824402,
+    "market_type": "moneyline",
+    "selection": "New York Mets gana (ML)",
+    "model_prob": 0.583,
+    "implied_prob": 0.4976,
+    "risk": "🟡 Riesgo medio",
+    "extra": {
+      "side": "away",
+      "price": -102
+    },
+    "status": "pending",
+    "result": null
+  },
+  {
+    "date": "2026-08-05",
+    "game_pk": 824402,
+    "market_type": "total_under",
+    "selection": "Under 8.0",
+    "model_prob": 0.7611,
+    "implied_prob": 0.5098,
+    "risk": "🟢 Riesgo bajo",
+    "extra": {
+      "line": 8.0,
+      "price": -114
+    },
+    "status": "pending",
+    "result": null
+  },
+  {
+    "date": "2026-08-05",
+    "game_pk": 824482,
+    "market_type": "moneyline",
+    "selection": "Cincinnati Reds gana (ML)",
+    "model_prob": 0.5224,
+    "implied_prob": 0.5845,
+    "risk": "🟡 Riesgo medio",
+    "extra": {
+      "side": "home",
+      "price": -146
+    },
+    "status": "pending",
+    "result": null
+  },
+  {
+    "date": "2026-08-05",
+    "game_pk": 824482,
+    "market_type": "total_over",
+    "selection": "Over 9.5",
+    "model_prob": 0.5826,
+    "implied_prob": 0.512,
+    "risk": "🟡 Riesgo medio",
+    "extra": {
+      "line": 9.5,
+      "price": -115
+    },
+    "status": "pending",
+    "result": null
+  },
+  {
+    "date": "2026-08-05",
+    "game_pk": 823429,
+    "market_type": "moneyline",
+    "selection": "Washington Nationals gana (ML)",
+    "model_prob": 0.5337,
+    "implied_prob": 0.3621,
+    "risk": "🟢 Riesgo bajo",
+    "extra": {
+      "side": "away",
+      "price": 174
+    },
+    "status": "pending",
+    "result": null
+  },
+  {
+    "date": "2026-08-05",
+    "game_pk": 823429,
+    "market_type": "total_over",
+    "selection": "Over 9.5",
+    "model_prob": 0.8024,
+    "implied_prob": 0.4978,
+    "risk": "🟢 Riesgo bajo",
+    "extra": {
+      "line": 9.5,
+      "price": -108
+    },
+    "status": "pending",
+    "result": null
+  },
+  {
+    "date": "2026-08-05",
+    "game_pk": 823516,
+    "market_type": "moneyline",
+    "selection": "New York Yankees gana (ML)",
+    "model_prob": 0.6757,
+    "implied_prob": 0.5961,
+    "risk": "🟡 Riesgo medio",
+    "extra": {
+      "side": "home",
+      "price": -153
+    },
+    "status": "pending",
+    "result": null
+  },
+  {
+    "date": "2026-08-05",
+    "game_pk": 823516,
+    "market_type": "total_under",
+    "selection": "Under 8.5",
+    "model_prob": 0.6413,
+    "implied_prob": 0.4902,
+    "risk": "🟢 Riesgo bajo",
+    "extra": {
+      "line": 8.5,
+      "price": -105
+    },
+    "status": "pending",
+    "result": null
+  },
+  {
+    "date": "2026-08-05",
+    "game_pk": 824728,
+    "market_type": "moneyline",
+    "selection": "Boston Red Sox gana (ML)",
+    "model_prob": 0.6966,
+    "implied_prob": 0.5509,
+    "risk": "🟢 Riesgo bajo",
+    "extra": {
+      "side": "home",
+      "price": -126
+    },
+    "status": "pending",
+    "result": null
+  },
+  {
+    "date": "2026-08-05",
+    "game_pk": 824728,
+    "market_type": "total_under",
+    "selection": "Under 8.5",
+    "model_prob": 0.6537,
+    "implied_prob": 0.5022,
+    "risk": "🟢 Riesgo bajo",
+    "extra": {
+      "line": 8.5,
+      "price": -110
+    },
+    "status": "pending",
+    "result": null
+  },
+  {
+    "date": "2026-08-05",
+    "game_pk": 824889,
+    "market_type": "moneyline",
+    "selection": "Atlanta Braves gana (ML)",
+    "model_prob": 0.6522,
+    "implied_prob": 0.5357,
+    "risk": "🟡 Riesgo medio",
+    "extra": {
+      "side": "home",
+      "price": -117
+    },
+    "status": "pending",
+    "result": null
+  },
+  {
+    "date": "2026-08-05",
+    "game_pk": 824889,
+    "market_type": "total_under",
+    "selection": "Under 8.5",
+    "model_prob": 0.626,
+    "implied_prob": 0.4748,
+    "risk": "🟢 Riesgo bajo",
+    "extra": {
+      "line": 8.5,
+      "price": 102
+    },
+    "status": "pending",
+    "result": null
+  },
+  {
+    "date": "2026-08-05",
+    "game_pk": 824082,
+    "market_type": "moneyline",
+    "selection": "Kansas City Royals gana (ML)",
+    "model_prob": 0.7197,
+    "implied_prob": 0.528,
+    "risk": "🟢 Riesgo bajo",
+    "extra": {
+      "side": "home",
+      "price": -114
+    },
+    "status": "pending",
+    "result": null
+  },
+  {
+    "date": "2026-08-05",
+    "game_pk": 824082,
+    "market_type": "total_over",
+    "selection": "Over 8.5",
+    "model_prob": 0.6967,
+    "implied_prob": 0.5217,
+    "risk": "🟢 Riesgo bajo",
+    "extra": {
+      "line": 8.5,
+      "price": -120
+    },
+    "status": "pending",
+    "result": null
+  },
+  {
+    "date": "2026-08-05",
+    "game_pk": 823753,
+    "market_type": "moneyline",
+    "selection": "Milwaukee Brewers gana (ML)",
+    "model_prob": 0.5546,
+    "implied_prob": 0.5428,
+    "risk": "🔴 Riesgo alto",
+    "extra": {
+      "side": "home",
+      "price": -122
+    },
+    "status": "pending",
+    "result": null
+  },
+  {
+    "date": "2026-08-05",
+    "game_pk": 823753,
+    "market_type": "total_over",
+    "selection": "Over 7.0",
+    "model_prob": 0.5841,
+    "implied_prob": 0.5337,
+    "risk": "🔴 Riesgo alto",
+    "extra": {
+      "line": 7.0,
+      "price": -125
+    },
+    "status": "pending",
+    "result": null
+  },
+  {
+    "date": "2026-08-05",
+    "game_pk": 825052,
+    "market_type": "moneyline",
+    "selection": "San Diego Padres gana (ML)",
+    "model_prob": 0.6964,
+    "implied_prob": 0.5367,
+    "risk": "🟢 Riesgo bajo",
+    "extra": {
+      "side": "away",
+      "price": -118
+    },
+    "status": "pending",
+    "result": null
+  },
+  {
+    "date": "2026-08-05",
+    "game_pk": 825052,
+    "market_type": "total_under",
+    "selection": "Under 9.0",
+    "model_prob": 0.5821,
+    "implied_prob": 0.4892,
+    "risk": "🟡 Riesgo medio",
+    "extra": {
+      "line": 9.0,
+      "price": -105
+    },
+    "status": "pending",
+    "result": null
+  },
+  {
+    "date": "2026-08-05",
+    "game_pk": 823106,
+    "market_type": "moneyline",
+    "selection": "Detroit Tigers gana (ML)",
+    "model_prob": 0.7427,
+    "implied_prob": 0.4138,
+    "risk": "🟢 Riesgo bajo",
+    "extra": {
+      "side": "away",
+      "price": 138
+    },
+    "status": "pending",
+    "result": null
+  },
+  {
+    "date": "2026-08-05",
+    "game_pk": 823106,
+    "market_type": "total_over",
+    "selection": "Over 7.5",
+    "model_prob": 0.7456,
+    "implied_prob": 0.5108,
+    "risk": "🟢 Riesgo bajo",
+    "extra": {
+      "line": 7.5,
+      "price": -115
+    },
+    "status": "pending",
+    "result": null
   }
 ]
