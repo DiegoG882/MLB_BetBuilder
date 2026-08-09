@@ -3491,8 +3491,11 @@
       "side": "away",
       "price": -134
     },
-    "status": "pending",
-    "result": null
+    "status": "loss",
+    "result": {
+      "home_runs": 5,
+      "away_runs": 4
+    }
   },
   {
     "date": "2026-08-08",
@@ -3506,8 +3509,11 @@
       "line": 7.5,
       "price": -120
     },
-    "status": "pending",
-    "result": null
+    "status": "loss",
+    "result": {
+      "home_runs": 5,
+      "away_runs": 4
+    }
   },
   {
     "date": "2026-08-08",
@@ -3521,8 +3527,11 @@
       "side": "away",
       "price": 235
     },
-    "status": "pending",
-    "result": null
+    "status": "win",
+    "result": {
+      "home_runs": 3,
+      "away_runs": 7
+    }
   },
   {
     "date": "2026-08-08",
@@ -3536,8 +3545,11 @@
       "line": 9.0,
       "price": -105
     },
-    "status": "pending",
-    "result": null
+    "status": "loss",
+    "result": {
+      "home_runs": 3,
+      "away_runs": 7
+    }
   },
   {
     "date": "2026-08-08",
@@ -3551,8 +3563,11 @@
       "side": "away",
       "price": 146
     },
-    "status": "pending",
-    "result": null
+    "status": "loss",
+    "result": {
+      "home_runs": 7,
+      "away_runs": 0
+    }
   },
   {
     "date": "2026-08-08",
@@ -3566,8 +3581,11 @@
       "line": 7.5,
       "price": -120
     },
-    "status": "pending",
-    "result": null
+    "status": "win",
+    "result": {
+      "home_runs": 7,
+      "away_runs": 0
+    }
   },
   {
     "date": "2026-08-08",
@@ -3581,8 +3599,11 @@
       "side": "home",
       "price": -156
     },
-    "status": "pending",
-    "result": null
+    "status": "loss",
+    "result": {
+      "home_runs": 5,
+      "away_runs": 7
+    }
   },
   {
     "date": "2026-08-08",
@@ -3596,8 +3617,11 @@
       "line": 9.5,
       "price": -110
     },
-    "status": "pending",
-    "result": null
+    "status": "loss",
+    "result": {
+      "home_runs": 5,
+      "away_runs": 7
+    }
   },
   {
     "date": "2026-08-08",
@@ -3611,8 +3635,11 @@
       "side": "away",
       "price": 115
     },
-    "status": "pending",
-    "result": null
+    "status": "loss",
+    "result": {
+      "home_runs": 9,
+      "away_runs": 0
+    }
   },
   {
     "date": "2026-08-08",
@@ -3626,8 +3653,11 @@
       "line": 9.0,
       "price": -114
     },
-    "status": "pending",
-    "result": null
+    "status": "loss",
+    "result": {
+      "home_runs": 9,
+      "away_runs": 0
+    }
   },
   {
     "date": "2026-08-08",
@@ -3641,8 +3671,11 @@
       "side": "away",
       "price": -136
     },
-    "status": "pending",
-    "result": null
+    "status": "loss",
+    "result": {
+      "home_runs": 8,
+      "away_runs": 2
+    }
   },
   {
     "date": "2026-08-08",
@@ -3656,8 +3689,11 @@
       "line": 8.5,
       "price": -108
     },
-    "status": "pending",
-    "result": null
+    "status": "loss",
+    "result": {
+      "home_runs": 8,
+      "away_runs": 2
+    }
   },
   {
     "date": "2026-08-08",
@@ -3671,8 +3707,11 @@
       "side": "away",
       "price": -158
     },
-    "status": "pending",
-    "result": null
+    "status": "loss",
+    "result": {
+      "home_runs": 6,
+      "away_runs": 3
+    }
   },
   {
     "date": "2026-08-08",
@@ -3686,8 +3725,11 @@
       "line": 9.5,
       "price": -120
     },
-    "status": "pending",
-    "result": null
+    "status": "win",
+    "result": {
+      "home_runs": 6,
+      "away_runs": 3
+    }
   },
   {
     "date": "2026-08-08",
@@ -3701,8 +3743,11 @@
       "side": "home",
       "price": -144
     },
-    "status": "pending",
-    "result": null
+    "status": "win",
+    "result": {
+      "home_runs": 4,
+      "away_runs": 3
+    }
   },
   {
     "date": "2026-08-08",
@@ -3716,8 +3761,11 @@
       "line": 8.0,
       "price": -110
     },
-    "status": "pending",
-    "result": null
+    "status": "win",
+    "result": {
+      "home_runs": 4,
+      "away_runs": 3
+    }
   },
   {
     "date": "2026-08-08",
@@ -3731,8 +3779,11 @@
       "side": "away",
       "price": 108
     },
-    "status": "pending",
-    "result": null
+    "status": "loss",
+    "result": {
+      "home_runs": 3,
+      "away_runs": 2
+    }
   },
   {
     "date": "2026-08-08",
@@ -3746,8 +3797,11 @@
       "line": 8.0,
       "price": -115
     },
-    "status": "pending",
-    "result": null
+    "status": "win",
+    "result": {
+      "home_runs": 3,
+      "away_runs": 2
+    }
   },
   {
     "date": "2026-08-08",
@@ -3761,8 +3815,11 @@
       "side": "away",
       "price": -110
     },
-    "status": "pending",
-    "result": null
+    "status": "win",
+    "result": {
+      "home_runs": 0,
+      "away_runs": 8
+    }
   },
   {
     "date": "2026-08-08",
@@ -3776,8 +3833,11 @@
       "line": 8.0,
       "price": -105
     },
-    "status": "pending",
-    "result": null
+    "status": "loss",
+    "result": {
+      "home_runs": 0,
+      "away_runs": 8
+    }
   },
   {
     "date": "2026-08-08",
@@ -3791,8 +3851,11 @@
       "side": "home",
       "price": -148
     },
-    "status": "pending",
-    "result": null
+    "status": "loss",
+    "result": {
+      "home_runs": 6,
+      "away_runs": 8
+    }
   },
   {
     "date": "2026-08-08",
@@ -3806,8 +3869,11 @@
       "line": 8.5,
       "price": -115
     },
-    "status": "pending",
-    "result": null
+    "status": "win",
+    "result": {
+      "home_runs": 6,
+      "away_runs": 8
+    }
   },
   {
     "date": "2026-08-08",
@@ -3821,8 +3887,11 @@
       "side": "away",
       "price": 138
     },
-    "status": "pending",
-    "result": null
+    "status": "loss",
+    "result": {
+      "home_runs": 5,
+      "away_runs": 1
+    }
   },
   {
     "date": "2026-08-08",
@@ -3836,8 +3905,11 @@
       "line": 7.5,
       "price": -115
     },
-    "status": "pending",
-    "result": null
+    "status": "win",
+    "result": {
+      "home_runs": 5,
+      "away_runs": 1
+    }
   },
   {
     "date": "2026-08-08",
@@ -3851,8 +3923,11 @@
       "side": "away",
       "price": -124
     },
-    "status": "pending",
-    "result": null
+    "status": "loss",
+    "result": {
+      "home_runs": 6,
+      "away_runs": 3
+    }
   },
   {
     "date": "2026-08-08",
@@ -3866,8 +3941,11 @@
       "line": 7.5,
       "price": -120
     },
-    "status": "pending",
-    "result": null
+    "status": "loss",
+    "result": {
+      "home_runs": 6,
+      "away_runs": 3
+    }
   },
   {
     "date": "2026-08-08",
@@ -3881,8 +3959,11 @@
       "side": "away",
       "price": -171
     },
-    "status": "pending",
-    "result": null
+    "status": "win",
+    "result": {
+      "home_runs": 1,
+      "away_runs": 2
+    }
   },
   {
     "date": "2026-08-08",
@@ -3896,8 +3977,11 @@
       "line": 8.5,
       "price": -115
     },
-    "status": "pending",
-    "result": null
+    "status": "win",
+    "result": {
+      "home_runs": 1,
+      "away_runs": 2
+    }
   },
   {
     "date": "2026-08-08",
@@ -3911,8 +3995,11 @@
       "side": "away",
       "price": 105
     },
-    "status": "pending",
-    "result": null
+    "status": "win",
+    "result": {
+      "home_runs": 2,
+      "away_runs": 3
+    }
   },
   {
     "date": "2026-08-08",
@@ -3924,6 +4011,459 @@
     "risk": "🟡 Riesgo medio",
     "extra": {
       "line": 7.0,
+      "price": -115
+    },
+    "status": "win",
+    "result": {
+      "home_runs": 2,
+      "away_runs": 3
+    }
+  },
+  {
+    "date": "2026-08-09",
+    "game_pk": 822700,
+    "market_type": "moneyline",
+    "selection": "Cincinnati Reds gana (ML)",
+    "model_prob": 0.5387,
+    "implied_prob": 0.5037,
+    "risk": "🔴 Riesgo alto",
+    "extra": {
+      "side": "away",
+      "price": -103
+    },
+    "status": "pending",
+    "result": null
+  },
+  {
+    "date": "2026-08-09",
+    "game_pk": 822700,
+    "market_type": "total_under",
+    "selection": "Under 9.5",
+    "model_prob": 0.5205,
+    "implied_prob": 0.5108,
+    "risk": "🔴 Riesgo alto",
+    "extra": {
+      "line": 9.5,
+      "price": -115
+    },
+    "status": "pending",
+    "result": null
+  },
+  {
+    "date": "2026-08-09",
+    "game_pk": 824724,
+    "market_type": "moneyline",
+    "selection": "Boston Red Sox gana (ML)",
+    "model_prob": 0.7033,
+    "implied_prob": 0.6945,
+    "risk": "🔴 Riesgo alto",
+    "extra": {
+      "side": "home",
+      "price": -235
+    },
+    "status": "pending",
+    "result": null
+  },
+  {
+    "date": "2026-08-09",
+    "game_pk": 824724,
+    "market_type": "total_under",
+    "selection": "Under 9.5",
+    "model_prob": 0.5795,
+    "implied_prob": 0.5,
+    "risk": "🟡 Riesgo medio",
+    "extra": {
+      "line": 9.5,
+      "price": -110
+    },
+    "status": "pending",
+    "result": null
+  },
+  {
+    "date": "2026-08-09",
+    "game_pk": 823345,
+    "market_type": "moneyline",
+    "selection": "Pittsburgh Pirates gana (ML)",
+    "model_prob": 0.7007,
+    "implied_prob": 0.5736,
+    "risk": "🟢 Riesgo bajo",
+    "extra": {
+      "side": "home",
+      "price": -138
+    },
+    "status": "pending",
+    "result": null
+  },
+  {
+    "date": "2026-08-09",
+    "game_pk": 823345,
+    "market_type": "total_under",
+    "selection": "Under 8.0",
+    "model_prob": 0.9172,
+    "implied_prob": 0.5115,
+    "risk": "🟢 Riesgo bajo",
+    "extra": {
+      "line": 8.0,
+      "price": -125
+    },
+    "status": "pending",
+    "result": null
+  },
+  {
+    "date": "2026-08-09",
+    "game_pk": 823425,
+    "market_type": "moneyline",
+    "selection": "Philadelphia Phillies gana (ML)",
+    "model_prob": 0.6684,
+    "implied_prob": 0.6576,
+    "risk": "🔴 Riesgo alto",
+    "extra": {
+      "side": "home",
+      "price": -198
+    },
+    "status": "pending",
+    "result": null
+  },
+  {
+    "date": "2026-08-09",
+    "game_pk": 823425,
+    "market_type": "total_under",
+    "selection": "Under 8.5",
+    "model_prob": 0.8904,
+    "implied_prob": 0.5108,
+    "risk": "🟢 Riesgo bajo",
+    "extra": {
+      "line": 8.5,
+      "price": -115
+    },
+    "status": "pending",
+    "result": null
+  },
+  {
+    "date": "2026-08-09",
+    "game_pk": 823513,
+    "market_type": "moneyline",
+    "selection": "New York Yankees gana (ML)",
+    "model_prob": 0.6171,
+    "implied_prob": 0.5721,
+    "risk": "🔴 Riesgo alto",
+    "extra": {
+      "side": "home",
+      "price": -136
+    },
+    "status": "pending",
+    "result": null
+  },
+  {
+    "date": "2026-08-09",
+    "game_pk": 823513,
+    "market_type": "total_under",
+    "selection": "Under 8.5",
+    "model_prob": 0.7304,
+    "implied_prob": 0.5132,
+    "risk": "🟢 Riesgo bajo",
+    "extra": {
+      "line": 8.5,
+      "price": -115
+    },
+    "status": "pending",
+    "result": null
+  },
+  {
+    "date": "2026-08-09",
+    "game_pk": 823835,
+    "market_type": "moneyline",
+    "selection": "Miami Marlins gana (ML)",
+    "model_prob": 0.6823,
+    "implied_prob": 0.5736,
+    "risk": "🟡 Riesgo medio",
+    "extra": {
+      "side": "home",
+      "price": -138
+    },
+    "status": "pending",
+    "result": null
+  },
+  {
+    "date": "2026-08-09",
+    "game_pk": 823835,
+    "market_type": "total_under",
+    "selection": "Under 8.5",
+    "model_prob": 0.6021,
+    "implied_prob": 0.5,
+    "risk": "🟡 Riesgo medio",
+    "extra": {
+      "line": 8.5,
+      "price": -109
+    },
+    "status": "pending",
+    "result": null
+  },
+  {
+    "date": "2026-08-09",
+    "game_pk": 824078,
+    "market_type": "moneyline",
+    "selection": "Kansas City Royals gana (ML)",
+    "model_prob": 0.6457,
+    "implied_prob": 0.4058,
+    "risk": "🟢 Riesgo bajo",
+    "extra": {
+      "side": "home",
+      "price": 144
+    },
+    "status": "pending",
+    "result": null
+  },
+  {
+    "date": "2026-08-09",
+    "game_pk": 824078,
+    "market_type": "total_under",
+    "selection": "Under 10.0",
+    "model_prob": 0.8927,
+    "implied_prob": 0.4892,
+    "risk": "🟢 Riesgo bajo",
+    "extra": {
+      "line": 10.0,
+      "price": -105
+    },
+    "status": "pending",
+    "result": null
+  },
+  {
+    "date": "2026-08-09",
+    "game_pk": 824564,
+    "market_type": "moneyline",
+    "selection": "Chicago White Sox gana (ML)",
+    "model_prob": 0.6395,
+    "implied_prob": 0.4856,
+    "risk": "🟢 Riesgo bajo",
+    "extra": {
+      "side": "home",
+      "price": 104
+    },
+    "status": "pending",
+    "result": null
+  },
+  {
+    "date": "2026-08-09",
+    "game_pk": 824564,
+    "market_type": "total_under",
+    "selection": "Under 8.5",
+    "model_prob": 0.5272,
+    "implied_prob": 0.512,
+    "risk": "🔴 Riesgo alto",
+    "extra": {
+      "line": 8.5,
+      "price": -115
+    },
+    "status": "pending",
+    "result": null
+  },
+  {
+    "date": "2026-08-09",
+    "game_pk": 823751,
+    "market_type": "moneyline",
+    "selection": "Milwaukee Brewers gana (ML)",
+    "model_prob": 0.6703,
+    "implied_prob": 0.7034,
+    "risk": "🔴 Riesgo alto",
+    "extra": {
+      "side": "home",
+      "price": -245
+    },
+    "status": "pending",
+    "result": null
+  },
+  {
+    "date": "2026-08-09",
+    "game_pk": 823751,
+    "market_type": "total_under",
+    "selection": "Under 7.0",
+    "model_prob": 0.8578,
+    "implied_prob": 0.4675,
+    "risk": "🟢 Riesgo bajo",
+    "extra": {
+      "line": 7.0,
+      "price": 105
+    },
+    "status": "pending",
+    "result": null
+  },
+  {
+    "date": "2026-08-09",
+    "game_pk": 823020,
+    "market_type": "moneyline",
+    "selection": "Colorado Rockies gana (ML)",
+    "model_prob": 0.5501,
+    "implied_prob": 0.3951,
+    "risk": "🟢 Riesgo bajo",
+    "extra": {
+      "side": "away",
+      "price": 150
+    },
+    "status": "pending",
+    "result": null
+  },
+  {
+    "date": "2026-08-09",
+    "game_pk": 823020,
+    "market_type": "total_under",
+    "selection": "Under 9.0",
+    "model_prob": 0.6186,
+    "implied_prob": 0.4783,
+    "risk": "🟢 Riesgo bajo",
+    "extra": {
+      "line": 9.0,
+      "price": 100
+    },
+    "status": "pending",
+    "result": null
+  },
+  {
+    "date": "2026-08-09",
+    "game_pk": 822862,
+    "market_type": "moneyline",
+    "selection": "Baltimore Orioles gana (ML)",
+    "model_prob": 0.5025,
+    "implied_prob": 0.4474,
+    "risk": "🔴 Riesgo alto",
+    "extra": {
+      "side": "away",
+      "price": 120
+    },
+    "status": "pending",
+    "result": null
+  },
+  {
+    "date": "2026-08-09",
+    "game_pk": 822862,
+    "market_type": "total_under",
+    "selection": "Under 8.0",
+    "model_prob": 0.6838,
+    "implied_prob": 0.5,
+    "risk": "🟢 Riesgo bajo",
+    "extra": {
+      "line": 8.0,
+      "price": -110
+    },
+    "status": "pending",
+    "result": null
+  },
+  {
+    "date": "2026-08-09",
+    "game_pk": 823190,
+    "market_type": "moneyline",
+    "selection": "Detroit Tigers gana (ML)",
+    "model_prob": 0.799,
+    "implied_prob": 0.5276,
+    "risk": "🟢 Riesgo bajo",
+    "extra": {
+      "side": "away",
+      "price": -116
+    },
+    "status": "pending",
+    "result": null
+  },
+  {
+    "date": "2026-08-09",
+    "game_pk": 823190,
+    "market_type": "total_under",
+    "selection": "Under 7.5",
+    "model_prob": 0.5559,
+    "implied_prob": 0.5325,
+    "risk": "🔴 Riesgo alto",
+    "extra": {
+      "line": 7.5,
+      "price": -125
+    },
+    "status": "pending",
+    "result": null
+  },
+  {
+    "date": "2026-08-09",
+    "game_pk": 825050,
+    "market_type": "moneyline",
+    "selection": "Arizona Diamondbacks gana (ML)",
+    "model_prob": 0.6482,
+    "implied_prob": 0.426,
+    "risk": "🟢 Riesgo bajo",
+    "extra": {
+      "side": "home",
+      "price": 131
+    },
+    "status": "pending",
+    "result": null
+  },
+  {
+    "date": "2026-08-09",
+    "game_pk": 825050,
+    "market_type": "total_under",
+    "selection": "Under 9.0",
+    "model_prob": 0.801,
+    "implied_prob": 0.5217,
+    "risk": "🟢 Riesgo bajo",
+    "extra": {
+      "line": 9.0,
+      "price": -120
+    },
+    "status": "pending",
+    "result": null
+  },
+  {
+    "date": "2026-08-09",
+    "game_pk": 823104,
+    "market_type": "moneyline",
+    "selection": "Tampa Bay Rays gana (ML)",
+    "model_prob": 0.5548,
+    "implied_prob": 0.494,
+    "risk": "🟡 Riesgo medio",
+    "extra": {
+      "side": "away",
+      "price": 100
+    },
+    "status": "pending",
+    "result": null
+  },
+  {
+    "date": "2026-08-09",
+    "game_pk": 823104,
+    "market_type": "total_under",
+    "selection": "Under 7.5",
+    "model_prob": 0.6522,
+    "implied_prob": 0.4892,
+    "risk": "🟢 Riesgo bajo",
+    "extra": {
+      "line": 7.5,
+      "price": -105
+    },
+    "status": "pending",
+    "result": null
+  },
+  {
+    "date": "2026-08-09",
+    "game_pk": 823268,
+    "market_type": "moneyline",
+    "selection": "Houston Astros gana (ML)",
+    "model_prob": 0.5432,
+    "implied_prob": 0.4708,
+    "risk": "🟡 Riesgo medio",
+    "extra": {
+      "side": "away",
+      "price": 111
+    },
+    "status": "pending",
+    "result": null
+  },
+  {
+    "date": "2026-08-09",
+    "game_pk": 823268,
+    "market_type": "total_over",
+    "selection": "Over 8.5",
+    "model_prob": 0.7547,
+    "implied_prob": 0.5108,
+    "risk": "🟢 Riesgo bajo",
+    "extra": {
+      "line": 8.5,
       "price": -115
     },
     "status": "pending",
