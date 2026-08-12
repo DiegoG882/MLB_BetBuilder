@@ -174,9 +174,22 @@ DEFAULT_KELLY_FRACTION = 0.25
 
 # Tope duro: sin importar que tan grande salga Kelly, nunca sugerir apostar
 # mas de este % del bankroll en un solo pick. Proteccion contra errores del
-# modelo o de la cuota.
-MAX_STAKE_PCT_OF_BANKROLL = 0.05
+# modelo o de la cuota. Bajado de 5% a 2%: con 4 picks/dia al 5% cada uno, la
+# suma podia llegar a 20% del bankroll en un solo dia -- demasiado para
+# aguantar una racha mala. Configurable con la variable de entorno
+# MAX_STAKE_PCT_OF_BANKROLL si despues de varias semanas de calibracion
+# confirmada quieres mas agresividad.
+MAX_STAKE_PCT_OF_BANKROLL = 0.02
 
+# Si el edge (diferencia entre la probabilidad del modelo y la del mercado
+# sin vig) es mayor a este umbral, casi siempre es senal de un dato mal
+# calibrado (pitcher recien traspasado, cuota mal emparejada al juego, etc.)
+# y no una oportunidad real -- es muy raro que el mercado se equivoque por
+# tanto. Los picks que pasan este umbral quedan fuera de la seleccion de
+# "picks fuertes" con monto sugerido (se siguen mostrando en el reporte
+# completo, pero sin dinero automatico encima). Configurable con la variable
+# de entorno EDGE_SANITY_CAP.
+EDGE_SANITY_CAP = 0.15
 
 def american_to_decimal_odds(price):
     """Convierte cuota americana a cuota decimal (ej. -150 -> 1.667,
@@ -188,7 +201,7 @@ def american_to_decimal_odds(price):
     return 1 + (100 / -price)
 
 
-def kelly_fraction(model_prob, price, fraction=DEFAULT_KELLY_FRACTION):
+def kelly_fraction(model_prob, price, fraction=DEFAULT_KELLY_FRACTION, max_stake_pct=MAX_STAKE_PCT_OF_BANKROLL):
     """Fraccion del bankroll a apostar segun el criterio de Kelly, aplicando
     un multiplicador fraccional (Kelly a 1/4 por default) y un tope maximo
     por pick. Regresa 0.0 si no hay edge (no conviene apostar) o si falta la
@@ -206,7 +219,7 @@ def kelly_fraction(model_prob, price, fraction=DEFAULT_KELLY_FRACTION):
         return 0.0  # el modelo no ve edge suficiente para que Kelly recomiende apostar
 
     stake_pct = full_kelly * fraction
-    return round(min(stake_pct, MAX_STAKE_PCT_OF_BANKROLL), 4)
+   return round(min(stake_pct, max_stake_pct), 4)
 
 
 def suggested_stake(model_prob, price, bankroll, fraction=DEFAULT_KELLY_FRACTION):
