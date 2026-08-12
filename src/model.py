@@ -218,7 +218,7 @@ def kelly_fraction(model_prob, price, fraction=DEFAULT_KELLY_FRACTION, max_stake
     if full_kelly <= 0:
         return 0.0  # el modelo no ve edge suficiente para que Kelly recomiende apostar
 
-stake_pct = full_kelly * fraction
+    stake_pct = full_kelly * fraction
     return round(min(stake_pct, max_stake_pct), 4)
 
 
