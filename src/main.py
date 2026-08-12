@@ -77,11 +77,17 @@ def _env_int(name, default):
 
 
 KELLY_FRACTION = _env_float("KELLY_FRACTION", model_module.DEFAULT_KELLY_FRACTION)
+# Tope maximo por pick individual (ver model.MAX_STAKE_PCT_OF_BANKROLL).
+MAX_STAKE_PCT = _env_float("MAX_STAKE_PCT_OF_BANKROLL", model_module.MAX_STAKE_PCT_OF_BANKROLL)
 # Tope de cuanto del bankroll se sugiere exponer EN TOTAL en un solo dia,
-# sumando los picks elegidos. Cada pick ya se topa individual en 5% (ver
-# model.MAX_STAKE_PCT_OF_BANKROLL); este tope adicional es sobre todos los
-# picks del dia juntos.
-DAILY_EXPOSURE_CAP_PCT = _env_float("DAILY_EXPOSURE_CAP_PCT", 0.20)
+# sumando los picks elegidos. Bajado de 20% a 6%: incluso con las picks mas
+# fuertes del dia, exponer una quinta parte del bankroll en 24 horas es
+# demasiado riesgo de ruina si el modelo se equivoca. Con el tope individual
+# en 2% (ver arriba) y hasta 4 picks/dia, 6% deja margen sin ser agresivo.
+DAILY_EXPOSURE_CAP_PCT = _env_float("DAILY_EXPOSURE_CAP_PCT", 0.06)
+# Picks con edge mayor a esto se consideran sospechosos (probable dato mal
+# calibrado, no oportunidad real) y quedan fuera del sizing automatico.
+EDGE_SANITY_CAP = _env_float("EDGE_SANITY_CAP", model_module.EDGE_SANITY_CAP)
 # Cuantos picks "fuertes" elegir por dia para sugerirles monto. El resto de
 # los juegos del reporte se siguen mostrando con probabilidad/edge/riesgo,
 # nada mas sin monto sugerido -- no tiene sentido repartir el bankroll entre
@@ -135,8 +141,8 @@ def main():
         if data:
             all_game_data.append(data)
 
-    # 5) Elegir los picks mas fuertes del dia y repartirles el bankroll
-    scaled, top_picks = _apply_stake_sizing(all_game_data, bankroll)
+   # 5) Elegir los picks mas fuertes del dia y repartirles el bankroll
+    scaled, top_picks, suspicious_picks = _apply_stake_sizing(all_game_data, bankroll)
 
     # 6) Armar y mandar el reporte completo
     message_lines = [f"⚾ <b>Bet Builder MLB - {today}</b>\n"]
@@ -145,6 +151,9 @@ def main():
 
     if bankroll:
         message_lines.append(_exposure_summary(top_picks, bankroll, scaled))
+
+    if suspicious_picks:
+        message_lines.append(_suspicious_picks_note(suspicious_picks))
 
     message_lines.append(
         "\n⚠️ Esto es un modelo estadistico, no una garantia. "
@@ -289,22 +298,37 @@ def _apply_stake_sizing(all_game_data, bankroll):
     semaforo de riesgo -- verde antes que amarillo antes que rojo -- y
     dentro de cada semaforo, por edge de mayor a menor) y les reparte el
     bankroll con Kelly fraccionado, respetando el tope de exposicion diaria.
-    Regresa (huvo_que_escalar, lista_de_picks_elegidos)."""
+
+    Los picks con edge mayor a EDGE_SANITY_CAP se excluyen de este sizing
+    (casi siempre son dato mal calibrado, no oportunidad real -- ver el
+    caso de un pitcher recien traspasado que distorsiono su ERA de
+    temporada). Se devuelven aparte para que el reporte los marque como
+    "revisar manualmente" en vez de sugerirles dinero automatico.
+
+    Regresa (hubo_que_escalar, lista_de_picks_elegidos, lista_de_picks_sospechosos)."""
     flat_picks = [p for data in all_game_data for p in data["picks"]]
     for p in flat_picks:
         p["stake_pct"] = 0.0
         p["stake_amount"] = None
 
-    if not bankroll:
-        return False, []
+    suspicious = [
+        p for p in flat_picks
+        if p["extra"].get("price") is not None and abs(p["edge"]) > EDGE_SANITY_CAP
+    ]
 
-    # solo picks con cuota real pueden calcular Kelly correctamente
-    candidates = [p for p in flat_picks if p["extra"].get("price") is not None]
+    if not bankroll:
+        return False, [], suspicious
+
+    # solo picks con cuota real y edge "creible" pueden entrar al sizing
+    candidates = [
+        p for p in flat_picks
+        if p["extra"].get("price") is not None and abs(p["edge"]) <= EDGE_SANITY_CAP
+    ]
     candidates.sort(key=lambda p: (RISK_ORDER.get(p["risk"].split()[0], 3), -abs(p["edge"])))
 
     top_picks = []
     for p in candidates:
-        pct = model_module.kelly_fraction(p["model_prob"], p["extra"]["price"], KELLY_FRACTION)
+        pct = model_module.kelly_fraction(p["model_prob"], p["extra"]["price"], KELLY_FRACTION, MAX_STAKE_PCT)
         if pct <= 0:
             continue  # sin edge real contra esa cuota especifica, se salta
         p["_raw_stake_pct"] = pct
@@ -313,7 +337,7 @@ def _apply_stake_sizing(all_game_data, bankroll):
             break
 
     if not top_picks:
-        return False, []
+        return False, [], suspicious
 
     raw_total_pct = sum(p["_raw_stake_pct"] for p in top_picks)
     scale = 1.0
@@ -327,7 +351,7 @@ def _apply_stake_sizing(all_game_data, bankroll):
         p["stake_pct"] = round(final_pct, 4)
         p["stake_amount"] = round(bankroll * final_pct, 2)
 
-    return scaled, top_picks
+    return scaled, top_picks, suspicious
 
 
 def _render_game_block(data):
@@ -370,6 +394,20 @@ def _exposure_summary(top_picks, bankroll, scaled):
             f"ℹ️ Los montos se escalaron porque la suma cruda pasaba el tope diario de "
             f"{DAILY_EXPOSURE_CAP_PCT*100:.0f}% de tu bankroll."
         )
+    return "\n".join(lines)
+
+
+def _suspicious_picks_note(suspicious_picks):
+    """Lista corta de picks que quedaron fuera del sizing automatico por
+    tener un edge demasiado grande para ser creible (casi siempre dato mal
+    calibrado, no oportunidad real)."""
+    lines = [
+        f"\n⚠️ <b>{len(suspicious_picks)} pick(s) con edge > {EDGE_SANITY_CAP*100:.0f}% "
+        f"(no se les asignó monto, revísalos a mano antes de apostar):</b>"
+    ]
+    for p in suspicious_picks:
+        edge_pct = round(p["edge"] * 100, 1)
+        lines.append(f"  • {p['selection']} ({p.get('matchup', '')}) — edge: {edge_pct:+}%")
     return "\n".join(lines)
 
 
