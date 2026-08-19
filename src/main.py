@@ -34,9 +34,11 @@ from dotenv import load_dotenv
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
+from src import historical_cache
 from src import mlb_data
 from src import odds_data
 from src import model as model_module
+from src import park_factors
 from src import storage
 from src import settle
 from src import telegram_bot
@@ -93,6 +95,9 @@ EDGE_SANITY_CAP = _env_float("EDGE_SANITY_CAP", model_module.EDGE_SANITY_CAP)
 # nada mas sin monto sugerido -- no tiene sentido repartir el bankroll entre
 # 20+ picks el mismo dia.
 TOP_PICKS_COUNT = _env_int("TOP_PICKS_COUNT", 4)
+# Cuantos dias hacia atras de partidos de toda la liga se guardan en el
+# cache local para calcular "forma reciente" (ver historical_cache.py).
+HISTORICAL_WINDOW_DAYS = _env_int("HISTORICAL_WINDOW_DAYS", historical_cache.DEFAULT_WINDOW_DAYS)
 
 RISK_ORDER = {"🟢": 0, "🟡": 1, "🔴": 2}
 
@@ -134,14 +139,19 @@ def main():
     # 3) Cuotas reales (opcional)
     odds_events = odds_data.get_mlb_odds(ODDS_API_KEY) if ODDS_API_KEY else []
 
+    # 3b) Actualizar el cache de los ultimos N dias de partidos (referencia
+    # para "forma reciente" -- ver historical_cache.py). Normalmente solo
+    # pide el dia que falte, no los 100 dias completos cada vez.
+    hist_games = historical_cache.update_cache(today, window_days=HISTORICAL_WINDOW_DAYS)
+
     # 4) Calcular proyecciones y picks de cada juego (todavia sin montos)
     all_game_data = []
     for game in games:
-        data = _compute_game(game, odds_events, calibration)
+        data = _compute_game(game, odds_events, calibration, hist_games)
         if data:
             all_game_data.append(data)
 
-   # 5) Elegir los picks mas fuertes del dia y repartirles el bankroll
+    # 5) Elegir los picks mas fuertes del dia y repartirles el bankroll
     scaled, top_picks, suspicious_picks = _apply_stake_sizing(all_game_data, bankroll)
 
     # 6) Armar y mandar el reporte completo
@@ -170,16 +180,20 @@ def main():
         sent_summary = telegram_bot.send_message(TELEGRAM_TOKEN, TELEGRAM_CHAT_ID, summary_message)
         print(f"Resumen de apuestas enviado a Telegram: {sent_summary}")
 
-    # 7) Guardar historial
+    # 7) Guardar historial (JSON, fuente de verdad) y exportarlo a CSV (para
+    # que lo puedas abrir en Excel/Sheets, o verlo como tabla directo en
+    # GitHub sin descargar nada)
     for data in all_game_data:
         for pick in data["picks"]:
             storage.record_pick(history, pick, data["game"]["game_pk"], today)
     storage.save_history(history)
+    storage.export_history_csv(history)
+    storage.export_performance_summary_csv(history)
 
     print("Listo.")
 
 
-def _compute_game(game, odds_events, calibration):
+def _compute_game(game, odds_events, calibration, hist_games):
     """Calcula proyecciones y picks (moneyline + total) de un juego, sin
     montos de apuesta todavia -- eso se decide despues, en conjunto con
     todos los juegos del dia, para elegir nada mas los mejores picks."""
@@ -188,8 +202,8 @@ def _compute_game(game, odds_events, calibration):
 
     home_season = mlb_data.get_team_season_stats(home_id, SEASON)
     away_season = mlb_data.get_team_season_stats(away_id, SEASON)
-    home_recent = mlb_data.get_team_recent_form(home_id, game["date"])
-    away_recent = mlb_data.get_team_recent_form(away_id, game["date"])
+    home_recent = historical_cache.get_recent_form(hist_games, home_id, game["date"])
+    away_recent = historical_cache.get_recent_form(hist_games, away_id, game["date"])
 
     home_pitcher = None
     away_pitcher = None
@@ -209,6 +223,13 @@ def _compute_game(game, odds_events, calibration):
 
     if home_proj is None or away_proj is None:
         return None  # datos insuficientes (ej: inicio de temporada), nos lo saltamos
+
+    # El parque afecta a AMBOS equipos por igual (la pelota no distingue de
+    # quien es), asi que multiplicamos ambas proyecciones por el factor del
+    # estadio del equipo local.
+    park_factor = park_factors.get_park_factor(game["home_team_name"])
+    home_proj = round(home_proj * park_factor, 2)
+    away_proj = round(away_proj * park_factor, 2)
 
     total_proj = home_proj + away_proj
     sample_size = min(
@@ -300,10 +321,9 @@ def _apply_stake_sizing(all_game_data, bankroll):
     bankroll con Kelly fraccionado, respetando el tope de exposicion diaria.
 
     Los picks con edge mayor a EDGE_SANITY_CAP se excluyen de este sizing
-    (casi siempre son dato mal calibrado, no oportunidad real -- ver el
-    caso de un pitcher recien traspasado que distorsiono su ERA de
-    temporada). Se devuelven aparte para que el reporte los marque como
-    "revisar manualmente" en vez de sugerirles dinero automatico.
+    (casi siempre son dato mal calibrado, no oportunidad real). Se
+    devuelven aparte para que el reporte los marque como "revisar
+    manualmente" en vez de sugerirles dinero automatico.
 
     Regresa (hubo_que_escalar, lista_de_picks_elegidos, lista_de_picks_sospechosos)."""
     flat_picks = [p for data in all_game_data for p in data["picks"]]

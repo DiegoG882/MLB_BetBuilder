@@ -191,6 +191,7 @@ MAX_STAKE_PCT_OF_BANKROLL = 0.02
 # de entorno EDGE_SANITY_CAP.
 EDGE_SANITY_CAP = 0.15
 
+
 def american_to_decimal_odds(price):
     """Convierte cuota americana a cuota decimal (ej. -150 -> 1.667,
     +150 -> 2.5). Cuota decimal es la que usa la formula de Kelly."""

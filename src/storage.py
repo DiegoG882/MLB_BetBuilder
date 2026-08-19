@@ -14,6 +14,7 @@ bankroll.json        -> tu bankroll actual, para poder sugerir cuanto
                         el sistema nunca lo cambia solo.
 """
 
+import csv
 import json
 import os
 
@@ -21,6 +22,14 @@ DATA_DIR = os.path.join(os.path.dirname(__file__), "..", "data")
 HISTORY_PATH = os.path.join(DATA_DIR, "picks_history.json")
 CALIBRATION_PATH = os.path.join(DATA_DIR, "calibration.json")
 BANKROLL_PATH = os.path.join(DATA_DIR, "bankroll.json")
+PICKS_CSV_PATH = os.path.join(DATA_DIR, "picks_history.csv")
+SUMMARY_CSV_PATH = os.path.join(DATA_DIR, "performance_summary.csv")
+
+CSV_FIELDS = [
+    "date", "matchup", "market_type", "selection", "model_prob",
+    "implied_prob", "edge", "risk", "status", "result",
+    "stake_pct", "stake_amount",
+]
 
 # Si un pick queda 'pending' mas de este numero de dias (el juego se
 # suspendio, se pospuso, o el endpoint de resultado nunca respondio), lo
@@ -66,12 +75,15 @@ def record_pick(history, pick, game_pk, date_str):
         {
             "date": date_str,
             "game_pk": game_pk,
+            "matchup": pick.get("matchup", ""),
             "market_type": pick["market_type"],
             "selection": pick["selection"],
             "model_prob": pick["model_prob"],
             "implied_prob": pick["implied_prob"],
             "risk": pick["risk"],
             "extra": pick["extra"],
+            "stake_pct": pick.get("stake_pct") or None,
+            "stake_amount": pick.get("stake_amount"),
             "status": "pending",   # pending | win | loss | push | no_data
             "result": None,
         }
@@ -91,6 +103,73 @@ def update_calibration(calibration, market_type, model_prob, won):
     entry["n"] += 1
     entry["hits"] += 1 if won else 0
     entry["predicted_sum"] += model_prob
+
+
+# ---------- Exportacion a CSV (para verlo en Excel/Sheets, o directo en GitHub) ----------
+
+def export_history_csv(history):
+    """Escribe picks_history.json como CSV plano: una fila por pick, con su
+    resultado. Se regenera completo cada corrida (el archivo es chico, no
+    importa el costo). Se puede abrir en Excel/Google Sheets, o verlo
+    directo como tabla en la pagina de GitHub sin descargar nada."""
+    os.makedirs(DATA_DIR, exist_ok=True)
+    with open(PICKS_CSV_PATH, "w", newline="", encoding="utf-8") as f:
+        writer = csv.DictWriter(f, fieldnames=CSV_FIELDS)
+        writer.writeheader()
+        for entry in history:
+            model_prob = entry.get("model_prob")
+            implied_prob = entry.get("implied_prob")
+            edge = None
+            if model_prob is not None and implied_prob is not None:
+                edge = round(model_prob - implied_prob, 4)
+
+            result = entry.get("result") or {}
+            result_str = f"{result.get('away_runs')}-{result.get('home_runs')}" if result else ""
+
+            writer.writerow({
+                "date": entry.get("date"),
+                "matchup": entry.get("matchup", ""),
+                "market_type": entry.get("market_type"),
+                "selection": entry.get("selection"),
+                "model_prob": model_prob,
+                "implied_prob": implied_prob,
+                "edge": edge,
+                "risk": entry.get("risk"),
+                "status": entry.get("status"),
+                "result": result_str,
+                "stake_pct": entry.get("stake_pct"),
+                "stake_amount": entry.get("stake_amount"),
+            })
+
+
+def export_performance_summary_csv(history):
+    """Resumen de aciertos por tipo de mercado (moneyline / total_over /
+    total_under) mas un renglon TOTAL, para ver de un vistazo que tan bien
+    (o mal) va el modelo sin tener que contar filas a mano en el CSV
+    completo."""
+    stats = {}
+    for entry in history:
+        status = entry.get("status")
+        if status not in ("win", "loss"):
+            continue  # solo contamos picks ya resueltos, no pending/no_data
+        market = entry.get("market_type", "desconocido")
+        bucket = stats.setdefault(market, {"wins": 0, "losses": 0})
+        bucket["wins" if status == "win" else "losses"] += 1
+
+    os.makedirs(DATA_DIR, exist_ok=True)
+    with open(SUMMARY_CSV_PATH, "w", newline="", encoding="utf-8") as f:
+        writer = csv.writer(f)
+        writer.writerow(["market_type", "wins", "losses", "total", "win_rate_pct"])
+        total_wins = total_losses = 0
+        for market, s in sorted(stats.items()):
+            total = s["wins"] + s["losses"]
+            win_rate = round(100 * s["wins"] / total, 1) if total else 0.0
+            writer.writerow([market, s["wins"], s["losses"], total, win_rate])
+            total_wins += s["wins"]
+            total_losses += s["losses"]
+        overall_total = total_wins + total_losses
+        overall_rate = round(100 * total_wins / overall_total, 1) if overall_total else 0.0
+        writer.writerow(["TOTAL", total_wins, total_losses, overall_total, overall_rate])
 
 
 # ---------- Bankroll ----------

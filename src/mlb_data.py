@@ -187,6 +187,42 @@ def get_pitcher_stats(pitcher_id, season):
     }
 
 
+def get_final_games_range(start_date, end_date):
+    """Trae TODOS los juegos terminados de la liga completa en un rango de
+    fechas (YYYY-MM-DD, inclusive), en una sola llamada -- se usa para armar
+    el cache historico de referencia (ver historical_cache.py) en vez de
+    pedir el calendario equipo por equipo, que serian ~30 llamadas por dia."""
+    data = _get(
+        "/schedule",
+        {"sportId": SPORT_ID, "startDate": start_date, "endDate": end_date, "hydrate": "linescore"},
+    )
+    games = []
+    for date_block in data.get("dates", []):
+        game_date = date_block.get("date")
+        for g in date_block.get("games", []):
+            if g.get("status", {}).get("abstractGameState") != "Final":
+                continue
+            home = g.get("teams", {}).get("home", {})
+            away = g.get("teams", {}).get("away", {})
+            home_runs = home.get("score")
+            away_runs = away.get("score")
+            home_id = home.get("team", {}).get("id")
+            away_id = away.get("team", {}).get("id")
+            if None in (home_runs, away_runs, home_id, away_id):
+                continue
+            games.append(
+                {
+                    "game_pk": g.get("gamePk"),
+                    "date": game_date,
+                    "home_team_id": home_id,
+                    "away_team_id": away_id,
+                    "home_runs": home_runs,
+                    "away_runs": away_runs,
+                }
+            )
+    return games
+
+
 def get_final_score(game_pk):
     """Para settlement: resultado final ya jugado.
 
