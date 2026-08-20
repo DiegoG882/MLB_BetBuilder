@@ -27,7 +27,7 @@ SUMMARY_CSV_PATH = os.path.join(DATA_DIR, "performance_summary.csv")
 
 CSV_FIELDS = [
     "date", "matchup", "market_type", "selection", "model_prob",
-    "implied_prob", "edge", "risk", "status", "result",
+    "implied_prob", "edge", "risk", "model_version", "status", "result",
     "stake_pct", "stake_amount",
 ]
 
@@ -81,6 +81,7 @@ def record_pick(history, pick, game_pk, date_str):
             "model_prob": pick["model_prob"],
             "implied_prob": pick["implied_prob"],
             "risk": pick["risk"],
+            "model_version": pick.get("model_version", "sin_version"),
             "extra": pick["extra"],
             "stake_pct": pick.get("stake_pct") or None,
             "stake_amount": pick.get("stake_amount"),
@@ -110,6 +111,7 @@ def upsert_pick(history, pick, game_pk, date_str):
                 "model_prob": pick["model_prob"],
                 "implied_prob": pick["implied_prob"],
                 "risk": pick["risk"],
+                "model_version": pick.get("model_version", "sin_version"),
                 "extra": pick["extra"],
                 "stake_pct": pick.get("stake_pct") or None,
                 "stake_amount": pick.get("stake_amount"),
@@ -187,6 +189,7 @@ def export_history_csv(history):
                 "implied_prob": implied_prob,
                 "edge": edge,
                 "risk": entry.get("risk"),
+                "model_version": entry.get("model_version", "sin_version"),
                 "status": entry.get("status"),
                 "result": result_str,
                 "stake_pct": entry.get("stake_pct"),
@@ -195,34 +198,38 @@ def export_history_csv(history):
 
 
 def export_performance_summary_csv(history):
-    """Resumen de aciertos por tipo de mercado (moneyline / total_over /
-    total_under) mas un renglon TOTAL, para ver de un vistazo que tan bien
-    (o mal) va el modelo sin tener que contar filas a mano en el CSV
-    completo."""
+    """Resumen de aciertos por VERSION del modelo + tipo de mercado, mas un
+    renglon TOTAL por version. Desglosarlo por version es lo que permite
+    comparar "v4 contra lo que hubo antes" sin que un cambio nuevo quede
+    escondido dentro del promedio general de todo el historial."""
     stats = {}
     for entry in history:
         status = entry.get("status")
         if status not in ("win", "loss"):
             continue  # solo contamos picks ya resueltos, no pending/no_data
+        version = entry.get("model_version") or "sin_version"
         market = entry.get("market_type", "desconocido")
-        bucket = stats.setdefault(market, {"wins": 0, "losses": 0})
+        bucket = stats.setdefault((version, market), {"wins": 0, "losses": 0})
         bucket["wins" if status == "win" else "losses"] += 1
 
     os.makedirs(DATA_DIR, exist_ok=True)
     with open(SUMMARY_CSV_PATH, "w", newline="", encoding="utf-8") as f:
         writer = csv.writer(f)
-        writer.writerow(["market_type", "wins", "losses", "total", "win_rate_pct"])
-        total_wins = total_losses = 0
-        for market, s in sorted(stats.items()):
+        writer.writerow(["model_version", "market_type", "wins", "losses", "total", "win_rate_pct"])
+
+        totals_by_version = {}
+        for (version, market), s in sorted(stats.items()):
             total = s["wins"] + s["losses"]
             win_rate = round(100 * s["wins"] / total, 1) if total else 0.0
-            writer.writerow([market, s["wins"], s["losses"], total, win_rate])
-            total_wins += s["wins"]
-            total_losses += s["losses"]
-        overall_total = total_wins + total_losses
-        overall_rate = round(100 * total_wins / overall_total, 1) if overall_total else 0.0
-        writer.writerow(["TOTAL", total_wins, total_losses, overall_total, overall_rate])
+            writer.writerow([version, market, s["wins"], s["losses"], total, win_rate])
+            tv = totals_by_version.setdefault(version, {"wins": 0, "losses": 0})
+            tv["wins"] += s["wins"]
+            tv["losses"] += s["losses"]
 
+        for version, tv in sorted(totals_by_version.items()):
+            total = tv["wins"] + tv["losses"]
+            win_rate = round(100 * tv["wins"] / total, 1) if total else 0.0
+            writer.writerow([version, "TOTAL", tv["wins"], tv["losses"], total, win_rate])
 
 # ---------- Bankroll ----------
 
