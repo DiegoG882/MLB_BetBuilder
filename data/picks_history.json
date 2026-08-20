@@ -8016,34 +8016,36 @@
     "market_type": "moneyline",
     "selection": "St. Louis Cardinals gana (ML)",
     "model_prob": 0.6985,
-    "implied_prob": 0.5072,
+    "implied_prob": 0.5049,
     "risk": "⚠️ Edge sospechoso",
     "extra": {
       "side": "away",
-      "price": -106
+      "price": -104
     },
     "stake_pct": null,
     "stake_amount": null,
     "status": "pending",
-    "result": null
+    "result": null,
+    "model_version": "v4"
   },
   {
     "date": "2026-08-20",
     "game_pk": 824474,
     "matchup": "St. Louis Cardinals @ Cincinnati Reds",
     "market_type": "total_under",
-    "selection": "Under 9.0",
-    "model_prob": 0.5874,
-    "implied_prob": 0.5108,
-    "risk": "🟡 Riesgo medio",
+    "selection": "Under 8.5",
+    "model_prob": 0.8812,
+    "implied_prob": 0.4675,
+    "risk": "⚠️ Edge sospechoso",
     "extra": {
-      "line": 9.0,
-      "price": -115
+      "line": 8.5,
+      "price": 105
     },
-    "stake_pct": 0.015,
-    "stake_amount": 7.5,
+    "stake_pct": null,
+    "stake_amount": null,
     "status": "pending",
-    "result": null
+    "result": null,
+    "model_version": "v4"
   },
   {
     "date": "2026-08-20",
@@ -8052,34 +8054,36 @@
     "market_type": "moneyline",
     "selection": "San Francisco Giants gana (ML)",
     "model_prob": 0.5913,
-    "implied_prob": 0.3554,
+    "implied_prob": 0.3424,
     "risk": "⚠️ Edge sospechoso",
     "extra": {
       "side": "away",
-      "price": 180
+      "price": 190
     },
     "stake_pct": null,
     "stake_amount": null,
     "status": "pending",
-    "result": null
+    "result": null,
+    "model_version": "v4"
   },
   {
     "date": "2026-08-20",
     "game_pk": 824395,
     "matchup": "San Francisco Giants @ Cleveland Guardians",
     "market_type": "total_under",
-    "selection": "Under 7.0",
-    "model_prob": 0.6151,
-    "implied_prob": 0.4783,
-    "risk": "🟢 Riesgo bajo",
+    "selection": "Under 6.5",
+    "model_prob": 0.8918,
+    "implied_prob": 0.4675,
+    "risk": "⚠️ Edge sospechoso",
     "extra": {
-      "line": 7.0,
-      "price": 100
+      "line": 6.5,
+      "price": 105
     },
-    "stake_pct": 0.015,
-    "stake_amount": 7.5,
+    "stake_pct": null,
+    "stake_amount": null,
     "status": "pending",
-    "result": null
+    "result": null,
+    "model_version": "v4"
   },
   {
     "date": "2026-08-20",
@@ -8088,7 +8092,7 @@
     "market_type": "moneyline",
     "selection": "Tampa Bay Rays gana (ML)",
     "model_prob": 0.5551,
-    "implied_prob": 0.6039,
+    "implied_prob": 0.603,
     "risk": "🔴 Riesgo alto",
     "extra": {
       "side": "home",
@@ -8097,7 +8101,8 @@
     "stake_pct": null,
     "stake_amount": null,
     "status": "pending",
-    "result": null
+    "result": null,
+    "model_version": "v4"
   },
   {
     "date": "2026-08-20",
@@ -8115,7 +8120,8 @@
     "stake_pct": null,
     "stake_amount": null,
     "status": "pending",
-    "result": null
+    "result": null,
+    "model_version": "v4"
   },
   {
     "date": "2026-08-20",
@@ -8124,16 +8130,17 @@
     "market_type": "moneyline",
     "selection": "Kansas City Royals gana (ML)",
     "model_prob": 0.5531,
-    "implied_prob": 0.5641,
+    "implied_prob": 0.5559,
     "risk": "🔴 Riesgo alto",
     "extra": {
       "side": "home",
-      "price": -134
+      "price": -128
     },
     "stake_pct": null,
     "stake_amount": null,
     "status": "pending",
-    "result": null
+    "result": null,
+    "model_version": "v4"
   },
   {
     "date": "2026-08-20",
@@ -8142,16 +8149,17 @@
     "market_type": "total_under",
     "selection": "Under 8.5",
     "model_prob": 0.5688,
-    "implied_prob": 0.5236,
+    "implied_prob": 0.5217,
     "risk": "🔴 Riesgo alto",
     "extra": {
       "line": 8.5,
-      "price": -122
+      "price": -120
     },
-    "stake_pct": null,
-    "stake_amount": null,
+    "stake_pct": 0.0121,
+    "stake_amount": 6.04,
     "status": "pending",
-    "result": null
+    "result": null,
+    "model_version": "v4"
   },
   {
     "date": "2026-08-20",
@@ -8160,16 +8168,17 @@
     "market_type": "moneyline",
     "selection": "Chicago White Sox gana (ML)",
     "model_prob": 0.5597,
-    "implied_prob": 0.4964,
-    "risk": "🟡 Riesgo medio",
+    "implied_prob": 0.5,
+    "risk": "🔴 Riesgo alto",
     "extra": {
       "side": "home",
       "price": -102
     },
-    "stake_pct": 0.015,
-    "stake_amount": 7.5,
+    "stake_pct": 0.0189,
+    "stake_amount": 9.43,
     "status": "pending",
-    "result": null
+    "result": null,
+    "model_version": "v4"
   },
   {
     "date": "2026-08-20",
@@ -8187,7 +8196,8 @@
     "stake_pct": null,
     "stake_amount": null,
     "status": "pending",
-    "result": null
+    "result": null,
+    "model_version": "v4"
   },
   {
     "date": "2026-08-20",
@@ -8196,34 +8206,36 @@
     "market_type": "moneyline",
     "selection": "Seattle Mariners gana (ML)",
     "model_prob": 0.5537,
-    "implied_prob": 0.452,
+    "implied_prob": 0.4454,
     "risk": "🟡 Riesgo medio",
     "extra": {
       "side": "away",
-      "price": 119
+      "price": 121
     },
-    "stake_pct": 0.015,
-    "stake_amount": 7.5,
+    "stake_pct": 0.0189,
+    "stake_amount": 9.43,
     "status": "pending",
-    "result": null
+    "result": null,
+    "model_version": "v4"
   },
   {
     "date": "2026-08-20",
     "game_pk": 823747,
     "matchup": "Seattle Mariners @ Milwaukee Brewers",
     "market_type": "total_under",
-    "selection": "Under 8.0",
-    "model_prob": 0.9145,
-    "implied_prob": 0.5217,
-    "risk": "⚠️ Edge sospechoso",
+    "selection": "Under 7.5",
+    "model_prob": 0.5378,
+    "implied_prob": 0.4935,
+    "risk": "🔴 Riesgo alto",
     "extra": {
-      "line": 8.0,
-      "price": -120
+      "line": 7.5,
+      "price": -107
     },
-    "stake_pct": null,
-    "stake_amount": null,
+    "stake_pct": 0.0102,
+    "stake_amount": 5.09,
     "status": "pending",
-    "result": null
+    "result": null,
+    "model_version": "v4"
   },
   {
     "date": "2026-08-20",
@@ -8232,16 +8244,17 @@
     "market_type": "moneyline",
     "selection": "Baltimore Orioles gana (ML)",
     "model_prob": 0.5092,
-    "implied_prob": 0.4668,
+    "implied_prob": 0.4928,
     "risk": "🔴 Riesgo alto",
     "extra": {
       "side": "home",
-      "price": 111
+      "price": 100
     },
     "stake_pct": null,
     "stake_amount": null,
     "status": "pending",
-    "result": null
+    "result": null,
+    "model_version": "v4"
   },
   {
     "date": "2026-08-20",
@@ -8259,7 +8272,8 @@
     "stake_pct": null,
     "stake_amount": null,
     "status": "pending",
-    "result": null
+    "result": null,
+    "model_version": "v4"
   },
   {
     "date": "2026-08-20",
@@ -8268,16 +8282,17 @@
     "market_type": "moneyline",
     "selection": "Washington Nationals gana (ML)",
     "model_prob": 0.6715,
-    "implied_prob": 0.3932,
+    "implied_prob": 0.3848,
     "risk": "⚠️ Edge sospechoso",
     "extra": {
       "side": "away",
-      "price": 152
+      "price": 158
     },
     "stake_pct": null,
     "stake_amount": null,
     "status": "pending",
-    "result": null
+    "result": null,
+    "model_version": "v4"
   },
   {
     "date": "2026-08-20",
@@ -8295,7 +8310,8 @@
     "stake_pct": null,
     "stake_amount": null,
     "status": "pending",
-    "result": null
+    "result": null,
+    "model_version": "v4"
   },
   {
     "date": "2026-08-20",
@@ -8304,16 +8320,17 @@
     "market_type": "moneyline",
     "selection": "Houston Astros gana (ML)",
     "model_prob": 0.6275,
-    "implied_prob": 0.6264,
+    "implied_prob": 0.6273,
     "risk": "🔴 Riesgo alto",
     "extra": {
       "side": "home",
-      "price": -174
+      "price": -176
     },
     "stake_pct": null,
     "stake_amount": null,
     "status": "pending",
-    "result": null
+    "result": null,
+    "model_version": "v4"
   },
   {
     "date": "2026-08-20",
@@ -8331,6 +8348,7 @@
     "stake_pct": null,
     "stake_amount": null,
     "status": "pending",
-    "result": null
+    "result": null,
+    "model_version": "v4"
   }
 ]
