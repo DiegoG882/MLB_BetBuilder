@@ -90,6 +90,58 @@ def record_pick(history, pick, game_pk, date_str):
     )
 
 
+def upsert_pick(history, pick, game_pk, date_str):
+    """Como record_pick, pero idempotente: si ya existe un pick para el
+    mismo dia + juego + tipo de mercado, lo ACTUALIZA en vez de duplicarlo.
+    Esto es lo que permite correr el workflow manualmente mas de una vez el
+    mismo dia (para pruebas, por ejemplo) sin ensuciar el historial.
+
+    Si el pick existente YA se resolvio (win/loss/no_data), no lo tocamos --
+    nunca queremos pisar un resultado ya conocido con una repeticion que
+    todavia dice pending."""
+    key = (date_str, game_pk, pick["market_type"])
+    for entry in history:
+        if (entry.get("date"), entry.get("game_pk"), entry.get("market_type")) == key:
+            if entry.get("status") != "pending":
+                return  # ya resuelto, no lo tocamos
+            entry.update({
+                "matchup": pick.get("matchup", ""),
+                "selection": pick["selection"],
+                "model_prob": pick["model_prob"],
+                "implied_prob": pick["implied_prob"],
+                "risk": pick["risk"],
+                "extra": pick["extra"],
+                "stake_pct": pick.get("stake_pct") or None,
+                "stake_amount": pick.get("stake_amount"),
+            })
+            return
+    record_pick(history, pick, game_pk, date_str)
+
+
+def dedupe_history(history):
+    """Colapsa entradas duplicadas (mismo dia + juego + tipo de mercado --
+    pasa cuando el workflow se corrio manualmente mas de una vez el mismo
+    dia, antes de que existiera upsert_pick). Para cada grupo de
+    duplicados: si alguna version ya esta resuelta (win/loss/no_data), esa
+    gana sobre cualquier pending; si todas siguen pending, gana la mas
+    reciente en la lista. Regresa (historial_limpio, cuantos_se_quitaron)."""
+    best_by_key = {}
+    order = []
+    for entry in history:
+        key = (entry.get("date"), entry.get("game_pk"), entry.get("market_type"))
+        if key not in best_by_key:
+            best_by_key[key] = entry
+            order.append(key)
+            continue
+        current = best_by_key[key]
+        if current.get("status") == "pending":
+            best_by_key[key] = entry  # resuelto gana sobre pending, o mas reciente entre dos pending
+        # si el actual ya estaba resuelto, se queda -- no lo pisamos
+
+    deduped = [best_by_key[k] for k in order]
+    removed = len(history) - len(deduped)
+    return deduped, removed
+
 def update_calibration(calibration, market_type, model_prob, won):
     """won = True/False. Acumula por bucket para poder calcular la tasa real
     de acierto vs la probabilidad que predijo el modelo (ver model.py
