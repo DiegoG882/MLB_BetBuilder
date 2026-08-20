@@ -86,8 +86,15 @@ class TestCalibration(unittest.TestCase):
 
 
 class TestRiskLabel(unittest.TestCase):
-    def test_big_edge_is_low_risk(self):
-        self.assertEqual(model.risk_label(0.20, 10), "🟢 Riesgo bajo")
+    def test_moderate_edge_is_low_risk(self):
+        self.assertEqual(model.risk_label(0.13, 10), "🟢 Riesgo bajo")
+
+    def test_edge_above_sanity_cap_is_suspicious(self):
+        # 546 picks reales mostraron que "Riesgo bajo" sin techo (edge >=12%
+        # sin limite) acertaba MENOS que "Riesgo medio" -- porque mezclaba
+        # ventaja real con edges gigantes que casi siempre son dato mal
+        # calibrado. Por eso edge > EDGE_SANITY_CAP ya no es "bajo riesgo".
+        self.assertEqual(model.risk_label(0.20, 10), "⚠️ Edge sospechoso")
 
     def test_small_edge_is_high_risk(self):
         self.assertEqual(model.risk_label(0.02, 10), "🔴 Riesgo alto")
@@ -99,7 +106,6 @@ class TestRiskLabel(unittest.TestCase):
         low_sample = model.risk_label(0.10, 2)
         order = ["🔴 Riesgo alto", "🟡 Riesgo medio", "🟢 Riesgo bajo"]
         self.assertLessEqual(order.index(low_sample), order.index(high_sample))
-
 
 class TestKellySizing(unittest.TestCase):
     def test_decimal_odds_conversion(self):
