@@ -118,6 +118,10 @@ def main():
 
     # 1) Aprender de dias anteriores + limpiar picks viejos sin resultado
     history = storage.load_history()
+    history, deduped_count = storage.dedupe_history(history)
+    if deduped_count:
+        print(f"[main] {deduped_count} pick(s) duplicado(s) eliminado(s) del historial "
+              f"(corridas manuales repetidas el mismo dia).")
     calibration = storage.load_calibration()
     settled = settle.settle_pending_picks(history, calibration, today_str=today)
     print(f"Picks de dias anteriores resueltos: {settled}")
@@ -185,7 +189,7 @@ def main():
     # GitHub sin descargar nada)
     for data in all_game_data:
         for pick in data["picks"]:
-            storage.record_pick(history, pick, data["game"]["game_pk"], today)
+            storage.upsert_pick(history, pick, data["game"]["game_pk"], today)
     storage.save_history(history)
     storage.export_history_csv(history)
     storage.export_performance_summary_csv(history)
