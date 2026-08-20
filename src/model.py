@@ -106,12 +106,23 @@ def risk_label(edge, sample_size):
     y probabilidad implicita del mercado sin vig (si hay cuota). Sin cuota,
     usamos solo que tan lejos de 50% esta la probabilidad del modelo, con
     penalidad si el tamano de muestra (juegos recientes disponibles) es
-    chico."""
+    chico.
+
+    IMPORTANTE: el edge tiene TECHO, no solo piso. Datos reales (546 picks
+    resueltos) mostraron que "Riesgo bajo" (edge >= 12% sin limite superior)
+    acertaba MENOS (45.5%) que "Riesgo medio" (55.9%) -- porque mezclaba
+    picks con ventaja genuina junto con los de edge gigante, que casi
+    siempre son dato mal calibrado (ver EDGE_SANITY_CAP) y no ventaja real.
+    Por eso, cualquier edge que pase EDGE_SANITY_CAP ya no se etiqueta como
+    "bajo riesgo" -- se marca aparte como sospechoso, consistente con que
+    esos mismos picks ya se excluyen del monto sugerido (ver main.py)."""
     confidence = abs(edge)
     if sample_size is not None and sample_size < 5:
         confidence *= 0.6  # poca muestra = menos confianza aunque el numero se vea bonito
 
-    if confidence >= 0.12:
+    if confidence > EDGE_SANITY_CAP:
+        return "⚠️ Edge sospechoso"
+    elif confidence >= 0.12:
         return "🟢 Riesgo bajo"
     elif confidence >= 0.06:
         return "🟡 Riesgo medio"
