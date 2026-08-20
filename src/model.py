@@ -9,6 +9,17 @@ fraccionado) segun tu bankroll.
 
 import math
 
+# Version del modelo: se guarda en cada pick para poder comparar resultados
+# ANTES y DESPUES de un cambio, sin que picks de versiones distintas se
+# mezclen en el mismo numero (ver storage.export_performance_summary_csv).
+# Sube este numero cada vez que cambies algo que afecte las proyecciones,
+# probabilidades, o como se etiqueta el riesgo -- asi el CSV te deja
+# comparar "v4 vs v5" en vez de un promedio que mezcla todo el historial.
+#
+# v4: agrega park factors + cache historico de 100 dias + techo de edge en
+#     risk_label (EDGE_SANITY_CAP) + dedupe/upsert de picks.
+MODEL_VERSION = "v4"
+
 # Ventaja de jugar en casa: en MLB los equipos locales anotan en promedio
 # ~4-5% mas carreras que de visitante (factor de cancha, rutina, sin viaje,
 # ultimo turno al bate). La codificamos como un bono fijo de carreras en vez
@@ -144,6 +155,7 @@ def build_pick(market_type, selection, model_prob, implied_prob, sample_size, ex
         "implied_prob": round(implied_prob, 4) if implied_prob is not None else None,
         "edge": round(edge, 4),
         "risk": risk_label(edge, sample_size),
+        "model_version": MODEL_VERSION,
         "extra": extra or {},
     }
 
