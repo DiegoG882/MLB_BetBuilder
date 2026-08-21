@@ -2,4 +2,8 @@ model_version,market_type,wins,losses,total,win_rate_pct
 sin_version,moneyline,109,109,218,50.0
 sin_version,total_over,18,20,38,47.4
 sin_version,total_under,90,95,185,48.6
+v4,moneyline,2,6,8,25.0
+v4,total_over,0,1,1,0.0
+v4,total_under,3,4,7,42.9
 sin_version,TOTAL,217,224,441,49.2
+v4,TOTAL,5,11,16,31.2
