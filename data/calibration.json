@@ -10,29 +10,29 @@
     "predicted_sum": 4.758
   },
   "moneyline:50-60": {
-    "n": 167,
-    "hits": 86,
-    "predicted_sum": 91.13300000000001
+    "n": 179,
+    "hits": 91,
+    "predicted_sum": 97.83730000000001
   },
   "total_under:60-70": {
-    "n": 56,
-    "hits": 30,
-    "predicted_sum": 36.3605
+    "n": 59,
+    "hits": 33,
+    "predicted_sum": 38.2576
   },
   "total_under:50-60": {
-    "n": 109,
+    "n": 112,
     "hits": 57,
-    "predicted_sum": 60.267200000000024
+    "predicted_sum": 61.917700000000025
   },
   "total_under:80-90": {
-    "n": 43,
-    "hits": 17,
-    "predicted_sum": 36.89090000000001
+    "n": 49,
+    "hits": 20,
+    "predicted_sum": 42.028800000000004
   },
   "moneyline:60-70": {
-    "n": 75,
+    "n": 78,
     "hits": 34,
-    "predicted_sum": 49.10520000000002
+    "predicted_sum": 51.02240000000002
   },
   "total_under:70-80": {
     "n": 27,
@@ -55,9 +55,9 @@
     "predicted_sum": 18.4345
   },
   "total_over:80-90": {
-    "n": 4,
-    "hits": 3,
-    "predicted_sum": 3.2733
+    "n": 5,
+    "hits": 4,
+    "predicted_sum": 4.1181
   },
   "total_over:70-80": {
     "n": 16,
@@ -70,8 +70,8 @@
     "predicted_sum": 5.524000000000001
   },
   "total_under:90-100": {
-    "n": 9,
-    "hits": 2,
-    "predicted_sum": 8.211
+    "n": 11,
+    "hits": 3,
+    "predicted_sum": 10.0353
   }
 }
