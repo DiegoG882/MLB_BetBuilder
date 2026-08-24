@@ -28,7 +28,7 @@ SUMMARY_CSV_PATH = os.path.join(DATA_DIR, "performance_summary.csv")
 CSV_FIELDS = [
     "date", "matchup", "market_type", "selection", "model_prob",
     "implied_prob", "edge", "risk", "model_version", "status", "result",
-    "stake_pct", "stake_amount",
+    "projected_total", "actual_total", "stake_pct", "stake_amount",
 ]
 
 # Si un pick queda 'pending' mas de este numero de dias (el juego se
@@ -179,6 +179,15 @@ def export_history_csv(history):
 
             result = entry.get("result") or {}
             result_str = f"{result.get('away_runs')}-{result.get('home_runs')}" if result else ""
+            actual_total = None
+            if result:
+                home_r = result.get("home_runs")
+                away_r = result.get("away_runs")
+                if home_r is not None and away_r is not None:
+                    actual_total = home_r + away_r
+
+            # solo aplica a picks de totales (moneyline no proyecta un total)
+            projected_total = (entry.get("extra") or {}).get("projected_total")
 
             writer.writerow({
                 "date": entry.get("date"),
@@ -192,10 +201,11 @@ def export_history_csv(history):
                 "model_version": entry.get("model_version", "sin_version"),
                 "status": entry.get("status"),
                 "result": result_str,
+                "projected_total": projected_total,
+                "actual_total": actual_total,
                 "stake_pct": entry.get("stake_pct"),
                 "stake_amount": entry.get("stake_amount"),
             })
-
 
 def export_performance_summary_csv(history):
     """Resumen de aciertos por VERSION del modelo + tipo de mercado, mas un
