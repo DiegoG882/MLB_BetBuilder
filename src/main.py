@@ -300,16 +300,18 @@ def _compute_game(game, odds_events, calibration, hist_games):
     if over_prob >= under_prob:
         pick2 = model_module.build_pick(
             "total_over", f"Over {line}", over_prob, over_implied_fair, sample_size,
-            extra={"line": line, "price": total_info["over_price"] if total_info else None},
+            extra={"line": line, "price": total_info["over_price"] if total_info else None,
+                   "projected_total": round(total_proj, 2)},
         )
     else:
         pick2 = model_module.build_pick(
             "total_under", f"Under {line}", under_prob, under_implied_fair, sample_size,
-            extra={"line": line, "price": total_info["under_price"] if total_info else None},
+            extra={"line": line, "price": total_info["under_price"] if total_info else None,
+                   "projected_total": round(total_proj, 2)},
         )
     pick2["matchup"] = matchup
     picks.append(pick2)
-
+  
     return {
         "game": game,
         "home_proj": home_proj,
