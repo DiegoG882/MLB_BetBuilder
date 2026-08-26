@@ -262,27 +262,36 @@ def _compute_game(game, odds_events, calibration, hist_games):
 
     # --- Moneyline ---
     diff = home_proj - away_proj
-    home_prob_raw = 1 / (1 + pow(2.71828, -0.5 * diff))
-    home_prob_raw = model_module.apply_calibration(home_prob_raw, "moneyline", calibration)
+    home_prob_uncalibrated = 1 / (1 + pow(2.71828, -0.5 * diff))
+    home_prob_raw = model_module.apply_calibration(home_prob_uncalibrated, "moneyline", calibration)
     away_prob_raw = 1 - home_prob_raw
 
     home_implied_raw = odds_data.american_to_implied_prob(home_ml_price)
     away_implied_raw = odds_data.american_to_implied_prob(away_ml_price)
     home_implied_fair, away_implied_fair = odds_data.remove_vig_two_way(home_implied_raw, away_implied_raw)
 
+    # Guardamos el diff crudo de carreras (home_proj - away_proj) y la
+    # probabilidad SIN calibrar en cada pick -- son los dos datos que
+    # necesitamos para, en unas semanas, poder recalibrar la formula de
+    # moneyline con datos reales en vez de la constante 0.5 puesta a ojo.
+    ml_extra_common = {
+        "run_diff": round(diff, 2),
+        "uncalibrated_prob": round(home_prob_uncalibrated, 4),  # siempre en perspectiva del equipo LOCAL
+    }
+
     if home_prob_raw >= away_prob_raw:
         pick = model_module.build_pick(
             "moneyline",
             f"{game['home_team_name']} gana (ML)",
             home_prob_raw, home_implied_fair, sample_size,
-            extra={"side": "home", "price": home_ml_price},
+            extra={"side": "home", "price": home_ml_price, **ml_extra_common},
         )
     else:
         pick = model_module.build_pick(
             "moneyline",
             f"{game['away_team_name']} gana (ML)",
             away_prob_raw, away_implied_fair, sample_size,
-            extra={"side": "away", "price": away_ml_price},
+            extra={"side": "away", "price": away_ml_price, **ml_extra_common},
         )
     pick["matchup"] = matchup
     picks.append(pick)
