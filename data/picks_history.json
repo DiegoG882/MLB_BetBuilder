@@ -12187,8 +12187,11 @@
     },
     "stake_pct": null,
     "stake_amount": null,
-    "status": "pending",
-    "result": null
+    "status": "loss",
+    "result": {
+      "home_runs": 7,
+      "away_runs": 1
+    }
   },
   {
     "date": "2026-08-27",
@@ -12207,8 +12210,11 @@
     },
     "stake_pct": 0.015,
     "stake_amount": 7.5,
-    "status": "pending",
-    "result": null
+    "status": "loss",
+    "result": {
+      "home_runs": 7,
+      "away_runs": 1
+    }
   },
   {
     "date": "2026-08-27",
@@ -12228,8 +12234,11 @@
     },
     "stake_pct": null,
     "stake_amount": null,
-    "status": "pending",
-    "result": null
+    "status": "loss",
+    "result": {
+      "home_runs": 7,
+      "away_runs": 5
+    }
   },
   {
     "date": "2026-08-27",
@@ -12248,8 +12257,11 @@
     },
     "stake_pct": null,
     "stake_amount": null,
-    "status": "pending",
-    "result": null
+    "status": "loss",
+    "result": {
+      "home_runs": 7,
+      "away_runs": 5
+    }
   },
   {
     "date": "2026-08-27",
@@ -12421,18 +12433,18 @@
     "matchup": "Arizona Diamondbacks @ San Francisco Giants",
     "market_type": "moneyline",
     "selection": "San Francisco Giants gana (ML)",
-    "model_prob": 0.5221,
-    "implied_prob": 0.4964,
+    "model_prob": 0.52,
+    "implied_prob": 0.4741,
     "risk": "🔴 Riesgo alto",
     "model_version": "v4",
     "extra": {
       "side": "home",
-      "price": -102,
+      "price": 110,
       "run_diff": 0.42,
       "uncalibrated_prob": 0.5523
     },
-    "stake_pct": null,
-    "stake_amount": null,
+    "stake_pct": 0.02,
+    "stake_amount": 10.0,
     "status": "pending",
     "result": null
   },
@@ -12443,7 +12455,7 @@
     "market_type": "total_under",
     "selection": "Under 8.0",
     "model_prob": 0.5231,
-    "implied_prob": 0.5055,
+    "implied_prob": 0.5043,
     "risk": "🔴 Riesgo alto",
     "model_version": "v4",
     "extra": {
