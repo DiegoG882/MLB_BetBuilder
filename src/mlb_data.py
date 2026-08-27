@@ -41,8 +41,18 @@ def _get(path, params=None):
 
 
 def get_schedule(date_str):
-    """Regresa la lista de juegos programados para una fecha YYYY-MM-DD,
-    incluyendo pitchers probables cuando ya estan anunciados."""
+    """Regresa la lista de juegos programados para una fecha YYYY-MM-DD que
+    TODAVIA NO EMPIEZAN, incluyendo pitchers probables cuando ya estan
+    anunciados.
+
+    Solo se aceptan juegos con abstractGameState == 'Preview'. Antes solo
+    se descartaban los ya terminados ('Final'), pero eso dejaba pasar
+    juegos YA EN CURSO ('Live') si el bot corria a media tarde/noche -- y
+    ahi el problema no es solo que ya no tiene caso recomendar una apuesta
+    pregame, sino que las cuotas que trae The Odds API para un juego en
+    curso son de mercado EN VIVO (in-play), no las cuotas pre-partido. Eso
+    generaba comparaciones sin sentido (ej. un 4.4% de probabilidad para un
+    equipo que ya iba perdiendo feo en la 8va entrada)."""
     data = _get(
         "/schedule",
         {
@@ -54,8 +64,8 @@ def get_schedule(date_str):
     games = []
     for date_block in data.get("dates", []):
         for g in date_block.get("games", []):
-            if g.get("status", {}).get("abstractGameState") == "Final":
-                continue
+            if g.get("status", {}).get("abstractGameState") != "Preview":
+                continue  # ya termino, ya esta en curso, o pospuesto -- no es un pick pregame valido
             home = g["teams"]["home"]
             away = g["teams"]["away"]
             games.append(
