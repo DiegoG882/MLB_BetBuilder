@@ -12281,8 +12281,11 @@
     },
     "stake_pct": null,
     "stake_amount": null,
-    "status": "pending",
-    "result": null
+    "status": "loss",
+    "result": {
+      "home_runs": 1,
+      "away_runs": 5
+    }
   },
   {
     "date": "2026-08-27",
@@ -12301,8 +12304,11 @@
     },
     "stake_pct": 0.015,
     "stake_amount": 7.5,
-    "status": "pending",
-    "result": null
+    "status": "win",
+    "result": {
+      "home_runs": 1,
+      "away_runs": 5
+    }
   },
   {
     "date": "2026-08-27",
@@ -12322,8 +12328,11 @@
     },
     "stake_pct": 0.015,
     "stake_amount": 7.5,
-    "status": "pending",
-    "result": null
+    "status": "win",
+    "result": {
+      "home_runs": 2,
+      "away_runs": 13
+    }
   },
   {
     "date": "2026-08-27",
@@ -12342,8 +12351,11 @@
     },
     "stake_pct": null,
     "stake_amount": null,
-    "status": "pending",
-    "result": null
+    "status": "loss",
+    "result": {
+      "home_runs": 2,
+      "away_runs": 13
+    }
   },
   {
     "date": "2026-08-27",
@@ -12363,8 +12375,11 @@
     },
     "stake_pct": 0.015,
     "stake_amount": 7.5,
-    "status": "pending",
-    "result": null
+    "status": "win",
+    "result": {
+      "home_runs": 2,
+      "away_runs": 8
+    }
   },
   {
     "date": "2026-08-27",
@@ -12383,8 +12398,11 @@
     },
     "stake_pct": null,
     "stake_amount": null,
-    "status": "pending",
-    "result": null
+    "status": "loss",
+    "result": {
+      "home_runs": 2,
+      "away_runs": 8
+    }
   },
   {
     "date": "2026-08-27",
@@ -12404,8 +12422,11 @@
     },
     "stake_pct": null,
     "stake_amount": null,
-    "status": "pending",
-    "result": null
+    "status": "loss",
+    "result": {
+      "home_runs": 1,
+      "away_runs": 0
+    }
   },
   {
     "date": "2026-08-27",
@@ -12424,8 +12445,11 @@
     },
     "stake_pct": null,
     "stake_amount": null,
-    "status": "pending",
-    "result": null
+    "status": "win",
+    "result": {
+      "home_runs": 1,
+      "away_runs": 0
+    }
   },
   {
     "date": "2026-08-27",
@@ -12445,8 +12469,11 @@
     },
     "stake_pct": 0.02,
     "stake_amount": 10.0,
-    "status": "pending",
-    "result": null
+    "status": "win",
+    "result": {
+      "home_runs": 6,
+      "away_runs": 1
+    }
   },
   {
     "date": "2026-08-27",
@@ -12462,6 +12489,624 @@
       "line": 8.0,
       "price": -112,
       "projected_total": 8.5
+    },
+    "stake_pct": null,
+    "stake_amount": null,
+    "status": "win",
+    "result": {
+      "home_runs": 6,
+      "away_runs": 1
+    }
+  },
+  {
+    "date": "2026-08-28",
+    "game_pk": 824638,
+    "matchup": "Cincinnati Reds @ Chicago Cubs",
+    "market_type": "moneyline",
+    "selection": "Chicago Cubs gana (ML)",
+    "model_prob": 0.5573,
+    "implied_prob": 0.6349,
+    "risk": "🟡 Riesgo medio",
+    "model_version": "v4",
+    "extra": {
+      "side": "home",
+      "price": -181,
+      "run_diff": 1.75,
+      "uncalibrated_prob": 0.7058
+    },
+    "stake_pct": null,
+    "stake_amount": null,
+    "status": "pending",
+    "result": null
+  },
+  {
+    "date": "2026-08-28",
+    "game_pk": 824638,
+    "matchup": "Cincinnati Reds @ Chicago Cubs",
+    "market_type": "total_over",
+    "selection": "Over 9.0",
+    "model_prob": 0.5307,
+    "implied_prob": 0.4783,
+    "risk": "🔴 Riesgo alto",
+    "model_version": "v4",
+    "extra": {
+      "line": 9.0,
+      "price": 100,
+      "projected_total": 11.29
+    },
+    "stake_pct": null,
+    "stake_amount": null,
+    "status": "pending",
+    "result": null
+  },
+  {
+    "date": "2026-08-28",
+    "game_pk": 824231,
+    "matchup": "Los Angeles Dodgers @ Detroit Tigers",
+    "market_type": "moneyline",
+    "selection": "Los Angeles Dodgers gana (ML)",
+    "model_prob": 0.6604,
+    "implied_prob": 0.6405,
+    "risk": "🔴 Riesgo alto",
+    "model_version": "v4",
+    "extra": {
+      "side": "away",
+      "price": -184,
+      "run_diff": -1.33,
+      "uncalibrated_prob": 0.3396
+    },
+    "stake_pct": null,
+    "stake_amount": null,
+    "status": "pending",
+    "result": null
+  },
+  {
+    "date": "2026-08-28",
+    "game_pk": 824231,
+    "matchup": "Los Angeles Dodgers @ Detroit Tigers",
+    "market_type": "total_under",
+    "selection": "Under 7.5",
+    "model_prob": 0.5349,
+    "implied_prob": 0.5217,
+    "risk": "🔴 Riesgo alto",
+    "model_version": "v4",
+    "extra": {
+      "line": 7.5,
+      "price": -120,
+      "projected_total": 7.43
+    },
+    "stake_pct": null,
+    "stake_amount": null,
+    "status": "pending",
+    "result": null
+  },
+  {
+    "date": "2026-08-28",
+    "game_pk": 822691,
+    "matchup": "Miami Marlins @ Washington Nationals",
+    "market_type": "moneyline",
+    "selection": "Miami Marlins gana (ML)",
+    "model_prob": 0.734,
+    "implied_prob": 0.5882,
+    "risk": "🟢 Riesgo bajo",
+    "model_version": "v4",
+    "extra": {
+      "side": "away",
+      "price": -147,
+      "run_diff": -2.03,
+      "uncalibrated_prob": 0.266
+    },
+    "stake_pct": 0.015,
+    "stake_amount": 7.5,
+    "status": "pending",
+    "result": null
+  },
+  {
+    "date": "2026-08-28",
+    "game_pk": 822691,
+    "matchup": "Miami Marlins @ Washington Nationals",
+    "market_type": "total_under",
+    "selection": "Under 8.5",
+    "model_prob": 0.55,
+    "implied_prob": 0.5217,
+    "risk": "🔴 Riesgo alto",
+    "model_version": "v4",
+    "extra": {
+      "line": 8.5,
+      "price": -120,
+      "projected_total": 9.51
+    },
+    "stake_pct": null,
+    "stake_amount": null,
+    "status": "pending",
+    "result": null
+  },
+  {
+    "date": "2026-08-28",
+    "game_pk": 824396,
+    "matchup": "Kansas City Royals @ Cleveland Guardians",
+    "market_type": "moneyline",
+    "selection": "Kansas City Royals gana (ML)",
+    "model_prob": 0.5659,
+    "implied_prob": 0.4469,
+    "risk": "🟡 Riesgo medio",
+    "model_version": "v4",
+    "extra": {
+      "side": "away",
+      "price": 122,
+      "run_diff": -0.53,
+      "uncalibrated_prob": 0.4341
+    },
+    "stake_pct": null,
+    "stake_amount": null,
+    "status": "pending",
+    "result": null
+  },
+  {
+    "date": "2026-08-28",
+    "game_pk": 824396,
+    "matchup": "Kansas City Royals @ Cleveland Guardians",
+    "market_type": "total_under",
+    "selection": "Under 7.5",
+    "model_prob": 0.5259,
+    "implied_prob": 0.5,
+    "risk": "🔴 Riesgo alto",
+    "model_version": "v4",
+    "extra": {
+      "line": 7.5,
+      "price": -110,
+      "projected_total": 8.65
+    },
+    "stake_pct": null,
+    "stake_amount": null,
+    "status": "pending",
+    "result": null
+  },
+  {
+    "date": "2026-08-28",
+    "game_pk": 823583,
+    "matchup": "Houston Astros @ New York Mets",
+    "market_type": "moneyline",
+    "selection": "Houston Astros gana (ML)",
+    "model_prob": 0.5337,
+    "implied_prob": 0.5085,
+    "risk": "🔴 Riesgo alto",
+    "model_version": "v4",
+    "extra": {
+      "side": "away",
+      "price": -105,
+      "run_diff": -0.27,
+      "uncalibrated_prob": 0.4663
+    },
+    "stake_pct": null,
+    "stake_amount": null,
+    "status": "pending",
+    "result": null
+  },
+  {
+    "date": "2026-08-28",
+    "game_pk": 823583,
+    "matchup": "Houston Astros @ New York Mets",
+    "market_type": "total_under",
+    "selection": "Under 7.5",
+    "model_prob": 0.5497,
+    "implied_prob": 0.4783,
+    "risk": "🟡 Riesgo medio",
+    "model_version": "v4",
+    "extra": {
+      "line": 7.5,
+      "price": 100,
+      "projected_total": 7.33
+    },
+    "stake_pct": null,
+    "stake_amount": null,
+    "status": "pending",
+    "result": null
+  },
+  {
+    "date": "2026-08-28",
+    "game_pk": 822935,
+    "matchup": "San Diego Padres @ Tampa Bay Rays",
+    "market_type": "moneyline",
+    "selection": "Tampa Bay Rays gana (ML)",
+    "model_prob": 0.5196,
+    "implied_prob": 0.5509,
+    "risk": "🔴 Riesgo alto",
+    "model_version": "v4",
+    "extra": {
+      "side": "home",
+      "price": -126,
+      "run_diff": 0.42,
+      "uncalibrated_prob": 0.5523
+    },
+    "stake_pct": null,
+    "stake_amount": null,
+    "status": "pending",
+    "result": null
+  },
+  {
+    "date": "2026-08-28",
+    "game_pk": 822935,
+    "matchup": "San Diego Padres @ Tampa Bay Rays",
+    "market_type": "total_under",
+    "selection": "Under 7.5",
+    "model_prob": 0.6463,
+    "implied_prob": 0.5181,
+    "risk": "🟢 Riesgo bajo",
+    "model_version": "v4",
+    "extra": {
+      "line": 7.5,
+      "price": -120,
+      "projected_total": 6.68
+    },
+    "stake_pct": 0.015,
+    "stake_amount": 7.5,
+    "status": "pending",
+    "result": null
+  },
+  {
+    "date": "2026-08-28",
+    "game_pk": 822769,
+    "matchup": "Seattle Mariners @ Toronto Blue Jays",
+    "market_type": "moneyline",
+    "selection": "Seattle Mariners gana (ML)",
+    "model_prob": 0.574,
+    "implied_prob": 0.4145,
+    "risk": "⚠️ Edge sospechoso",
+    "model_version": "v4",
+    "extra": {
+      "side": "away",
+      "price": 138,
+      "run_diff": 1.26,
+      "uncalibrated_prob": 0.6525
+    },
+    "stake_pct": null,
+    "stake_amount": null,
+    "status": "pending",
+    "result": null
+  },
+  {
+    "date": "2026-08-28",
+    "game_pk": 822769,
+    "matchup": "Seattle Mariners @ Toronto Blue Jays",
+    "market_type": "total_under",
+    "selection": "Under 7.0",
+    "model_prob": 0.6106,
+    "implied_prob": 0.4809,
+    "risk": "🟢 Riesgo bajo",
+    "model_version": "v4",
+    "extra": {
+      "line": 7.0,
+      "price": 101,
+      "projected_total": 6.92
+    },
+    "stake_pct": 0.015,
+    "stake_amount": 7.5,
+    "status": "pending",
+    "result": null
+  },
+  {
+    "date": "2026-08-28",
+    "game_pk": 824877,
+    "matchup": "Colorado Rockies @ Atlanta Braves",
+    "market_type": "moneyline",
+    "selection": "Colorado Rockies gana (ML)",
+    "model_prob": 0.6041,
+    "implied_prob": 0.3222,
+    "risk": "⚠️ Edge sospechoso",
+    "model_version": "v4",
+    "extra": {
+      "side": "away",
+      "price": 206,
+      "run_diff": 1.0,
+      "uncalibrated_prob": 0.6225
+    },
+    "stake_pct": null,
+    "stake_amount": null,
+    "status": "pending",
+    "result": null
+  },
+  {
+    "date": "2026-08-28",
+    "game_pk": 824877,
+    "matchup": "Colorado Rockies @ Atlanta Braves",
+    "market_type": "total_under",
+    "selection": "Under 8.5",
+    "model_prob": 0.9351,
+    "implied_prob": 0.4573,
+    "risk": "⚠️ Edge sospechoso",
+    "model_version": "v4",
+    "extra": {
+      "line": 8.5,
+      "price": 110,
+      "projected_total": 8.74
+    },
+    "stake_pct": null,
+    "stake_amount": null,
+    "status": "pending",
+    "result": null
+  },
+  {
+    "date": "2026-08-28",
+    "game_pk": 823504,
+    "matchup": "Boston Red Sox @ New York Yankees",
+    "market_type": "moneyline",
+    "selection": "Boston Red Sox gana (ML)",
+    "model_prob": 0.5661,
+    "implied_prob": 0.4043,
+    "risk": "⚠️ Edge sospechoso",
+    "model_version": "v4",
+    "extra": {
+      "side": "away",
+      "price": 143,
+      "run_diff": 1.33,
+      "uncalibrated_prob": 0.6604
+    },
+    "stake_pct": null,
+    "stake_amount": null,
+    "status": "pending",
+    "result": null
+  },
+  {
+    "date": "2026-08-28",
+    "game_pk": 823504,
+    "matchup": "Boston Red Sox @ New York Yankees",
+    "market_type": "total_under",
+    "selection": "Under 7.0",
+    "model_prob": 0.8852,
+    "implied_prob": 0.4783,
+    "risk": "⚠️ Edge sospechoso",
+    "model_version": "v4",
+    "extra": {
+      "line": 7.0,
+      "price": 100,
+      "projected_total": 8.09
+    },
+    "stake_pct": null,
+    "stake_amount": null,
+    "status": "pending",
+    "result": null
+  },
+  {
+    "date": "2026-08-28",
+    "game_pk": 823744,
+    "matchup": "Texas Rangers @ Milwaukee Brewers",
+    "market_type": "moneyline",
+    "selection": "Milwaukee Brewers gana (ML)",
+    "model_prob": 0.5865,
+    "implied_prob": 0.6259,
+    "risk": "🔴 Riesgo alto",
+    "model_version": "v4",
+    "extra": {
+      "side": "home",
+      "price": -173,
+      "run_diff": 2.04,
+      "uncalibrated_prob": 0.735
+    },
+    "stake_pct": null,
+    "stake_amount": null,
+    "status": "pending",
+    "result": null
+  },
+  {
+    "date": "2026-08-28",
+    "game_pk": 823744,
+    "matchup": "Texas Rangers @ Milwaukee Brewers",
+    "market_type": "total_under",
+    "selection": "Under 7.5",
+    "model_prob": 0.513,
+    "implied_prob": 0.5,
+    "risk": "🔴 Riesgo alto",
+    "model_version": "v4",
+    "extra": {
+      "line": 7.5,
+      "price": -110,
+      "projected_total": 7.58
+    },
+    "stake_pct": null,
+    "stake_amount": null,
+    "status": "pending",
+    "result": null
+  },
+  {
+    "date": "2026-08-28",
+    "game_pk": 823666,
+    "matchup": "Chicago White Sox @ Minnesota Twins",
+    "market_type": "moneyline",
+    "selection": "Chicago White Sox gana (ML)",
+    "model_prob": 0.5597,
+    "implied_prob": 0.4563,
+    "risk": "🟡 Riesgo medio",
+    "model_version": "v4",
+    "extra": {
+      "side": "away",
+      "price": 116,
+      "run_diff": -0.48,
+      "uncalibrated_prob": 0.4403
+    },
+    "stake_pct": null,
+    "stake_amount": null,
+    "status": "pending",
+    "result": null
+  },
+  {
+    "date": "2026-08-28",
+    "game_pk": 823666,
+    "matchup": "Chicago White Sox @ Minnesota Twins",
+    "market_type": "total_over",
+    "selection": "Over 8.5",
+    "model_prob": 0.641,
+    "implied_prob": 0.5217,
+    "risk": "🟡 Riesgo medio",
+    "model_version": "v4",
+    "extra": {
+      "line": 8.5,
+      "price": -120,
+      "projected_total": 11.08
+    },
+    "stake_pct": null,
+    "stake_amount": null,
+    "status": "pending",
+    "result": null
+  },
+  {
+    "date": "2026-08-28",
+    "game_pk": 823013,
+    "matchup": "Pittsburgh Pirates @ St. Louis Cardinals",
+    "market_type": "moneyline",
+    "selection": "Pittsburgh Pirates gana (ML)",
+    "model_prob": 0.5671,
+    "implied_prob": 0.5178,
+    "risk": "🔴 Riesgo alto",
+    "model_version": "v4",
+    "extra": {
+      "side": "away",
+      "price": -110,
+      "run_diff": -0.54,
+      "uncalibrated_prob": 0.4329
+    },
+    "stake_pct": null,
+    "stake_amount": null,
+    "status": "pending",
+    "result": null
+  },
+  {
+    "date": "2026-08-28",
+    "game_pk": 823013,
+    "matchup": "Pittsburgh Pirates @ St. Louis Cardinals",
+    "market_type": "total_over",
+    "selection": "Over 7.5",
+    "model_prob": 0.7932,
+    "implied_prob": 0.4892,
+    "risk": "⚠️ Edge sospechoso",
+    "model_version": "v4",
+    "extra": {
+      "line": 7.5,
+      "price": -105,
+      "projected_total": 10.44
+    },
+    "stake_pct": null,
+    "stake_amount": null,
+    "status": "pending",
+    "result": null
+  },
+  {
+    "date": "2026-08-28",
+    "game_pk": 823985,
+    "matchup": "Philadelphia Phillies @ Los Angeles Angels",
+    "market_type": "moneyline",
+    "selection": "Los Angeles Angels gana (ML)",
+    "model_prob": 0.5648,
+    "implied_prob": 0.4436,
+    "risk": "🟢 Riesgo bajo",
+    "model_version": "v4",
+    "extra": {
+      "side": "home",
+      "price": 125,
+      "run_diff": 0.79,
+      "uncalibrated_prob": 0.5975
+    },
+    "stake_pct": null,
+    "stake_amount": null,
+    "status": "pending",
+    "result": null
+  },
+  {
+    "date": "2026-08-28",
+    "game_pk": 823985,
+    "matchup": "Philadelphia Phillies @ Los Angeles Angels",
+    "market_type": "total_over",
+    "selection": "Over 8.0",
+    "model_prob": 0.5043,
+    "implied_prob": 0.5,
+    "risk": "🔴 Riesgo alto",
+    "model_version": "v4",
+    "extra": {
+      "line": 8.0,
+      "price": -110,
+      "projected_total": 9.97
+    },
+    "stake_pct": null,
+    "stake_amount": null,
+    "status": "pending",
+    "result": null
+  },
+  {
+    "date": "2026-08-28",
+    "game_pk": 824960,
+    "matchup": "Baltimore Orioles @ Athletics",
+    "market_type": "moneyline",
+    "selection": "Baltimore Orioles gana (ML)",
+    "model_prob": 0.7058,
+    "implied_prob": 0.5416,
+    "risk": "⚠️ Edge sospechoso",
+    "model_version": "v4",
+    "extra": {
+      "side": "away",
+      "price": -116,
+      "run_diff": -1.75,
+      "uncalibrated_prob": 0.2942
+    },
+    "stake_pct": null,
+    "stake_amount": null,
+    "status": "pending",
+    "result": null
+  },
+  {
+    "date": "2026-08-28",
+    "game_pk": 824960,
+    "matchup": "Baltimore Orioles @ Athletics",
+    "market_type": "total_under",
+    "selection": "Under 10.0",
+    "model_prob": 0.6416,
+    "implied_prob": 0.5123,
+    "risk": "🟢 Riesgo bajo",
+    "model_version": "v4",
+    "extra": {
+      "line": 10.0,
+      "price": -113,
+      "projected_total": 9.53
+    },
+    "stake_pct": 0.015,
+    "stake_amount": 7.5,
+    "status": "pending",
+    "result": null
+  },
+  {
+    "date": "2026-08-28",
+    "game_pk": 823178,
+    "matchup": "Arizona Diamondbacks @ San Francisco Giants",
+    "market_type": "moneyline",
+    "selection": "Arizona Diamondbacks gana (ML)",
+    "model_prob": 0.6242,
+    "implied_prob": 0.5483,
+    "risk": "🟡 Riesgo medio",
+    "model_version": "v4",
+    "extra": {
+      "side": "away",
+      "price": -127,
+      "run_diff": 0.83,
+      "uncalibrated_prob": 0.6023
+    },
+    "stake_pct": null,
+    "stake_amount": null,
+    "status": "pending",
+    "result": null
+  },
+  {
+    "date": "2026-08-28",
+    "game_pk": 823178,
+    "matchup": "Arizona Diamondbacks @ San Francisco Giants",
+    "market_type": "total_under",
+    "selection": "Under 8.0",
+    "model_prob": 0.619,
+    "implied_prob": 0.5,
+    "risk": "🟡 Riesgo medio",
+    "model_version": "v4",
+    "extra": {
+      "line": 8.0,
+      "price": -107,
+      "projected_total": 7.81
     },
     "stake_pct": null,
     "stake_amount": null,
