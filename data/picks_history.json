@@ -14385,7 +14385,7 @@
     "market_type": "moneyline",
     "selection": "San Francisco Giants gana (ML)",
     "model_prob": 0.5683,
-    "implied_prob": 0.354,
+    "implied_prob": 0.3536,
     "risk": "⚠️ Edge sospechoso",
     "model_version": "v4",
     "extra": {
@@ -14406,7 +14406,7 @@
     "market_type": "total_under",
     "selection": "Under 9.0",
     "model_prob": 0.7977,
-    "implied_prob": 0.5066,
+    "implied_prob": 0.5055,
     "risk": "⚠️ Edge sospechoso",
     "model_version": "v4",
     "extra": {
@@ -14426,12 +14426,12 @@
     "market_type": "moneyline",
     "selection": "San Diego Padres gana (ML)",
     "model_prob": 0.589,
-    "implied_prob": 0.5736,
+    "implied_prob": 0.5695,
     "risk": "🔴 Riesgo alto",
     "model_version": "v4",
     "extra": {
       "side": "away",
-      "price": -138,
+      "price": -134,
       "run_diff": -0.72,
       "uncalibrated_prob": 0.411
     },
@@ -14467,12 +14467,12 @@
     "market_type": "moneyline",
     "selection": "Tampa Bay Rays gana (ML)",
     "model_prob": 0.5968,
-    "implied_prob": 0.617,
+    "implied_prob": 0.6331,
     "risk": "🔴 Riesgo alto",
     "model_version": "v4",
     "extra": {
       "side": "home",
-      "price": -168,
+      "price": -177,
       "run_diff": 2.26,
       "uncalibrated_prob": 0.7558
     },
@@ -14488,12 +14488,12 @@
     "market_type": "total_under",
     "selection": "Under 8.0",
     "model_prob": 0.68,
-    "implied_prob": 0.5095,
+    "implied_prob": 0.484,
     "risk": "⚠️ Edge sospechoso",
     "model_version": "v4",
     "extra": {
       "line": 8.0,
-      "price": -125,
+      "price": -112,
       "projected_total": 9.42
     },
     "stake_pct": null,
@@ -14508,17 +14508,17 @@
     "market_type": "moneyline",
     "selection": "Seattle Mariners gana (ML)",
     "model_prob": 0.5541,
-    "implied_prob": 0.398,
-    "risk": "⚠️ Edge sospechoso",
+    "implied_prob": 0.4043,
+    "risk": "🟢 Riesgo bajo",
     "model_version": "v4",
     "extra": {
       "side": "away",
-      "price": 147,
+      "price": 143,
       "run_diff": 1.26,
       "uncalibrated_prob": 0.6525
     },
-    "stake_pct": null,
-    "stake_amount": null,
+    "stake_pct": 0.015,
+    "stake_amount": 7.5,
     "status": "pending",
     "result": null
   },
@@ -14529,12 +14529,12 @@
     "market_type": "total_under",
     "selection": "Under 7.5",
     "model_prob": 0.5511,
-    "implied_prob": 0.4826,
+    "implied_prob": 0.4838,
     "risk": "🟡 Riesgo medio",
     "model_version": "v4",
     "extra": {
       "line": 7.5,
-      "price": -102,
+      "price": -103,
       "projected_total": 7.32
     },
     "stake_pct": null,
@@ -14570,12 +14570,12 @@
     "market_type": "total_under",
     "selection": "Under 8.5",
     "model_prob": 0.5272,
-    "implied_prob": 0.485,
+    "implied_prob": 0.4829,
     "risk": "🔴 Riesgo alto",
     "model_version": "v4",
     "extra": {
       "line": 8.5,
-      "price": -104,
+      "price": -103,
       "projected_total": 8.47
     },
     "stake_pct": null,
@@ -14611,12 +14611,12 @@
     "market_type": "total_under",
     "selection": "Under 9.0",
     "model_prob": 0.7543,
-    "implied_prob": 0.5217,
+    "implied_prob": 0.5087,
     "risk": "⚠️ Edge sospechoso",
     "model_version": "v4",
     "extra": {
       "line": 9.0,
-      "price": -132,
+      "price": -114,
       "projected_total": 7.69
     },
     "stake_pct": null,
@@ -14672,12 +14672,12 @@
     "market_type": "moneyline",
     "selection": "Texas Rangers gana (ML)",
     "model_prob": 0.5602,
-    "implied_prob": 0.6647,
+    "implied_prob": 0.6665,
     "risk": "🟡 Riesgo medio",
     "model_version": "v4",
     "extra": {
       "side": "home",
-      "price": -205,
+      "price": -210,
       "run_diff": 0.74,
       "uncalibrated_prob": 0.5915
     },
@@ -14734,7 +14734,7 @@
     "market_type": "total_under",
     "selection": "Under 9.0",
     "model_prob": 0.6006,
-    "implied_prob": 0.514,
+    "implied_prob": 0.5128,
     "risk": "🟡 Riesgo medio",
     "model_version": "v4",
     "extra": {
@@ -14742,8 +14742,8 @@
       "price": -117,
       "projected_total": 8.9
     },
-    "stake_pct": 0.015,
-    "stake_amount": 7.5,
+    "stake_pct": null,
+    "stake_amount": null,
     "status": "pending",
     "result": null
   },
@@ -14754,12 +14754,12 @@
     "market_type": "moneyline",
     "selection": "Baltimore Orioles gana (ML)",
     "model_prob": 0.764,
-    "implied_prob": 0.5509,
+    "implied_prob": 0.5495,
     "risk": "⚠️ Edge sospechoso",
     "model_version": "v4",
     "extra": {
       "side": "away",
-      "price": -126,
+      "price": -122,
       "run_diff": -2.35,
       "uncalibrated_prob": 0.236
     },
@@ -14834,16 +14834,16 @@
     "game_pk": 825040,
     "matchup": "Philadelphia Phillies @ Arizona Diamondbacks",
     "market_type": "moneyline",
-    "selection": "Arizona Diamondbacks gana (ML)",
-    "model_prob": 0.526,
-    "implied_prob": 0.4744,
-    "risk": "🔴 Riesgo alto",
+    "selection": "Philadelphia Phillies gana (ML)",
+    "model_prob": 0.5877,
+    "implied_prob": 0.5256,
+    "risk": "🟡 Riesgo medio",
     "model_version": "v4",
     "extra": {
-      "side": "home",
-      "price": 108,
-      "run_diff": 0.46,
-      "uncalibrated_prob": 0.5572
+      "side": "away",
+      "price": -114,
+      "run_diff": 0.97,
+      "uncalibrated_prob": 0.6189
     },
     "stake_pct": null,
     "stake_amount": null,
@@ -14864,6 +14864,26 @@
       "line": 8.5,
       "price": -105,
       "projected_total": 10.12
+    },
+    "stake_pct": null,
+    "stake_amount": null,
+    "status": "pending",
+    "result": null
+  },
+  {
+    "date": "2026-08-31",
+    "game_pk": 825040,
+    "matchup": "Philadelphia Phillies @ Arizona Diamondbacks",
+    "market_type": "total_under",
+    "selection": "Under 8.5",
+    "model_prob": 0.5151,
+    "implied_prob": 0.5108,
+    "risk": "🔴 Riesgo alto",
+    "model_version": "v4",
+    "extra": {
+      "line": 8.5,
+      "price": -115,
+      "projected_total": 9.61
     },
     "stake_pct": null,
     "stake_amount": null,
