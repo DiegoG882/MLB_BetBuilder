@@ -1,8 +1,8 @@
 {
   "moneyline:70-80": {
-    "n": 37,
-    "hits": 22,
-    "predicted_sum": 27.4893
+    "n": 38,
+    "hits": 23,
+    "predicted_sum": 28.2785
   },
   "total_over:90-100": {
     "n": 5,
@@ -10,49 +10,49 @@
     "predicted_sum": 4.758
   },
   "moneyline:50-60": {
-    "n": 272,
-    "hits": 139,
-    "predicted_sum": 148.84259999999998
+    "n": 280,
+    "hits": 143,
+    "predicted_sum": 153.11379999999997
   },
   "total_under:60-70": {
-    "n": 80,
-    "hits": 45,
-    "predicted_sum": 51.9909
+    "n": 81,
+    "hits": 46,
+    "predicted_sum": 52.661100000000005
   },
   "total_under:50-60": {
-    "n": 166,
+    "n": 170,
     "hits": 82,
-    "predicted_sum": 91.34600000000002
+    "predicted_sum": 93.49250000000002
   },
   "total_under:80-90": {
-    "n": 67,
-    "hits": 29,
-    "predicted_sum": 57.45629999999999
+    "n": 68,
+    "hits": 30,
+    "predicted_sum": 58.35419999999999
   },
   "moneyline:60-70": {
-    "n": 101,
-    "hits": 45,
-    "predicted_sum": 65.86780000000002
+    "n": 105,
+    "hits": 46,
+    "predicted_sum": 68.33490000000002
   },
   "total_under:70-80": {
-    "n": 40,
-    "hits": 20,
-    "predicted_sum": 29.615899999999996
+    "n": 43,
+    "hits": 21,
+    "predicted_sum": 31.802099999999992
   },
   "total_over:50-60": {
-    "n": 13,
-    "hits": 4,
-    "predicted_sum": 7.1918999999999995
+    "n": 17,
+    "hits": 6,
+    "predicted_sum": 9.374999999999998
   },
   "total_over:60-70": {
-    "n": 25,
-    "hits": 13,
-    "predicted_sum": 16.417200000000005
+    "n": 26,
+    "hits": 14,
+    "predicted_sum": 17.028300000000005
   },
   "moneyline:80-90": {
-    "n": 23,
-    "hits": 8,
-    "predicted_sum": 19.2406
+    "n": 25,
+    "hits": 9,
+    "predicted_sum": 20.9039
   },
   "total_over:80-90": {
     "n": 5,
@@ -60,9 +60,9 @@
     "predicted_sum": 4.1181
   },
   "total_over:70-80": {
-    "n": 19,
-    "hits": 11,
-    "predicted_sum": 14.2052
+    "n": 20,
+    "hits": 12,
+    "predicted_sum": 14.9945
   },
   "moneyline:90-100": {
     "n": 6,
