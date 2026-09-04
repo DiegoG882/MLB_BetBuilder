@@ -726,8 +726,8 @@ date,matchup,market_type,selection,model_prob,implied_prob,edge,risk,model_versi
 2026-08-30,Philadelphia Phillies @ Los Angeles Angels,total_over,Over 7.5,0.6252,0.5,0.1252,🟢 Riesgo bajo,v4,loss,5-2,10.16,7,,,0.015,7.5
 2026-08-30,Cincinnati Reds @ Chicago Cubs,moneyline,Chicago Cubs gana (ML),0.5554,0.5919,-0.0365,🔴 Riesgo alto,v4,loss,7-5,,12,0.68,0.5842,,
 2026-08-30,Cincinnati Reds @ Chicago Cubs,total_under,Under 9.0,0.514,0.4783,0.0357,🔴 Riesgo alto,v4,loss,7-5,9.56,12,,,,
-2026-08-31,San Francisco Giants @ Atlanta Braves,moneyline,San Francisco Giants gana (ML),0.5683,0.3536,0.2147,⚠️ Edge sospechoso,v4,pending,,,,-0.55,0.4317,,
-2026-08-31,San Francisco Giants @ Atlanta Braves,total_under,Under 9.0,0.7977,0.5055,0.2922,⚠️ Edge sospechoso,v4,pending,,7.31,,,,,
+2026-08-31,San Francisco Giants @ Atlanta Braves,moneyline,San Francisco Giants gana (ML),0.5683,0.3536,0.2147,⚠️ Edge sospechoso,v4,no_data,,,,-0.55,0.4317,,
+2026-08-31,San Francisco Giants @ Atlanta Braves,total_under,Under 9.0,0.7977,0.5055,0.2922,⚠️ Edge sospechoso,v4,no_data,,7.31,,,,,
 2026-08-31,San Diego Padres @ Cincinnati Reds,moneyline,San Diego Padres gana (ML),0.589,0.5695,0.0195,🔴 Riesgo alto,v4,win,5-0,,5,-0.72,0.411,,
 2026-08-31,San Diego Padres @ Cincinnati Reds,total_under,Under 9.0,0.5192,0.5108,0.0084,🔴 Riesgo alto,v4,win,5-0,9.52,5,,,,
 2026-08-31,New York Mets @ Tampa Bay Rays,moneyline,Tampa Bay Rays gana (ML),0.5968,0.6331,-0.0363,🔴 Riesgo alto,v4,loss,3-2,,5,2.26,0.7558,,
@@ -807,17 +807,47 @@ date,matchup,market_type,selection,model_prob,implied_prob,edge,risk,model_versi
 2026-09-02,New York Yankees @ Los Angeles Angels,total_over,Over 6.5,0.504,0.5108,-0.0068,🔴 Riesgo alto,v4,win,6-3,7.49,9,,,,
 2026-09-02,St. Louis Cardinals @ Los Angeles Dodgers,moneyline,St. Louis Cardinals gana (ML),0.5546,0.3164,0.2382,⚠️ Edge sospechoso,v4,win,8-6,,14,1.31,0.6581,,
 2026-09-02,St. Louis Cardinals @ Los Angeles Dodgers,total_under,Under 7.5,0.6755,0.4817,0.1938,⚠️ Edge sospechoso,v4,loss,8-6,7.83,14,,,,
-2026-09-03,Chicago White Sox @ Houston Astros,moneyline,Chicago White Sox gana (ML),0.5613,0.4083,0.153,⚠️ Edge sospechoso,v4,pending,,,,1.16,0.6411,,
-2026-09-03,Chicago White Sox @ Houston Astros,total_under,Under 8.5,0.5819,0.5054,0.0765,🟡 Riesgo medio,v4,pending,,9.26,,,,,
-2026-09-03,Boston Red Sox @ Baltimore Orioles,moneyline,Baltimore Orioles gana (ML),0.5173,0.469,0.0483,🔴 Riesgo alto,v4,pending,,,,0.43,0.5535,,
-2026-09-03,Boston Red Sox @ Baltimore Orioles,total_under,Under 8.5,0.5856,0.5108,0.0748,🟡 Riesgo medio,v4,pending,,8.05,,,,,
-2026-09-03,Milwaukee Brewers @ Chicago Cubs,moneyline,Milwaukee Brewers gana (ML),0.5915,0.5139,0.0776,🟡 Riesgo medio,v4,pending,,,,-0.74,0.4085,,
-2026-09-03,Milwaukee Brewers @ Chicago Cubs,total_over,Over 8.5,0.5848,0.4968,0.088,🟡 Riesgo medio,v4,pending,,10.64,,,,0.015,7.5
-2026-09-03,Miami Marlins @ Kansas City Royals,moneyline,Miami Marlins gana (ML),0.5137,0.4802,0.0335,🔴 Riesgo alto,v4,pending,,,,0.18,0.5225,,
-2026-09-03,Miami Marlins @ Kansas City Royals,total_under,Under 9.0,0.7116,0.4799,0.2317,⚠️ Edge sospechoso,v4,pending,,8.04,,,,,
-2026-09-03,Tampa Bay Rays @ Texas Rangers,moneyline,Tampa Bay Rays gana (ML),0.5013,0.5428,-0.0415,🔴 Riesgo alto,v4,pending,,,,0.28,0.5349,,
-2026-09-03,Tampa Bay Rays @ Texas Rangers,total_under,Under 7.5,0.6129,0.4675,0.1454,🟢 Riesgo bajo,v4,pending,,8.0,,,,0.015,7.5
-2026-09-03,Athletics @ Seattle Mariners,moneyline,Athletics gana (ML),0.5752,0.3363,0.2389,⚠️ Edge sospechoso,v4,pending,,,,1.04,0.6271,,
-2026-09-03,Athletics @ Seattle Mariners,total_over,Over 7.0,0.6407,0.5086,0.1321,🟢 Riesgo bajo,v4,pending,,10.12,,,,0.015,7.5
-2026-09-03,St. Louis Cardinals @ Los Angeles Dodgers,moneyline,St. Louis Cardinals gana (ML),0.5113,0.2723,0.239,⚠️ Edge sospechoso,v4,pending,,,,1.61,0.691,,
-2026-09-03,St. Louis Cardinals @ Los Angeles Dodgers,total_under,Under 8.0,0.6571,0.5108,0.1463,🟢 Riesgo bajo,v4,pending,,8.69,,,,0.015,7.5
+2026-09-03,Chicago White Sox @ Houston Astros,moneyline,Chicago White Sox gana (ML),0.5613,0.4083,0.153,⚠️ Edge sospechoso,v4,loss,2-6,,8,1.16,0.6411,,
+2026-09-03,Chicago White Sox @ Houston Astros,total_under,Under 8.5,0.5819,0.5054,0.0765,🟡 Riesgo medio,v4,win,2-6,9.26,8,,,,
+2026-09-03,Boston Red Sox @ Baltimore Orioles,moneyline,Baltimore Orioles gana (ML),0.5173,0.469,0.0483,🔴 Riesgo alto,v4,loss,6-5,,11,0.43,0.5535,,
+2026-09-03,Boston Red Sox @ Baltimore Orioles,total_under,Under 8.5,0.5856,0.5108,0.0748,🟡 Riesgo medio,v4,loss,6-5,8.05,11,,,,
+2026-09-03,Milwaukee Brewers @ Chicago Cubs,moneyline,Milwaukee Brewers gana (ML),0.5915,0.5139,0.0776,🟡 Riesgo medio,v4,loss,1-2,,3,-0.74,0.4085,,
+2026-09-03,Milwaukee Brewers @ Chicago Cubs,total_over,Over 8.5,0.5848,0.4968,0.088,🟡 Riesgo medio,v4,loss,1-2,10.64,3,,,0.015,7.5
+2026-09-03,Miami Marlins @ Kansas City Royals,moneyline,Miami Marlins gana (ML),0.5137,0.4802,0.0335,🔴 Riesgo alto,v4,loss,3-7,,10,0.18,0.5225,,
+2026-09-03,Miami Marlins @ Kansas City Royals,total_under,Under 9.0,0.7116,0.4799,0.2317,⚠️ Edge sospechoso,v4,loss,3-7,8.04,10,,,,
+2026-09-03,Tampa Bay Rays @ Texas Rangers,moneyline,Tampa Bay Rays gana (ML),0.5013,0.5428,-0.0415,🔴 Riesgo alto,v4,loss,0-6,,6,0.28,0.5349,,
+2026-09-03,Tampa Bay Rays @ Texas Rangers,total_under,Under 7.5,0.6129,0.4675,0.1454,🟢 Riesgo bajo,v4,win,0-6,8.0,6,,,0.015,7.5
+2026-09-03,Athletics @ Seattle Mariners,moneyline,Athletics gana (ML),0.5752,0.3363,0.2389,⚠️ Edge sospechoso,v4,win,7-4,,11,1.04,0.6271,,
+2026-09-03,Athletics @ Seattle Mariners,total_over,Over 7.0,0.6407,0.5086,0.1321,🟢 Riesgo bajo,v4,win,7-4,10.12,11,,,0.015,7.5
+2026-09-03,St. Louis Cardinals @ Los Angeles Dodgers,moneyline,St. Louis Cardinals gana (ML),0.5113,0.2723,0.239,⚠️ Edge sospechoso,v4,loss,2-3,,5,1.61,0.691,,
+2026-09-03,St. Louis Cardinals @ Los Angeles Dodgers,total_under,Under 8.0,0.6571,0.5108,0.1463,🟢 Riesgo bajo,v4,win,2-3,8.69,5,,,0.015,7.5
+2026-09-04,Detroit Tigers @ Cleveland Guardians,moneyline,Detroit Tigers gana (ML),0.5234,0.461,0.0624,🟡 Riesgo medio,v4,pending,,,,0.17,0.5212,,
+2026-09-04,Detroit Tigers @ Cleveland Guardians,total_under,Under 8.0,0.7611,0.4895,0.2716,⚠️ Edge sospechoso,v4,pending,,6.75,,,,,
+2026-09-04,Detroit Tigers @ Cleveland Guardians,moneyline,Cleveland Guardians gana (ML),0.6403,0.5605,0.0798,🟡 Riesgo medio,v4,pending,,,,2.7,0.7941,,
+2026-09-04,Detroit Tigers @ Cleveland Guardians,total_under,Under 8.0,0.5012,0.5,0.0012,🔴 Riesgo alto,v4,pending,,8.66,,,,,
+2026-09-04,Milwaukee Brewers @ Cincinnati Reds,moneyline,Milwaukee Brewers gana (ML),0.7658,0.5937,0.1721,⚠️ Edge sospechoso,v4,pending,,,,-2.37,0.2342,,
+2026-09-04,Milwaukee Brewers @ Cincinnati Reds,total_over,Over 9.5,0.5838,0.5,0.0838,🟡 Riesgo medio,v4,pending,,10.91,,,,,
+2026-09-04,Atlanta Braves @ Philadelphia Phillies,moneyline,Atlanta Braves gana (ML),0.52,0.4857,0.0343,🔴 Riesgo alto,v4,pending,,,,-0.16,0.48,,
+2026-09-04,Atlanta Braves @ Philadelphia Phillies,total_under,Under 6.5,0.5077,0.4721,0.0356,🔴 Riesgo alto,v4,pending,,6.62,,,,,
+2026-09-04,Los Angeles Angels @ Pittsburgh Pirates,moneyline,Los Angeles Angels gana (ML),0.5683,0.3603,0.208,⚠️ Edge sospechoso,v4,pending,,,,1.1,0.6341,,
+2026-09-04,Los Angeles Angels @ Pittsburgh Pirates,total_under,Under 8.5,0.6197,0.5097,0.11,🟡 Riesgo medio,v4,pending,,9.14,,,,,
+2026-09-04,Boston Red Sox @ Baltimore Orioles,moneyline,Boston Red Sox gana (ML),0.501,0.5278,-0.0268,🔴 Riesgo alto,v4,pending,,,,0.35,0.5436,,
+2026-09-04,Boston Red Sox @ Baltimore Orioles,total_under,Under 8.0,0.6366,0.5029,0.1337,🟢 Riesgo bajo,v4,pending,,9.01,,,,0.015,7.5
+2026-09-04,San Francisco Giants @ New York Mets,moneyline,San Francisco Giants gana (ML),0.5097,0.3698,0.1399,🟢 Riesgo bajo,v4,pending,,,,0.28,0.5349,0.015,7.5
+2026-09-04,San Francisco Giants @ New York Mets,total_under,Under 7.5,0.6635,0.486,0.1775,⚠️ Edge sospechoso,v4,pending,,7.8,,,,,
+2026-09-04,Chicago Cubs @ Miami Marlins,moneyline,Chicago Cubs gana (ML),0.6604,0.5914,0.069,🟡 Riesgo medio,v4,pending,,,,-1.33,0.3396,,
+2026-09-04,Chicago Cubs @ Miami Marlins,total_under,Under 8.0,0.603,0.516,0.087,🟡 Riesgo medio,v4,pending,,9.27,,,,,
+2026-09-04,Minnesota Twins @ Chicago White Sox,moneyline,Minnesota Twins gana (ML),0.5372,0.4871,0.0501,🔴 Riesgo alto,v4,pending,,,,0.06,0.5075,,
+2026-09-04,Minnesota Twins @ Chicago White Sox,total_under,Under 9.0,0.6155,0.4971,0.1184,🟡 Riesgo medio,v4,pending,,10.2,,,,0.015,7.5
+2026-09-04,Tampa Bay Rays @ Texas Rangers,moneyline,Tampa Bay Rays gana (ML),0.5449,0.4939,0.051,🔴 Riesgo alto,v4,pending,,,,-0.36,0.4551,,
+2026-09-04,Tampa Bay Rays @ Texas Rangers,total_under,Under 8.5,0.5341,0.5108,0.0233,🔴 Riesgo alto,v4,pending,,8.42,,,,,
+2026-09-04,Arizona Diamondbacks @ Houston Astros,moneyline,Arizona Diamondbacks gana (ML),0.5187,0.4537,0.065,🟡 Riesgo medio,v4,pending,,,,-0.15,0.4813,,
+2026-09-04,Arizona Diamondbacks @ Houston Astros,total_over,Over 8.5,0.5513,0.5217,0.0296,🔴 Riesgo alto,v4,pending,,10.31,,,,,
+2026-09-04,Toronto Blue Jays @ Kansas City Royals,moneyline,Kansas City Royals gana (ML),0.5983,0.5222,0.0761,🟡 Riesgo medio,v4,pending,,,,2.22,0.7521,,
+2026-09-04,Toronto Blue Jays @ Kansas City Royals,total_under,Under 10.0,0.6379,0.5076,0.1303,🟢 Riesgo bajo,v4,pending,,9.56,,,,0.015,7.5
+2026-09-04,St. Louis Cardinals @ Colorado Rockies,moneyline,St. Louis Cardinals gana (ML),0.8046,0.5393,0.2653,⚠️ Edge sospechoso,v4,pending,,,,-2.83,0.1954,,
+2026-09-04,St. Louis Cardinals @ Colorado Rockies,total_under,Under 11.5,0.5957,0.5217,0.074,🟡 Riesgo medio,v4,pending,,12.43,,,,,
+2026-09-04,New York Yankees @ San Diego Padres,moneyline,New York Yankees gana (ML),0.7408,0.5254,0.2154,⚠️ Edge sospechoso,v4,pending,,,,-2.1,0.2592,,
+2026-09-04,New York Yankees @ San Diego Padres,total_under,Under 7.5,0.6692,0.5076,0.1616,⚠️ Edge sospechoso,v4,pending,,7.76,,,,,
+2026-09-04,Washington Nationals @ Los Angeles Dodgers,moneyline,Los Angeles Dodgers gana (ML),0.5821,0.7232,-0.1411,🟢 Riesgo bajo,v4,pending,,,,2.05,0.7359,,
+2026-09-04,Washington Nationals @ Los Angeles Dodgers,total_under,Under 8.5,0.6081,0.5174,0.0907,🟡 Riesgo medio,v4,pending,,9.23,,,,,
