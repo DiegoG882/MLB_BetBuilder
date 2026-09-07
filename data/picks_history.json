@@ -18026,8 +18026,11 @@
     },
     "stake_pct": null,
     "stake_amount": null,
-    "status": "pending",
-    "result": null
+    "status": "win",
+    "result": {
+      "home_runs": 4,
+      "away_runs": 5
+    }
   },
   {
     "date": "2026-09-06",
@@ -18046,8 +18049,11 @@
     },
     "stake_pct": null,
     "stake_amount": null,
-    "status": "pending",
-    "result": null
+    "status": "loss",
+    "result": {
+      "home_runs": 4,
+      "away_runs": 5
+    }
   },
   {
     "date": "2026-09-06",
@@ -18067,8 +18073,11 @@
     },
     "stake_pct": null,
     "stake_amount": null,
-    "status": "pending",
-    "result": null
+    "status": "win",
+    "result": {
+      "home_runs": 1,
+      "away_runs": 3
+    }
   },
   {
     "date": "2026-09-06",
@@ -18087,8 +18096,11 @@
     },
     "stake_pct": null,
     "stake_amount": null,
-    "status": "pending",
-    "result": null
+    "status": "win",
+    "result": {
+      "home_runs": 1,
+      "away_runs": 3
+    }
   },
   {
     "date": "2026-09-06",
@@ -18108,8 +18120,11 @@
     },
     "stake_pct": 0.015,
     "stake_amount": 7.5,
-    "status": "pending",
-    "result": null
+    "status": "loss",
+    "result": {
+      "home_runs": 1,
+      "away_runs": 0
+    }
   },
   {
     "date": "2026-09-06",
@@ -18128,8 +18143,11 @@
     },
     "stake_pct": null,
     "stake_amount": null,
-    "status": "pending",
-    "result": null
+    "status": "win",
+    "result": {
+      "home_runs": 1,
+      "away_runs": 0
+    }
   },
   {
     "date": "2026-09-06",
@@ -18149,8 +18167,11 @@
     },
     "stake_pct": null,
     "stake_amount": null,
-    "status": "pending",
-    "result": null
+    "status": "win",
+    "result": {
+      "home_runs": 3,
+      "away_runs": 2
+    }
   },
   {
     "date": "2026-09-06",
@@ -18169,8 +18190,11 @@
     },
     "stake_pct": null,
     "stake_amount": null,
-    "status": "pending",
-    "result": null
+    "status": "win",
+    "result": {
+      "home_runs": 3,
+      "away_runs": 2
+    }
   },
   {
     "date": "2026-09-06",
@@ -18190,8 +18214,11 @@
     },
     "stake_pct": null,
     "stake_amount": null,
-    "status": "pending",
-    "result": null
+    "status": "loss",
+    "result": {
+      "home_runs": 4,
+      "away_runs": 2
+    }
   },
   {
     "date": "2026-09-06",
@@ -18210,8 +18237,11 @@
     },
     "stake_pct": null,
     "stake_amount": null,
-    "status": "pending",
-    "result": null
+    "status": "win",
+    "result": {
+      "home_runs": 4,
+      "away_runs": 2
+    }
   },
   {
     "date": "2026-09-06",
@@ -18231,8 +18261,11 @@
     },
     "stake_pct": 0.015,
     "stake_amount": 7.5,
-    "status": "pending",
-    "result": null
+    "status": "loss",
+    "result": {
+      "home_runs": 10,
+      "away_runs": 3
+    }
   },
   {
     "date": "2026-09-06",
@@ -18251,8 +18284,11 @@
     },
     "stake_pct": 0.015,
     "stake_amount": 7.5,
-    "status": "pending",
-    "result": null
+    "status": "loss",
+    "result": {
+      "home_runs": 10,
+      "away_runs": 3
+    }
   },
   {
     "date": "2026-09-06",
@@ -18272,8 +18308,11 @@
     },
     "stake_pct": null,
     "stake_amount": null,
-    "status": "pending",
-    "result": null
+    "status": "win",
+    "result": {
+      "home_runs": 2,
+      "away_runs": 3
+    }
   },
   {
     "date": "2026-09-06",
@@ -18292,8 +18331,11 @@
     },
     "stake_pct": null,
     "stake_amount": null,
-    "status": "pending",
-    "result": null
+    "status": "win",
+    "result": {
+      "home_runs": 2,
+      "away_runs": 3
+    }
   },
   {
     "date": "2026-09-06",
@@ -18313,8 +18355,11 @@
     },
     "stake_pct": null,
     "stake_amount": null,
-    "status": "pending",
-    "result": null
+    "status": "loss",
+    "result": {
+      "home_runs": 6,
+      "away_runs": 1
+    }
   },
   {
     "date": "2026-09-06",
@@ -18333,8 +18378,11 @@
     },
     "stake_pct": null,
     "stake_amount": null,
-    "status": "pending",
-    "result": null
+    "status": "win",
+    "result": {
+      "home_runs": 6,
+      "away_runs": 1
+    }
   },
   {
     "date": "2026-09-06",
@@ -18354,8 +18402,11 @@
     },
     "stake_pct": null,
     "stake_amount": null,
-    "status": "pending",
-    "result": null
+    "status": "loss",
+    "result": {
+      "home_runs": 8,
+      "away_runs": 6
+    }
   },
   {
     "date": "2026-09-06",
@@ -18374,8 +18425,11 @@
     },
     "stake_pct": null,
     "stake_amount": null,
-    "status": "pending",
-    "result": null
+    "status": "win",
+    "result": {
+      "home_runs": 8,
+      "away_runs": 6
+    }
   },
   {
     "date": "2026-09-06",
@@ -18395,8 +18449,11 @@
     },
     "stake_pct": null,
     "stake_amount": null,
-    "status": "pending",
-    "result": null
+    "status": "win",
+    "result": {
+      "home_runs": 8,
+      "away_runs": 10
+    }
   },
   {
     "date": "2026-09-06",
@@ -18415,8 +18472,11 @@
     },
     "stake_pct": null,
     "stake_amount": null,
-    "status": "pending",
-    "result": null
+    "status": "loss",
+    "result": {
+      "home_runs": 8,
+      "away_runs": 10
+    }
   },
   {
     "date": "2026-09-06",
@@ -18436,8 +18496,11 @@
     },
     "stake_pct": 0.015,
     "stake_amount": 7.5,
-    "status": "pending",
-    "result": null
+    "status": "loss",
+    "result": {
+      "home_runs": 2,
+      "away_runs": 0
+    }
   },
   {
     "date": "2026-09-06",
@@ -18456,8 +18519,11 @@
     },
     "stake_pct": null,
     "stake_amount": null,
-    "status": "pending",
-    "result": null
+    "status": "loss",
+    "result": {
+      "home_runs": 2,
+      "away_runs": 0
+    }
   },
   {
     "date": "2026-09-06",
@@ -18477,8 +18543,11 @@
     },
     "stake_pct": null,
     "stake_amount": null,
-    "status": "pending",
-    "result": null
+    "status": "loss",
+    "result": {
+      "home_runs": 4,
+      "away_runs": 3
+    }
   },
   {
     "date": "2026-09-06",
@@ -18497,8 +18566,11 @@
     },
     "stake_pct": null,
     "stake_amount": null,
-    "status": "pending",
-    "result": null
+    "status": "loss",
+    "result": {
+      "home_runs": 4,
+      "away_runs": 3
+    }
   },
   {
     "date": "2026-09-06",
@@ -18518,8 +18590,11 @@
     },
     "stake_pct": null,
     "stake_amount": null,
-    "status": "pending",
-    "result": null
+    "status": "win",
+    "result": {
+      "home_runs": 10,
+      "away_runs": 1
+    }
   },
   {
     "date": "2026-09-06",
@@ -18538,8 +18613,11 @@
     },
     "stake_pct": null,
     "stake_amount": null,
-    "status": "pending",
-    "result": null
+    "status": "loss",
+    "result": {
+      "home_runs": 10,
+      "away_runs": 1
+    }
   },
   {
     "date": "2026-09-06",
@@ -18559,8 +18637,11 @@
     },
     "stake_pct": null,
     "stake_amount": null,
-    "status": "pending",
-    "result": null
+    "status": "loss",
+    "result": {
+      "home_runs": 7,
+      "away_runs": 5
+    }
   },
   {
     "date": "2026-09-06",
@@ -18576,6 +18657,378 @@
       "line": 8.5,
       "price": -120,
       "projected_total": 8.61
+    },
+    "stake_pct": null,
+    "stake_amount": null,
+    "status": "loss",
+    "result": {
+      "home_runs": 7,
+      "away_runs": 5
+    }
+  },
+  {
+    "date": "2026-09-07",
+    "game_pk": 824715,
+    "matchup": "Los Angeles Angels @ Boston Red Sox",
+    "market_type": "moneyline",
+    "selection": "Boston Red Sox gana (ML)",
+    "model_prob": 0.5508,
+    "implied_prob": 0.6195,
+    "risk": "🟡 Riesgo medio",
+    "model_version": "v4",
+    "extra": {
+      "side": "home",
+      "price": -171,
+      "run_diff": 1.83,
+      "uncalibrated_prob": 0.714
+    },
+    "stake_pct": null,
+    "stake_amount": null,
+    "status": "pending",
+    "result": null
+  },
+  {
+    "date": "2026-09-07",
+    "game_pk": 824715,
+    "matchup": "Los Angeles Angels @ Boston Red Sox",
+    "market_type": "total_over",
+    "selection": "Over 8.5",
+    "model_prob": 0.5534,
+    "implied_prob": 0.4783,
+    "risk": "🟡 Riesgo medio",
+    "model_version": "v4",
+    "extra": {
+      "line": 8.5,
+      "price": 100,
+      "projected_total": 10.33
+    },
+    "stake_pct": null,
+    "stake_amount": null,
+    "status": "pending",
+    "result": null
+  },
+  {
+    "date": "2026-09-07",
+    "game_pk": 824793,
+    "matchup": "Cleveland Guardians @ Baltimore Orioles",
+    "market_type": "moneyline",
+    "selection": "Cleveland Guardians gana (ML)",
+    "model_prob": 0.5287,
+    "implied_prob": 0.446,
+    "risk": "🟡 Riesgo medio",
+    "model_version": "v4",
+    "extra": {
+      "side": "away",
+      "price": 119,
+      "run_diff": -0.23,
+      "uncalibrated_prob": 0.4713
+    },
+    "stake_pct": null,
+    "stake_amount": null,
+    "status": "pending",
+    "result": null
+  },
+  {
+    "date": "2026-09-07",
+    "game_pk": 824793,
+    "matchup": "Cleveland Guardians @ Baltimore Orioles",
+    "market_type": "total_under",
+    "selection": "Under 7.5",
+    "model_prob": 0.626,
+    "implied_prob": 0.5279,
+    "risk": "🟡 Riesgo medio",
+    "model_version": "v4",
+    "extra": {
+      "line": 7.5,
+      "price": -124,
+      "projected_total": 7.95
+    },
+    "stake_pct": 0.015,
+    "stake_amount": 7.5,
+    "status": "pending",
+    "result": null
+  },
+  {
+    "date": "2026-09-07",
+    "game_pk": 824062,
+    "matchup": "Arizona Diamondbacks @ Kansas City Royals",
+    "market_type": "moneyline",
+    "selection": "Arizona Diamondbacks gana (ML)",
+    "model_prob": 0.5695,
+    "implied_prob": 0.4941,
+    "risk": "🟡 Riesgo medio",
+    "model_version": "v4",
+    "extra": {
+      "side": "away",
+      "price": -102,
+      "run_diff": -0.56,
+      "uncalibrated_prob": 0.4305
+    },
+    "stake_pct": null,
+    "stake_amount": null,
+    "status": "pending",
+    "result": null
+  },
+  {
+    "date": "2026-09-07",
+    "game_pk": 824062,
+    "matchup": "Arizona Diamondbacks @ Kansas City Royals",
+    "market_type": "total_under",
+    "selection": "Under 9.5",
+    "model_prob": 0.8053,
+    "implied_prob": 0.5217,
+    "risk": "⚠️ Edge sospechoso",
+    "model_version": "v4",
+    "extra": {
+      "line": 9.5,
+      "price": -120,
+      "projected_total": 7.24
+    },
+    "stake_pct": null,
+    "stake_amount": null,
+    "status": "pending",
+    "result": null
+  },
+  {
+    "date": "2026-09-07",
+    "game_pk": 823742,
+    "matchup": "Chicago Cubs @ Milwaukee Brewers",
+    "market_type": "moneyline",
+    "selection": "Chicago Cubs gana (ML)",
+    "model_prob": 0.5927,
+    "implied_prob": 0.4652,
+    "risk": "🟢 Riesgo bajo",
+    "model_version": "v4",
+    "extra": {
+      "side": "away",
+      "price": 110,
+      "run_diff": -0.75,
+      "uncalibrated_prob": 0.4073
+    },
+    "stake_pct": 0.015,
+    "stake_amount": 7.5,
+    "status": "pending",
+    "result": null
+  },
+  {
+    "date": "2026-09-07",
+    "game_pk": 823742,
+    "matchup": "Chicago Cubs @ Milwaukee Brewers",
+    "market_type": "total_over",
+    "selection": "Over 8.5",
+    "model_prob": 0.7866,
+    "implied_prob": 0.4903,
+    "risk": "⚠️ Edge sospechoso",
+    "model_version": "v4",
+    "extra": {
+      "line": 8.5,
+      "price": -106,
+      "projected_total": 11.51
+    },
+    "stake_pct": null,
+    "stake_amount": null,
+    "status": "pending",
+    "result": null
+  },
+  {
+    "date": "2026-09-07",
+    "game_pk": 824229,
+    "matchup": "Minnesota Twins @ Detroit Tigers",
+    "market_type": "moneyline",
+    "selection": "Detroit Tigers gana (ML)",
+    "model_prob": 0.515,
+    "implied_prob": 0.5242,
+    "risk": "🔴 Riesgo alto",
+    "model_version": "v4",
+    "extra": {
+      "side": "home",
+      "price": -115,
+      "run_diff": 0.48,
+      "uncalibrated_prob": 0.5597
+    },
+    "stake_pct": null,
+    "stake_amount": null,
+    "status": "pending",
+    "result": null
+  },
+  {
+    "date": "2026-09-07",
+    "game_pk": 824229,
+    "matchup": "Minnesota Twins @ Detroit Tigers",
+    "market_type": "total_under",
+    "selection": "Under 7.5",
+    "model_prob": 0.5571,
+    "implied_prob": 0.4783,
+    "risk": "🟡 Riesgo medio",
+    "model_version": "v4",
+    "extra": {
+      "line": 7.5,
+      "price": 100,
+      "projected_total": 7.28
+    },
+    "stake_pct": null,
+    "stake_amount": null,
+    "status": "pending",
+    "result": null
+  },
+  {
+    "date": "2026-09-07",
+    "game_pk": 823254,
+    "matchup": "Washington Nationals @ San Diego Padres",
+    "market_type": "moneyline",
+    "selection": "Washington Nationals gana (ML)",
+    "model_prob": 0.5137,
+    "implied_prob": 0.3561,
+    "risk": "⚠️ Edge sospechoso",
+    "model_version": "v4",
+    "extra": {
+      "side": "away",
+      "price": 175,
+      "run_diff": -0.11,
+      "uncalibrated_prob": 0.4863
+    },
+    "stake_pct": null,
+    "stake_amount": null,
+    "status": "pending",
+    "result": null
+  },
+  {
+    "date": "2026-09-07",
+    "game_pk": 823254,
+    "matchup": "Washington Nationals @ San Diego Padres",
+    "market_type": "total_over",
+    "selection": "Over 8.0",
+    "model_prob": 0.5872,
+    "implied_prob": 0.5,
+    "risk": "🟡 Riesgo medio",
+    "model_version": "v4",
+    "extra": {
+      "line": 8.0,
+      "price": -110,
+      "projected_total": 9.75
+    },
+    "stake_pct": null,
+    "stake_amount": null,
+    "status": "pending",
+    "result": null
+  },
+  {
+    "date": "2026-09-07",
+    "game_pk": 823175,
+    "matchup": "St. Louis Cardinals @ San Francisco Giants",
+    "market_type": "moneyline",
+    "selection": "St. Louis Cardinals gana (ML)",
+    "model_prob": 0.5634,
+    "implied_prob": 0.4548,
+    "risk": "🟡 Riesgo medio",
+    "model_version": "v4",
+    "extra": {
+      "side": "away",
+      "price": 115,
+      "run_diff": -0.51,
+      "uncalibrated_prob": 0.4366
+    },
+    "stake_pct": 0.015,
+    "stake_amount": 7.5,
+    "status": "pending",
+    "result": null
+  },
+  {
+    "date": "2026-09-07",
+    "game_pk": 823175,
+    "matchup": "St. Louis Cardinals @ San Francisco Giants",
+    "market_type": "total_over",
+    "selection": "Over 7.5",
+    "model_prob": 0.6467,
+    "implied_prob": 0.5108,
+    "risk": "🟢 Riesgo bajo",
+    "model_version": "v4",
+    "extra": {
+      "line": 7.5,
+      "price": -115,
+      "projected_total": 9.19
+    },
+    "stake_pct": 0.015,
+    "stake_amount": 7.5,
+    "status": "pending",
+    "result": null
+  },
+  {
+    "date": "2026-09-07",
+    "game_pk": 823902,
+    "matchup": "Cincinnati Reds @ Los Angeles Dodgers",
+    "market_type": "moneyline",
+    "selection": "Cincinnati Reds gana (ML)",
+    "model_prob": 0.5708,
+    "implied_prob": 0.3847,
+    "risk": "⚠️ Edge sospechoso",
+    "model_version": "v4",
+    "extra": {
+      "side": "away",
+      "price": 154,
+      "run_diff": -0.57,
+      "uncalibrated_prob": 0.4292
+    },
+    "stake_pct": null,
+    "stake_amount": null,
+    "status": "pending",
+    "result": null
+  },
+  {
+    "date": "2026-09-07",
+    "game_pk": 823902,
+    "matchup": "Cincinnati Reds @ Los Angeles Dodgers",
+    "market_type": "total_under",
+    "selection": "Under 8.5",
+    "model_prob": 0.5272,
+    "implied_prob": 0.5108,
+    "risk": "🔴 Riesgo alto",
+    "model_version": "v4",
+    "extra": {
+      "line": 8.5,
+      "price": -115,
+      "projected_total": 8.47
+    },
+    "stake_pct": null,
+    "stake_amount": null,
+    "status": "pending",
+    "result": null
+  },
+  {
+    "date": "2026-09-07",
+    "game_pk": 824958,
+    "matchup": "Toronto Blue Jays @ Athletics",
+    "market_type": "moneyline",
+    "selection": "Toronto Blue Jays gana (ML)",
+    "model_prob": 0.7271,
+    "implied_prob": 0.6512,
+    "risk": "🟡 Riesgo medio",
+    "model_version": "v4",
+    "extra": {
+      "side": "away",
+      "price": -200,
+      "run_diff": -1.96,
+      "uncalibrated_prob": 0.2729
+    },
+    "stake_pct": null,
+    "stake_amount": null,
+    "status": "pending",
+    "result": null
+  },
+  {
+    "date": "2026-09-07",
+    "game_pk": 824958,
+    "matchup": "Toronto Blue Jays @ Athletics",
+    "market_type": "total_under",
+    "selection": "Under 8.5",
+    "model_prob": 0.5647,
+    "implied_prob": 0.5174,
+    "risk": "🔴 Riesgo alto",
+    "model_version": "v4",
+    "extra": {
+      "line": 8.5,
+      "price": -118,
+      "projected_total": 8.2
     },
     "stake_pct": null,
     "stake_amount": null,
