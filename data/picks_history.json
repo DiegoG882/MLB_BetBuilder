@@ -18837,7 +18837,7 @@
     "market_type": "moneyline",
     "selection": "Detroit Tigers gana (ML)",
     "model_prob": 0.515,
-    "implied_prob": 0.523,
+    "implied_prob": 0.5314,
     "risk": "🔴 Riesgo alto",
     "model_version": "v4",
     "extra": {
@@ -18866,8 +18866,8 @@
       "price": 100,
       "projected_total": 7.28
     },
-    "stake_pct": null,
-    "stake_amount": null,
+    "stake_pct": 0.015,
+    "stake_amount": 7.5,
     "status": "pending",
     "result": null
   },
