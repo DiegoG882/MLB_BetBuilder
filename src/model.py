@@ -18,7 +18,13 @@ import math
 #
 # v4: agrega park factors + cache historico de 100 dias + techo de edge en
 #     risk_label (EDGE_SANITY_CAP) + dedupe/upsert de picks.
-MODEL_VERSION = "v4"
+# v5: agrega el filtro de sensatez en cuotas/lineas de mercado (descarta
+#     lineas de total y probabilidades implicitas absurdas) + el filtro de
+#     'solo juegos que no han empezado' (abstractGameState == 'Preview').
+#     Se subio porque estos dos fixes se agregaron DESPUES de fijar "v4",
+#     asi que los picks viejos con esa etiqueta son una mezcla de codigo
+#     con y sin estos arreglos -- no comparables limpio contra lo nuevo.
+MODEL_VERSION = "v5"
 
 # Ventaja de jugar en casa: en MLB los equipos locales anotan en promedio
 # ~4-5% mas carreras que de visitante (factor de cancha, rutina, sin viaje,
