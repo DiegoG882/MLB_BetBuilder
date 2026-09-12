@@ -5,9 +5,9 @@ sin_version,total_under,90,95,185,48.6
 v4,moneyline,133,135,268,49.6
 v4,total_over,25,25,50,50.0
 v4,total_under,102,117,219,46.6
-v5,moneyline,1,2,3,33.3
-v5,total_over,1,0,1,100.0
-v5,total_under,1,1,2,50.0
+v5,moneyline,10,8,18,55.6
+v5,total_over,4,1,5,80.0
+v5,total_under,5,8,13,38.5
 sin_version,TOTAL,217,224,441,49.2
 v4,TOTAL,260,277,537,48.4
-v5,TOTAL,3,3,6,50.0
+v5,TOTAL,19,17,36,52.8
