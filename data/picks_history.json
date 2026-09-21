@@ -26157,8 +26157,11 @@
     },
     "stake_pct": null,
     "stake_amount": null,
-    "status": "pending",
-    "result": null
+    "status": "win",
+    "result": {
+      "home_runs": 2,
+      "away_runs": 7
+    }
   },
   {
     "date": "2026-09-20",
@@ -26177,8 +26180,11 @@
     },
     "stake_pct": null,
     "stake_amount": null,
-    "status": "pending",
-    "result": null
+    "status": "loss",
+    "result": {
+      "home_runs": 2,
+      "away_runs": 7
+    }
   },
   {
     "date": "2026-09-20",
@@ -26198,8 +26204,11 @@
     },
     "stake_pct": null,
     "stake_amount": null,
-    "status": "pending",
-    "result": null
+    "status": "win",
+    "result": {
+      "home_runs": 4,
+      "away_runs": 3
+    }
   },
   {
     "date": "2026-09-20",
@@ -26218,8 +26227,11 @@
     },
     "stake_pct": null,
     "stake_amount": null,
-    "status": "pending",
-    "result": null
+    "status": "win",
+    "result": {
+      "home_runs": 4,
+      "away_runs": 3
+    }
   },
   {
     "date": "2026-09-20",
@@ -26239,8 +26251,11 @@
     },
     "stake_pct": null,
     "stake_amount": null,
-    "status": "pending",
-    "result": null
+    "status": "win",
+    "result": {
+      "home_runs": 1,
+      "away_runs": 9
+    }
   },
   {
     "date": "2026-09-20",
@@ -26259,8 +26274,11 @@
     },
     "stake_pct": null,
     "stake_amount": null,
-    "status": "pending",
-    "result": null
+    "status": "win",
+    "result": {
+      "home_runs": 1,
+      "away_runs": 9
+    }
   },
   {
     "date": "2026-09-20",
@@ -26280,8 +26298,11 @@
     },
     "stake_pct": null,
     "stake_amount": null,
-    "status": "pending",
-    "result": null
+    "status": "loss",
+    "result": {
+      "home_runs": 1,
+      "away_runs": 0
+    }
   },
   {
     "date": "2026-09-20",
@@ -26300,8 +26321,11 @@
     },
     "stake_pct": null,
     "stake_amount": null,
-    "status": "pending",
-    "result": null
+    "status": "loss",
+    "result": {
+      "home_runs": 1,
+      "away_runs": 0
+    }
   },
   {
     "date": "2026-09-20",
@@ -26321,8 +26345,11 @@
     },
     "stake_pct": null,
     "stake_amount": null,
-    "status": "pending",
-    "result": null
+    "status": "win",
+    "result": {
+      "home_runs": 5,
+      "away_runs": 1
+    }
   },
   {
     "date": "2026-09-20",
@@ -26341,8 +26368,11 @@
     },
     "stake_pct": null,
     "stake_amount": null,
-    "status": "pending",
-    "result": null
+    "status": "win",
+    "result": {
+      "home_runs": 5,
+      "away_runs": 1
+    }
   },
   {
     "date": "2026-09-20",
@@ -26362,8 +26392,11 @@
     },
     "stake_pct": null,
     "stake_amount": null,
-    "status": "pending",
-    "result": null
+    "status": "win",
+    "result": {
+      "home_runs": 2,
+      "away_runs": 4
+    }
   },
   {
     "date": "2026-09-20",
@@ -26382,8 +26415,11 @@
     },
     "stake_pct": null,
     "stake_amount": null,
-    "status": "pending",
-    "result": null
+    "status": "win",
+    "result": {
+      "home_runs": 2,
+      "away_runs": 4
+    }
   },
   {
     "date": "2026-09-20",
@@ -26403,8 +26439,11 @@
     },
     "stake_pct": null,
     "stake_amount": null,
-    "status": "pending",
-    "result": null
+    "status": "loss",
+    "result": {
+      "home_runs": 8,
+      "away_runs": 1
+    }
   },
   {
     "date": "2026-09-20",
@@ -26423,8 +26462,11 @@
     },
     "stake_pct": 0.015,
     "stake_amount": 7.5,
-    "status": "pending",
-    "result": null
+    "status": "loss",
+    "result": {
+      "home_runs": 8,
+      "away_runs": 1
+    }
   },
   {
     "date": "2026-09-20",
@@ -26444,8 +26486,11 @@
     },
     "stake_pct": 0.015,
     "stake_amount": 7.5,
-    "status": "pending",
-    "result": null
+    "status": "loss",
+    "result": {
+      "home_runs": 5,
+      "away_runs": 3
+    }
   },
   {
     "date": "2026-09-20",
@@ -26464,8 +26509,11 @@
     },
     "stake_pct": null,
     "stake_amount": null,
-    "status": "pending",
-    "result": null
+    "status": "loss",
+    "result": {
+      "home_runs": 5,
+      "away_runs": 3
+    }
   },
   {
     "date": "2026-09-20",
@@ -26485,8 +26533,11 @@
     },
     "stake_pct": null,
     "stake_amount": null,
-    "status": "pending",
-    "result": null
+    "status": "win",
+    "result": {
+      "home_runs": 2,
+      "away_runs": 7
+    }
   },
   {
     "date": "2026-09-20",
@@ -26505,8 +26556,11 @@
     },
     "stake_pct": null,
     "stake_amount": null,
-    "status": "pending",
-    "result": null
+    "status": "loss",
+    "result": {
+      "home_runs": 2,
+      "away_runs": 7
+    }
   },
   {
     "date": "2026-09-20",
@@ -26526,8 +26580,11 @@
     },
     "stake_pct": null,
     "stake_amount": null,
-    "status": "pending",
-    "result": null
+    "status": "win",
+    "result": {
+      "home_runs": 1,
+      "away_runs": 2
+    }
   },
   {
     "date": "2026-09-20",
@@ -26546,8 +26603,11 @@
     },
     "stake_pct": null,
     "stake_amount": null,
-    "status": "pending",
-    "result": null
+    "status": "loss",
+    "result": {
+      "home_runs": 1,
+      "away_runs": 2
+    }
   },
   {
     "date": "2026-09-20",
@@ -26567,8 +26627,11 @@
     },
     "stake_pct": null,
     "stake_amount": null,
-    "status": "pending",
-    "result": null
+    "status": "loss",
+    "result": {
+      "home_runs": 0,
+      "away_runs": 8
+    }
   },
   {
     "date": "2026-09-20",
@@ -26587,8 +26650,11 @@
     },
     "stake_pct": null,
     "stake_amount": null,
-    "status": "pending",
-    "result": null
+    "status": "win",
+    "result": {
+      "home_runs": 0,
+      "away_runs": 8
+    }
   },
   {
     "date": "2026-09-20",
@@ -26608,8 +26674,11 @@
     },
     "stake_pct": null,
     "stake_amount": null,
-    "status": "pending",
-    "result": null
+    "status": "win",
+    "result": {
+      "home_runs": 3,
+      "away_runs": 1
+    }
   },
   {
     "date": "2026-09-20",
@@ -26628,8 +26697,11 @@
     },
     "stake_pct": null,
     "stake_amount": null,
-    "status": "pending",
-    "result": null
+    "status": "loss",
+    "result": {
+      "home_runs": 3,
+      "away_runs": 1
+    }
   },
   {
     "date": "2026-09-20",
@@ -26649,8 +26721,11 @@
     },
     "stake_pct": null,
     "stake_amount": null,
-    "status": "pending",
-    "result": null
+    "status": "win",
+    "result": {
+      "home_runs": 7,
+      "away_runs": 3
+    }
   },
   {
     "date": "2026-09-20",
@@ -26669,8 +26744,11 @@
     },
     "stake_pct": 0.015,
     "stake_amount": 7.5,
-    "status": "pending",
-    "result": null
+    "status": "win",
+    "result": {
+      "home_runs": 7,
+      "away_runs": 3
+    }
   },
   {
     "date": "2026-09-20",
@@ -26690,8 +26768,11 @@
     },
     "stake_pct": null,
     "stake_amount": null,
-    "status": "pending",
-    "result": null
+    "status": "loss",
+    "result": {
+      "home_runs": 8,
+      "away_runs": 4
+    }
   },
   {
     "date": "2026-09-20",
@@ -26710,8 +26791,11 @@
     },
     "stake_pct": null,
     "stake_amount": null,
-    "status": "pending",
-    "result": null
+    "status": "loss",
+    "result": {
+      "home_runs": 8,
+      "away_runs": 4
+    }
   },
   {
     "date": "2026-09-20",
@@ -26731,8 +26815,11 @@
     },
     "stake_pct": null,
     "stake_amount": null,
-    "status": "pending",
-    "result": null
+    "status": "win",
+    "result": {
+      "home_runs": 0,
+      "away_runs": 3
+    }
   },
   {
     "date": "2026-09-20",
@@ -26751,6 +26838,132 @@
     },
     "stake_pct": 0.015,
     "stake_amount": 7.5,
+    "status": "loss",
+    "result": {
+      "home_runs": 0,
+      "away_runs": 3
+    }
+  },
+  {
+    "date": "2026-09-21",
+    "game_pk": 824787,
+    "matchup": "Toronto Blue Jays @ Baltimore Orioles",
+    "market_type": "moneyline",
+    "selection": "Toronto Blue Jays gana (ML)",
+    "model_prob": 0.5305,
+    "implied_prob": 0.4953,
+    "risk": "🔴 Riesgo alto",
+    "model_version": "v5",
+    "extra": {
+      "side": "away",
+      "price": -102,
+      "run_diff": 0.04,
+      "uncalibrated_prob": 0.505
+    },
+    "stake_pct": null,
+    "stake_amount": null,
+    "status": "pending",
+    "result": null
+  },
+  {
+    "date": "2026-09-21",
+    "game_pk": 824787,
+    "matchup": "Toronto Blue Jays @ Baltimore Orioles",
+    "market_type": "total_under",
+    "selection": "Under 7.5",
+    "model_prob": 0.5816,
+    "implied_prob": 0.5108,
+    "risk": "🟡 Riesgo medio",
+    "model_version": "v5",
+    "extra": {
+      "line": 7.5,
+      "price": -115,
+      "projected_total": 8.24
+    },
+    "stake_pct": 0.016,
+    "stake_amount": 8.01,
+    "status": "pending",
+    "result": null
+  },
+  {
+    "date": "2026-09-21",
+    "game_pk": 824221,
+    "matchup": "Washington Nationals @ Detroit Tigers",
+    "market_type": "moneyline",
+    "selection": "Washington Nationals gana (ML)",
+    "model_prob": 0.532,
+    "implied_prob": 0.4497,
+    "risk": "🟡 Riesgo medio",
+    "model_version": "v5",
+    "extra": {
+      "side": "away",
+      "price": 118,
+      "run_diff": 1.22,
+      "uncalibrated_prob": 0.6479
+    },
+    "stake_pct": 0.016,
+    "stake_amount": 8.01,
+    "status": "pending",
+    "result": null
+  },
+  {
+    "date": "2026-09-21",
+    "game_pk": 824221,
+    "matchup": "Washington Nationals @ Detroit Tigers",
+    "market_type": "total_over",
+    "selection": "Over 8.5",
+    "model_prob": 0.5839,
+    "implied_prob": 0.5108,
+    "risk": "🟡 Riesgo medio",
+    "model_version": "v5",
+    "extra": {
+      "line": 8.5,
+      "price": -115,
+      "projected_total": 9.66
+    },
+    "stake_pct": 0.016,
+    "stake_amount": 8.01,
+    "status": "pending",
+    "result": null
+  },
+  {
+    "date": "2026-09-21",
+    "game_pk": 823169,
+    "matchup": "Minnesota Twins @ San Francisco Giants",
+    "market_type": "moneyline",
+    "selection": "San Francisco Giants gana (ML)",
+    "model_prob": 0.5205,
+    "implied_prob": 0.4802,
+    "risk": "🔴 Riesgo alto",
+    "model_version": "v5",
+    "extra": {
+      "side": "home",
+      "price": 104,
+      "run_diff": 0.45,
+      "uncalibrated_prob": 0.556
+    },
+    "stake_pct": 0.0119,
+    "stake_amount": 5.97,
+    "status": "pending",
+    "result": null
+  },
+  {
+    "date": "2026-09-21",
+    "game_pk": 823169,
+    "matchup": "Minnesota Twins @ San Francisco Giants",
+    "market_type": "total_under",
+    "selection": "Under 8.5",
+    "model_prob": 0.5108,
+    "implied_prob": 0.5217,
+    "risk": "🔴 Riesgo alto",
+    "model_version": "v5",
+    "extra": {
+      "line": 8.5,
+      "price": -120,
+      "projected_total": 8.59
+    },
+    "stake_pct": null,
+    "stake_amount": null,
     "status": "pending",
     "result": null
   }
