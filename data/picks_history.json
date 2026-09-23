@@ -27752,14 +27752,14 @@
     "matchup": "Toronto Blue Jays @ Baltimore Orioles",
     "market_type": "total_under",
     "selection": "Under 7.5",
-    "model_prob": 0.5644,
-    "implied_prob": 0.441,
-    "risk": "🟢 Riesgo bajo",
+    "model_prob": 0.5698,
+    "implied_prob": 0.454,
+    "risk": "🟡 Riesgo medio",
     "model_version": "v5",
     "extra": {
       "line": 7.5,
-      "price": 116,
-      "projected_total": 8.35
+      "price": 110,
+      "projected_total": 8.31
     },
     "stake_pct": 0.015,
     "stake_amount": 7.5,
@@ -27843,8 +27843,8 @@
       "price": 100,
       "projected_total": 8.57
     },
-    "stake_pct": null,
-    "stake_amount": null,
+    "stake_pct": 0.015,
+    "stake_amount": 7.5,
     "status": "pending",
     "result": null
   },
@@ -27855,12 +27855,12 @@
     "market_type": "moneyline",
     "selection": "Milwaukee Brewers gana (ML)",
     "model_prob": 0.7892,
-    "implied_prob": 0.5327,
+    "implied_prob": 0.5404,
     "risk": "⚠️ Edge sospechoso",
     "model_version": "v5",
     "extra": {
       "side": "away",
-      "price": -120,
+      "price": -122,
       "run_diff": -2.64,
       "uncalibrated_prob": 0.2108
     },
@@ -27895,15 +27895,15 @@
     "matchup": "Tampa Bay Rays @ New York Yankees",
     "market_type": "moneyline",
     "selection": "New York Yankees gana (ML)",
-    "model_prob": 0.541,
-    "implied_prob": 0.5503,
+    "model_prob": 0.5543,
+    "implied_prob": 0.5601,
     "risk": "🔴 Riesgo alto",
     "model_version": "v5",
     "extra": {
       "side": "home",
-      "price": -128,
-      "run_diff": 0.67,
-      "uncalibrated_prob": 0.583
+      "price": -129,
+      "run_diff": 0.78,
+      "uncalibrated_prob": 0.5963
     },
     "stake_pct": null,
     "stake_amount": null,
@@ -27916,14 +27916,14 @@
     "matchup": "Tampa Bay Rays @ New York Yankees",
     "market_type": "total_under",
     "selection": "Under 6.5",
-    "model_prob": 0.5362,
-    "implied_prob": 0.5108,
+    "model_prob": 0.5239,
+    "implied_prob": 0.4892,
     "risk": "🔴 Riesgo alto",
     "model_version": "v5",
     "extra": {
       "line": 6.5,
-      "price": -115,
-      "projected_total": 8.29
+      "price": -105,
+      "projected_total": 8.4
     },
     "stake_pct": null,
     "stake_amount": null,
@@ -27937,7 +27937,7 @@
     "market_type": "moneyline",
     "selection": "Cleveland Guardians gana (ML)",
     "model_prob": 0.5407,
-    "implied_prob": 0.4483,
+    "implied_prob": 0.4536,
     "risk": "🟡 Riesgo medio",
     "model_version": "v5",
     "extra": {
@@ -28019,12 +28019,12 @@
     "market_type": "moneyline",
     "selection": "Chicago White Sox gana (ML)",
     "model_prob": 0.7867,
-    "implied_prob": 0.5199,
+    "implied_prob": 0.521,
     "risk": "⚠️ Edge sospechoso",
     "model_version": "v5",
     "extra": {
       "side": "away",
-      "price": -112,
+      "price": -113,
       "run_diff": -2.61,
       "uncalibrated_prob": 0.2133
     },
@@ -28122,12 +28122,12 @@
     "market_type": "total_over",
     "selection": "Over 7.5",
     "model_prob": 0.5706,
-    "implied_prob": 0.5,
+    "implied_prob": 0.5032,
     "risk": "🟡 Riesgo medio",
     "model_version": "v5",
     "extra": {
       "line": 7.5,
-      "price": -110,
+      "price": -112,
       "projected_total": 8.52
     },
     "stake_pct": null,
@@ -28142,7 +28142,7 @@
     "market_type": "moneyline",
     "selection": "Arizona Diamondbacks gana (ML)",
     "model_prob": 0.6271,
-    "implied_prob": 0.5881,
+    "implied_prob": 0.5932,
     "risk": "🔴 Riesgo alto",
     "model_version": "v5",
     "extra": {
@@ -28163,12 +28163,12 @@
     "market_type": "total_over",
     "selection": "Over 11.5",
     "model_prob": 0.6025,
-    "implied_prob": 0.4872,
+    "implied_prob": 0.4968,
     "risk": "🟡 Riesgo medio",
     "model_version": "v5",
     "extra": {
       "line": 11.5,
-      "price": -105,
+      "price": -109,
       "projected_total": 13.02
     },
     "stake_pct": 0.015,
