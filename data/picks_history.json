@@ -30187,7 +30187,7 @@
     },
     "stake_pct": null,
     "stake_amount": null,
-    "status": "pending",
+    "status": "no_data",
     "result": null
   },
   {
@@ -30207,7 +30207,7 @@
     },
     "stake_pct": null,
     "stake_amount": null,
-    "status": "pending",
+    "status": "no_data",
     "result": null
   },
   {
@@ -30980,8 +30980,11 @@
     },
     "stake_pct": 0.02,
     "stake_amount": 10.0,
-    "status": "pending",
-    "result": null
+    "status": "win",
+    "result": {
+      "home_runs": 3,
+      "away_runs": 7
+    }
   },
   {
     "date": "2026-09-30",
@@ -31000,8 +31003,11 @@
     },
     "stake_pct": null,
     "stake_amount": null,
-    "status": "pending",
-    "result": null
+    "status": "win",
+    "result": {
+      "home_runs": 3,
+      "away_runs": 7
+    }
   },
   {
     "date": "2026-09-30",
@@ -31021,8 +31027,11 @@
     },
     "stake_pct": 0.02,
     "stake_amount": 10.0,
-    "status": "pending",
-    "result": null
+    "status": "loss",
+    "result": {
+      "home_runs": 9,
+      "away_runs": 2
+    }
   },
   {
     "date": "2026-09-30",
@@ -31041,8 +31050,11 @@
     },
     "stake_pct": null,
     "stake_amount": null,
-    "status": "pending",
-    "result": null
+    "status": "loss",
+    "result": {
+      "home_runs": 9,
+      "away_runs": 2
+    }
   },
   {
     "date": "2026-09-30",
@@ -31062,8 +31074,11 @@
     },
     "stake_pct": null,
     "stake_amount": null,
-    "status": "pending",
-    "result": null
+    "status": "win",
+    "result": {
+      "home_runs": 4,
+      "away_runs": 1
+    }
   },
   {
     "date": "2026-09-30",
@@ -31082,6 +31097,50 @@
     },
     "stake_pct": 0.02,
     "stake_amount": 10.0,
+    "status": "loss",
+    "result": {
+      "home_runs": 4,
+      "away_runs": 1
+    }
+  },
+  {
+    "date": "2026-10-01",
+    "game_pk": 849844,
+    "matchup": "Philadelphia Phillies @ Atlanta Braves",
+    "market_type": "moneyline",
+    "selection": "Atlanta Braves gana (ML)",
+    "model_prob": 0.5731,
+    "implied_prob": 0.4953,
+    "risk": "🟡 Riesgo medio",
+    "model_version": "v5",
+    "extra": {
+      "side": "home",
+      "price": -102,
+      "run_diff": 1.9,
+      "uncalibrated_prob": 0.7211
+    },
+    "stake_pct": 0.02,
+    "stake_amount": 10.0,
+    "status": "pending",
+    "result": null
+  },
+  {
+    "date": "2026-10-01",
+    "game_pk": 849844,
+    "matchup": "Philadelphia Phillies @ Atlanta Braves",
+    "market_type": "total_under",
+    "selection": "Under 7.5",
+    "model_prob": 0.5334,
+    "implied_prob": 0.5217,
+    "risk": "🔴 Riesgo alto",
+    "model_version": "v5",
+    "extra": {
+      "line": 7.5,
+      "price": -120,
+      "projected_total": 7.44
+    },
+    "stake_pct": null,
+    "stake_amount": null,
     "status": "pending",
     "result": null
   }

@@ -1399,8 +1399,8 @@ date,matchup,market_type,selection,model_prob,implied_prob,edge,risk,model_versi
 2026-09-26,Los Angeles Angels @ Seattle Mariners,total_under,Under 7.5,0.5739,0.5236,0.0503,🔴 Riesgo alto,v5,loss,4-8,7.96,12,,,,
 2026-09-27,New York Mets @ Washington Nationals,moneyline,New York Mets gana (ML),0.6177,0.5105,0.1072,🟡 Riesgo medio,v5,loss,4-6,,10,-0.96,0.3823,,
 2026-09-27,New York Mets @ Washington Nationals,total_over,Over 8.5,0.5238,0.4892,0.0346,🔴 Riesgo alto,v5,win,4-6,11.32,10,,,,
-2026-09-27,Baltimore Orioles @ New York Yankees,moneyline,Baltimore Orioles gana (ML),0.5337,0.4758,0.0579,🔴 Riesgo alto,v5,pending,,,,-0.27,0.4663,,
-2026-09-27,Baltimore Orioles @ New York Yankees,total_under,Under 7.5,0.5474,0.5325,0.0149,🔴 Riesgo alto,v5,pending,,9.43,,,,,
+2026-09-27,Baltimore Orioles @ New York Yankees,moneyline,Baltimore Orioles gana (ML),0.5337,0.4758,0.0579,🔴 Riesgo alto,v5,no_data,,,,-0.27,0.4663,,
+2026-09-27,Baltimore Orioles @ New York Yankees,total_under,Under 7.5,0.5474,0.5325,0.0149,🔴 Riesgo alto,v5,no_data,,9.43,,,,,
 2026-09-27,Tampa Bay Rays @ Philadelphia Phillies,moneyline,Tampa Bay Rays gana (ML),0.5866,0.3595,0.2271,⚠️ Edge sospechoso,v5,loss,3-7,,10,-0.7,0.4134,,
 2026-09-27,Tampa Bay Rays @ Philadelphia Phillies,total_under,Under 6.5,0.569,0.5097,0.0593,🔴 Riesgo alto,v5,loss,3-7,6.96,10,,,,
 2026-09-27,Chicago Cubs @ Boston Red Sox,moneyline,Chicago Cubs gana (ML),0.5757,0.5162,0.0595,🔴 Riesgo alto,v5,win,6-2,,8,-0.61,0.4243,,
@@ -1433,9 +1433,11 @@ date,matchup,market_type,selection,model_prob,implied_prob,edge,risk,model_versi
 2026-09-29,Boston Red Sox @ New York Yankees,total_under,Under 6.0,0.6111,0.4892,0.1219,🟢 Riesgo bajo,v5,loss,0-9,5.97,9,,,0.015,7.5
 2026-09-29,Chicago Cubs @ San Diego Padres,moneyline,Chicago Cubs gana (ML),0.5524,0.4561,0.0963,🟡 Riesgo medio,v5,loss,0-8,,8,1.05,0.6283,0.015,7.5
 2026-09-29,Chicago Cubs @ San Diego Padres,total_over,Over 7.5,0.5862,0.4783,0.1079,🟡 Riesgo medio,v5,win,0-8,8.51,8,,,0.015,7.5
-2026-09-30,Chicago White Sox @ Houston Astros,moneyline,Chicago White Sox gana (ML),0.5511,0.4197,0.1314,🟢 Riesgo bajo,v5,pending,,,,-0.41,0.4489,0.02,10.0
-2026-09-30,Chicago White Sox @ Houston Astros,total_over,Over 7.5,0.6548,0.4892,0.1656,⚠️ Edge sospechoso,v5,pending,,9.07,,,,,
-2026-09-30,Boston Red Sox @ New York Yankees,moneyline,Boston Red Sox gana (ML),0.5215,0.4474,0.0741,🟡 Riesgo medio,v5,pending,,,,1.29,0.6559,0.02,10.0
-2026-09-30,Boston Red Sox @ New York Yankees,total_under,Under 6.5,0.64,0.4786,0.1614,⚠️ Edge sospechoso,v5,pending,,5.79,,,,,
-2026-09-30,Chicago Cubs @ San Diego Padres,moneyline,San Diego Padres gana (ML),0.5772,0.574,0.0032,🔴 Riesgo alto,v5,pending,,,,1.94,0.7251,,
-2026-09-30,Chicago Cubs @ San Diego Padres,total_over,Over 7.5,0.5771,0.4733,0.1038,🟡 Riesgo medio,v5,pending,,8.44,,,,0.02,10.0
+2026-09-30,Chicago White Sox @ Houston Astros,moneyline,Chicago White Sox gana (ML),0.5511,0.4197,0.1314,🟢 Riesgo bajo,v5,win,7-3,,10,-0.41,0.4489,0.02,10.0
+2026-09-30,Chicago White Sox @ Houston Astros,total_over,Over 7.5,0.6548,0.4892,0.1656,⚠️ Edge sospechoso,v5,win,7-3,9.07,10,,,,
+2026-09-30,Boston Red Sox @ New York Yankees,moneyline,Boston Red Sox gana (ML),0.5215,0.4474,0.0741,🟡 Riesgo medio,v5,loss,2-9,,11,1.29,0.6559,0.02,10.0
+2026-09-30,Boston Red Sox @ New York Yankees,total_under,Under 6.5,0.64,0.4786,0.1614,⚠️ Edge sospechoso,v5,loss,2-9,5.79,11,,,,
+2026-09-30,Chicago Cubs @ San Diego Padres,moneyline,San Diego Padres gana (ML),0.5772,0.574,0.0032,🔴 Riesgo alto,v5,win,1-4,,5,1.94,0.7251,,
+2026-09-30,Chicago Cubs @ San Diego Padres,total_over,Over 7.5,0.5771,0.4733,0.1038,🟡 Riesgo medio,v5,loss,1-4,8.44,5,,,0.02,10.0
+2026-10-01,Philadelphia Phillies @ Atlanta Braves,moneyline,Atlanta Braves gana (ML),0.5731,0.4953,0.0778,🟡 Riesgo medio,v5,pending,,,,1.9,0.7211,0.02,10.0
+2026-10-01,Philadelphia Phillies @ Atlanta Braves,total_under,Under 7.5,0.5334,0.5217,0.0117,🔴 Riesgo alto,v5,pending,,7.44,,,,,
