@@ -1441,9 +1441,13 @@ date,matchup,market_type,selection,model_prob,implied_prob,edge,risk,model_versi
 2026-09-30,Chicago Cubs @ San Diego Padres,total_over,Over 7.5,0.5771,0.4733,0.1038,🟡 Riesgo medio,v5,loss,1-4,8.44,5,,,0.02,10.0
 2026-10-01,Philadelphia Phillies @ Atlanta Braves,moneyline,Atlanta Braves gana (ML),0.5731,0.4953,0.0778,🟡 Riesgo medio,v5,win,2-6,,8,1.9,0.7211,0.02,10.0
 2026-10-01,Philadelphia Phillies @ Atlanta Braves,total_under,Under 7.5,0.5334,0.5217,0.0117,🔴 Riesgo alto,v5,loss,2-6,7.44,8,,,,
-2026-10-03,Atlanta Braves @ Los Angeles Dodgers,moneyline,Atlanta Braves gana (ML),0.5148,0.3358,0.179,⚠️ Edge sospechoso,v5,pending,,,,1.35,0.6626,,
-2026-10-03,Atlanta Braves @ Los Angeles Dodgers,total_under,Under 8.5,0.6825,0.5217,0.1608,⚠️ Edge sospechoso,v5,pending,,7.35,,,,,
-2026-10-03,New York Yankees @ Tampa Bay Rays,moneyline,New York Yankees gana (ML),0.5161,0.4517,0.0644,🟡 Riesgo medio,v5,pending,,,,0.2,0.525,0.02,10.0
-2026-10-03,New York Yankees @ Tampa Bay Rays,total_under,Under 6.5,0.5848,0.4448,0.14,🟢 Riesgo bajo,v5,pending,,6.84,,,,0.02,10.0
-2026-10-03,San Diego Padres @ Milwaukee Brewers,moneyline,San Diego Padres gana (ML),0.5608,0.3448,0.216,⚠️ Edge sospechoso,v5,pending,,,,0.95,0.6166,,
-2026-10-03,San Diego Padres @ Milwaukee Brewers,total_under,Under 7.0,0.5709,0.5108,0.0601,🟡 Riesgo medio,v5,pending,,7.95,,,,0.0194,9.7
+2026-10-03,Atlanta Braves @ Los Angeles Dodgers,moneyline,Atlanta Braves gana (ML),0.5148,0.3358,0.179,⚠️ Edge sospechoso,v5,loss,3-5,,8,1.35,0.6626,,
+2026-10-03,Atlanta Braves @ Los Angeles Dodgers,total_under,Under 8.5,0.6825,0.5217,0.1608,⚠️ Edge sospechoso,v5,win,3-5,7.35,8,,,,
+2026-10-03,New York Yankees @ Tampa Bay Rays,moneyline,New York Yankees gana (ML),0.5161,0.4517,0.0644,🟡 Riesgo medio,v5,loss,0-1,,1,0.2,0.525,0.02,10.0
+2026-10-03,New York Yankees @ Tampa Bay Rays,total_under,Under 6.5,0.5848,0.4448,0.14,🟢 Riesgo bajo,v5,win,0-1,6.84,1,,,0.02,10.0
+2026-10-03,San Diego Padres @ Milwaukee Brewers,moneyline,San Diego Padres gana (ML),0.5608,0.3448,0.216,⚠️ Edge sospechoso,v5,loss,2-3,,5,0.95,0.6166,,
+2026-10-03,San Diego Padres @ Milwaukee Brewers,total_under,Under 7.0,0.5709,0.5108,0.0601,🟡 Riesgo medio,v5,win,2-3,7.95,5,,,0.0194,9.7
+2026-10-04,San Diego Padres @ Milwaukee Brewers,moneyline,Milwaukee Brewers gana (ML),0.5512,0.5559,-0.0047,🔴 Riesgo alto,v5,pending,,,,0.77,0.5951,,
+2026-10-04,San Diego Padres @ Milwaukee Brewers,total_under,Under 7.5,0.5261,0.538,-0.0119,🔴 Riesgo alto,v5,pending,,7.49,,,,,
+2026-10-04,Atlanta Braves @ Los Angeles Dodgers,moneyline,Atlanta Braves gana (ML),0.5148,0.4098,0.105,🟡 Riesgo medio,v5,pending,,,,1.35,0.6626,0.02,10.0
+2026-10-04,Atlanta Braves @ Los Angeles Dodgers,total_under,Under 7.5,0.5764,0.5552,0.0212,🔴 Riesgo alto,v5,pending,,7.15,,,,,

@@ -31168,8 +31168,11 @@
     },
     "stake_pct": null,
     "stake_amount": null,
-    "status": "pending",
-    "result": null
+    "status": "loss",
+    "result": {
+      "home_runs": 5,
+      "away_runs": 3
+    }
   },
   {
     "date": "2026-10-03",
@@ -31188,8 +31191,11 @@
     },
     "stake_pct": null,
     "stake_amount": null,
-    "status": "pending",
-    "result": null
+    "status": "win",
+    "result": {
+      "home_runs": 5,
+      "away_runs": 3
+    }
   },
   {
     "date": "2026-10-03",
@@ -31209,8 +31215,11 @@
     },
     "stake_pct": 0.02,
     "stake_amount": 10.0,
-    "status": "pending",
-    "result": null
+    "status": "loss",
+    "result": {
+      "home_runs": 1,
+      "away_runs": 0
+    }
   },
   {
     "date": "2026-10-03",
@@ -31229,8 +31238,11 @@
     },
     "stake_pct": 0.02,
     "stake_amount": 10.0,
-    "status": "pending",
-    "result": null
+    "status": "win",
+    "result": {
+      "home_runs": 1,
+      "away_runs": 0
+    }
   },
   {
     "date": "2026-10-03",
@@ -31250,8 +31262,11 @@
     },
     "stake_pct": null,
     "stake_amount": null,
-    "status": "pending",
-    "result": null
+    "status": "loss",
+    "result": {
+      "home_runs": 3,
+      "away_runs": 2
+    }
   },
   {
     "date": "2026-10-03",
@@ -31270,6 +31285,91 @@
     },
     "stake_pct": 0.0194,
     "stake_amount": 9.7,
+    "status": "win",
+    "result": {
+      "home_runs": 3,
+      "away_runs": 2
+    }
+  },
+  {
+    "date": "2026-10-04",
+    "game_pk": 849825,
+    "matchup": "San Diego Padres @ Milwaukee Brewers",
+    "market_type": "moneyline",
+    "selection": "Milwaukee Brewers gana (ML)",
+    "model_prob": 0.5512,
+    "implied_prob": 0.5559,
+    "risk": "🔴 Riesgo alto",
+    "model_version": "v5",
+    "extra": {
+      "side": "home",
+      "price": -128,
+      "run_diff": 0.77,
+      "uncalibrated_prob": 0.5951
+    },
+    "stake_pct": null,
+    "stake_amount": null,
+    "status": "pending",
+    "result": null
+  },
+  {
+    "date": "2026-10-04",
+    "game_pk": 849825,
+    "matchup": "San Diego Padres @ Milwaukee Brewers",
+    "market_type": "total_under",
+    "selection": "Under 7.5",
+    "model_prob": 0.5261,
+    "implied_prob": 0.538,
+    "risk": "🔴 Riesgo alto",
+    "model_version": "v5",
+    "extra": {
+      "line": 7.5,
+      "price": -130,
+      "projected_total": 7.49
+    },
+    "stake_pct": null,
+    "stake_amount": null,
+    "status": "pending",
+    "result": null
+  },
+  {
+    "date": "2026-10-04",
+    "game_pk": 849823,
+    "matchup": "Atlanta Braves @ Los Angeles Dodgers",
+    "market_type": "moneyline",
+    "selection": "Atlanta Braves gana (ML)",
+    "model_prob": 0.5148,
+    "implied_prob": 0.4098,
+    "risk": "🟡 Riesgo medio",
+    "model_version": "v5",
+    "extra": {
+      "side": "away",
+      "price": 140,
+      "run_diff": 1.35,
+      "uncalibrated_prob": 0.6626
+    },
+    "stake_pct": 0.02,
+    "stake_amount": 10.0,
+    "status": "pending",
+    "result": null
+  },
+  {
+    "date": "2026-10-04",
+    "game_pk": 849823,
+    "matchup": "Atlanta Braves @ Los Angeles Dodgers",
+    "market_type": "total_under",
+    "selection": "Under 7.5",
+    "model_prob": 0.5764,
+    "implied_prob": 0.5552,
+    "risk": "🔴 Riesgo alto",
+    "model_version": "v5",
+    "extra": {
+      "line": 7.5,
+      "price": -140,
+      "projected_total": 7.15
+    },
+    "stake_pct": null,
+    "stake_amount": null,
     "status": "pending",
     "result": null
   }
