@@ -31309,8 +31309,11 @@
     },
     "stake_pct": null,
     "stake_amount": null,
-    "status": "pending",
-    "result": null
+    "status": "win",
+    "result": {
+      "home_runs": 4,
+      "away_runs": 3
+    }
   },
   {
     "date": "2026-10-04",
@@ -31329,8 +31332,11 @@
     },
     "stake_pct": null,
     "stake_amount": null,
-    "status": "pending",
-    "result": null
+    "status": "win",
+    "result": {
+      "home_runs": 4,
+      "away_runs": 3
+    }
   },
   {
     "date": "2026-10-04",
@@ -31350,8 +31356,11 @@
     },
     "stake_pct": 0.02,
     "stake_amount": 10.0,
-    "status": "pending",
-    "result": null
+    "status": "win",
+    "result": {
+      "home_runs": 2,
+      "away_runs": 3
+    }
   },
   {
     "date": "2026-10-04",
@@ -31370,6 +31379,50 @@
     },
     "stake_pct": null,
     "stake_amount": null,
+    "status": "win",
+    "result": {
+      "home_runs": 2,
+      "away_runs": 3
+    }
+  },
+  {
+    "date": "2026-10-05",
+    "game_pk": 849839,
+    "matchup": "New York Yankees @ Tampa Bay Rays",
+    "market_type": "moneyline",
+    "selection": "New York Yankees gana (ML)",
+    "model_prob": 0.677,
+    "implied_prob": 0.5339,
+    "risk": "🟢 Riesgo bajo",
+    "model_version": "v5",
+    "extra": {
+      "side": "away",
+      "price": -120,
+      "run_diff": -1.48,
+      "uncalibrated_prob": 0.323
+    },
+    "stake_pct": 0.02,
+    "stake_amount": 10.0,
+    "status": "pending",
+    "result": null
+  },
+  {
+    "date": "2026-10-05",
+    "game_pk": 849839,
+    "matchup": "New York Yankees @ Tampa Bay Rays",
+    "market_type": "total_over",
+    "selection": "Over 6.5",
+    "model_prob": 0.5866,
+    "implied_prob": 0.5032,
+    "risk": "🟡 Riesgo medio",
+    "model_version": "v5",
+    "extra": {
+      "line": 6.5,
+      "price": -112,
+      "projected_total": 7.42
+    },
+    "stake_pct": 0.02,
+    "stake_amount": 10.0,
     "status": "pending",
     "result": null
   }
