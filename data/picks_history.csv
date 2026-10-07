@@ -1453,7 +1453,15 @@ date,matchup,market_type,selection,model_prob,implied_prob,edge,risk,model_versi
 2026-10-04,Atlanta Braves @ Los Angeles Dodgers,total_under,Under 7.5,0.5764,0.5552,0.0212,🔴 Riesgo alto,v5,win,3-2,7.15,5,,,,
 2026-10-05,New York Yankees @ Tampa Bay Rays,moneyline,New York Yankees gana (ML),0.677,0.5339,0.1431,🟢 Riesgo bajo,v5,loss,2-5,,7,-1.48,0.323,0.02,10.0
 2026-10-05,New York Yankees @ Tampa Bay Rays,total_over,Over 6.5,0.5866,0.5032,0.0834,🟡 Riesgo medio,v5,win,2-5,7.42,7,,,0.02,10.0
-2026-10-06,Los Angeles Dodgers @ Atlanta Braves,moneyline,Los Angeles Dodgers gana (ML),0.5037,0.5012,0.0025,🔴 Riesgo alto,v5,pending,,,,-0.03,0.4963,,
-2026-10-06,Los Angeles Dodgers @ Atlanta Braves,total_under,Under 6.5,0.5407,0.5,0.0407,🔴 Riesgo alto,v5,pending,,6.41,,,,0.0089,4.45
-2026-10-06,Milwaukee Brewers @ San Diego Padres,moneyline,Milwaukee Brewers gana (ML),0.5407,0.4384,0.1023,🟡 Riesgo medio,v5,pending,,,,1.15,0.6399,0.02,10.0
-2026-10-06,Milwaukee Brewers @ San Diego Padres,total_under,Under 7.5,0.5527,0.5108,0.0419,🔴 Riesgo alto,v5,pending,,8.03,,,,0.0096,4.8
+2026-10-06,Los Angeles Dodgers @ Atlanta Braves,moneyline,Los Angeles Dodgers gana (ML),0.5037,0.5012,0.0025,🔴 Riesgo alto,v5,win,3-1,,4,-0.03,0.4963,,
+2026-10-06,Los Angeles Dodgers @ Atlanta Braves,total_under,Under 6.5,0.5407,0.5,0.0407,🔴 Riesgo alto,v5,win,3-1,6.41,4,,,0.0089,4.45
+2026-10-06,Milwaukee Brewers @ San Diego Padres,moneyline,Milwaukee Brewers gana (ML),0.5407,0.4384,0.1023,🟡 Riesgo medio,v5,loss,3-4,,7,1.15,0.6399,0.02,10.0
+2026-10-06,Milwaukee Brewers @ San Diego Padres,total_under,Under 7.5,0.5527,0.5108,0.0419,🔴 Riesgo alto,v5,win,3-4,8.03,7,,,0.0096,4.8
+2026-10-07,Cleveland Guardians @ Chicago White Sox,moneyline,Chicago White Sox gana (ML),0.5557,0.5381,0.0176,🔴 Riesgo alto,v5,pending,,,,1.73,0.7037,,
+2026-10-07,Cleveland Guardians @ Chicago White Sox,total_over,Over 7.5,0.6194,0.5032,0.1162,🟡 Riesgo medio,v5,pending,,8.73,,,,0.015,7.5
+2026-10-07,Los Angeles Dodgers @ Atlanta Braves,moneyline,Los Angeles Dodgers gana (ML),0.53,0.5844,-0.0544,🔴 Riesgo alto,v5,pending,,,,-0.24,0.47,,
+2026-10-07,Los Angeles Dodgers @ Atlanta Braves,total_under,Under 7.5,0.5966,0.5,0.0966,🟡 Riesgo medio,v5,pending,,7.72,,,,,
+2026-10-07,Tampa Bay Rays @ New York Yankees,moneyline,New York Yankees gana (ML),0.5472,0.6098,-0.0626,🟡 Riesgo medio,v5,pending,,,,0.72,0.589,,
+2026-10-07,Tampa Bay Rays @ New York Yankees,total_under,Under 7.5,0.6374,0.538,0.0994,🟡 Riesgo medio,v5,pending,,6.74,,,,0.015,7.5
+2026-10-07,Milwaukee Brewers @ San Diego Padres,moneyline,Milwaukee Brewers gana (ML),0.6023,0.4906,0.1117,🟡 Riesgo medio,v5,pending,,,,-0.83,0.3977,0.015,7.5
+2026-10-07,Milwaukee Brewers @ San Diego Padres,total_over,Over 7.5,0.6094,0.5108,0.0986,🟡 Riesgo medio,v5,pending,,8.65,,,,0.015,7.5
