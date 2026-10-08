@@ -31544,8 +31544,11 @@
     },
     "stake_pct": null,
     "stake_amount": null,
-    "status": "pending",
-    "result": null
+    "status": "loss",
+    "result": {
+      "home_runs": 3,
+      "away_runs": 9
+    }
   },
   {
     "date": "2026-10-07",
@@ -31564,8 +31567,11 @@
     },
     "stake_pct": 0.015,
     "stake_amount": 7.5,
-    "status": "pending",
-    "result": null
+    "status": "win",
+    "result": {
+      "home_runs": 3,
+      "away_runs": 9
+    }
   },
   {
     "date": "2026-10-07",
@@ -31585,8 +31591,11 @@
     },
     "stake_pct": null,
     "stake_amount": null,
-    "status": "pending",
-    "result": null
+    "status": "win",
+    "result": {
+      "home_runs": 1,
+      "away_runs": 4
+    }
   },
   {
     "date": "2026-10-07",
@@ -31605,8 +31614,11 @@
     },
     "stake_pct": null,
     "stake_amount": null,
-    "status": "pending",
-    "result": null
+    "status": "win",
+    "result": {
+      "home_runs": 1,
+      "away_runs": 4
+    }
   },
   {
     "date": "2026-10-07",
@@ -31626,8 +31638,11 @@
     },
     "stake_pct": null,
     "stake_amount": null,
-    "status": "pending",
-    "result": null
+    "status": "loss",
+    "result": {
+      "home_runs": 3,
+      "away_runs": 4
+    }
   },
   {
     "date": "2026-10-07",
@@ -31646,8 +31661,11 @@
     },
     "stake_pct": 0.015,
     "stake_amount": 7.5,
-    "status": "pending",
-    "result": null
+    "status": "win",
+    "result": {
+      "home_runs": 3,
+      "away_runs": 4
+    }
   },
   {
     "date": "2026-10-07",
@@ -31667,8 +31685,11 @@
     },
     "stake_pct": 0.015,
     "stake_amount": 7.5,
-    "status": "pending",
-    "result": null
+    "status": "win",
+    "result": {
+      "home_runs": 1,
+      "away_runs": 3
+    }
   },
   {
     "date": "2026-10-07",
@@ -31687,6 +31708,50 @@
     },
     "stake_pct": 0.015,
     "stake_amount": 7.5,
+    "status": "loss",
+    "result": {
+      "home_runs": 1,
+      "away_runs": 3
+    }
+  },
+  {
+    "date": "2026-10-08",
+    "game_pk": 849832,
+    "matchup": "Cleveland Guardians @ Chicago White Sox",
+    "market_type": "moneyline",
+    "selection": "Chicago White Sox gana (ML)",
+    "model_prob": 0.5474,
+    "implied_prob": 0.4838,
+    "risk": "🟡 Riesgo medio",
+    "model_version": "v5",
+    "extra": {
+      "side": "home",
+      "price": 102,
+      "run_diff": 0.73,
+      "uncalibrated_prob": 0.5903
+    },
+    "stake_pct": 0.02,
+    "stake_amount": 10.0,
+    "status": "pending",
+    "result": null
+  },
+  {
+    "date": "2026-10-08",
+    "game_pk": 849832,
+    "matchup": "Cleveland Guardians @ Chicago White Sox",
+    "market_type": "total_under",
+    "selection": "Under 7.0",
+    "model_prob": 0.6684,
+    "implied_prob": 0.4783,
+    "risk": "⚠️ Edge sospechoso",
+    "model_version": "v5",
+    "extra": {
+      "line": 7.0,
+      "price": 100,
+      "projected_total": 6.53
+    },
+    "stake_pct": null,
+    "stake_amount": null,
     "status": "pending",
     "result": null
   }
