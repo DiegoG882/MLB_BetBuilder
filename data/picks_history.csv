@@ -1465,5 +1465,7 @@ date,matchup,market_type,selection,model_prob,implied_prob,edge,risk,model_versi
 2026-10-07,Tampa Bay Rays @ New York Yankees,total_under,Under 7.5,0.6374,0.538,0.0994,🟡 Riesgo medio,v5,win,4-3,6.74,7,,,0.015,7.5
 2026-10-07,Milwaukee Brewers @ San Diego Padres,moneyline,Milwaukee Brewers gana (ML),0.6023,0.4906,0.1117,🟡 Riesgo medio,v5,win,3-1,,4,-0.83,0.3977,0.015,7.5
 2026-10-07,Milwaukee Brewers @ San Diego Padres,total_over,Over 7.5,0.6094,0.5108,0.0986,🟡 Riesgo medio,v5,loss,3-1,8.65,4,,,0.015,7.5
-2026-10-08,Cleveland Guardians @ Chicago White Sox,moneyline,Chicago White Sox gana (ML),0.5474,0.4838,0.0636,🟡 Riesgo medio,v5,pending,,,,0.73,0.5903,0.02,10.0
-2026-10-08,Cleveland Guardians @ Chicago White Sox,total_under,Under 7.0,0.6684,0.4783,0.1901,⚠️ Edge sospechoso,v5,pending,,6.53,,,,,
+2026-10-08,Cleveland Guardians @ Chicago White Sox,moneyline,Chicago White Sox gana (ML),0.5474,0.4838,0.0636,🟡 Riesgo medio,v5,loss,9-5,,14,0.73,0.5903,0.02,10.0
+2026-10-08,Cleveland Guardians @ Chicago White Sox,total_under,Under 7.0,0.6684,0.4783,0.1901,⚠️ Edge sospechoso,v5,loss,9-5,6.53,14,,,,
+2026-10-10,Chicago White Sox @ Cleveland Guardians,moneyline,Chicago White Sox gana (ML),0.5535,0.4384,0.1151,🟡 Riesgo medio,v5,pending,,,,-0.43,0.4465,0.02,10.0
+2026-10-10,Chicago White Sox @ Cleveland Guardians,total_under,Under 7.5,0.5334,0.542,-0.0086,🔴 Riesgo alto,v5,pending,,8.17,,,,,

@@ -31760,5 +31760,46 @@
       "home_runs": 5,
       "away_runs": 9
     }
+  },
+  {
+    "date": "2026-10-10",
+    "game_pk": 849831,
+    "matchup": "Chicago White Sox @ Cleveland Guardians",
+    "market_type": "moneyline",
+    "selection": "Chicago White Sox gana (ML)",
+    "model_prob": 0.5535,
+    "implied_prob": 0.4384,
+    "risk": "🟡 Riesgo medio",
+    "model_version": "v5",
+    "extra": {
+      "side": "away",
+      "price": 123,
+      "run_diff": -0.43,
+      "uncalibrated_prob": 0.4465
+    },
+    "stake_pct": 0.02,
+    "stake_amount": 10.0,
+    "status": "pending",
+    "result": null
+  },
+  {
+    "date": "2026-10-10",
+    "game_pk": 849831,
+    "matchup": "Chicago White Sox @ Cleveland Guardians",
+    "market_type": "total_under",
+    "selection": "Under 7.5",
+    "model_prob": 0.5334,
+    "implied_prob": 0.542,
+    "risk": "🔴 Riesgo alto",
+    "model_version": "v5",
+    "extra": {
+      "line": 7.5,
+      "price": -132,
+      "projected_total": 8.17
+    },
+    "stake_pct": null,
+    "stake_amount": null,
+    "status": "pending",
+    "result": null
   }
 ]
