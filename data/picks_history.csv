@@ -1471,5 +1471,7 @@ date,matchup,market_type,selection,model_prob,implied_prob,edge,risk,model_versi
 2026-10-10,Chicago White Sox @ Cleveland Guardians,total_under,Under 7.5,0.5334,0.542,-0.0086,🔴 Riesgo alto,v5,win,0-2,8.17,2,,,,
 2026-10-11,Los Angeles Dodgers @ Milwaukee Brewers,moneyline,Milwaukee Brewers gana (ML),0.5211,0.5046,0.0165,🔴 Riesgo alto,v5,win,1-2,,3,0.53,0.5659,0.0022,1.1
 2026-10-11,Los Angeles Dodgers @ Milwaukee Brewers,total_under,Under 6.5,0.503,0.5552,-0.0522,🔴 Riesgo alto,v5,win,1-2,6.65,3,,,,
-2026-10-12,Cleveland Guardians @ Tampa Bay Rays,moneyline,Tampa Bay Rays gana (ML),0.5331,0.6028,-0.0697,🟡 Riesgo medio,v5,pending,,,,0.62,0.5769,,
-2026-10-12,Cleveland Guardians @ Tampa Bay Rays,total_under,Under 6.5,0.5808,0.4675,0.1133,🟡 Riesgo medio,v5,pending,,6.82,,,,0.02,10.0
+2026-10-12,Cleveland Guardians @ Tampa Bay Rays,moneyline,Tampa Bay Rays gana (ML),0.5331,0.6028,-0.0697,🟡 Riesgo medio,v5,loss,7-3,,10,0.62,0.5769,,
+2026-10-12,Cleveland Guardians @ Tampa Bay Rays,total_under,Under 6.5,0.5808,0.4675,0.1133,🟡 Riesgo medio,v5,loss,7-3,6.82,10,,,0.02,10.0
+2026-10-13,Cleveland Guardians @ Tampa Bay Rays,moneyline,Cleveland Guardians gana (ML),0.6824,0.4528,0.2296,⚠️ Edge sospechoso,v5,pending,,,,-1.53,0.3176,,
+2026-10-13,Cleveland Guardians @ Tampa Bay Rays,total_over,Over 6.5,0.5966,0.519,0.0776,🟡 Riesgo medio,v5,pending,,7.51,,,,0.02,10.0
