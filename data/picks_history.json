@@ -31967,8 +31967,11 @@
     },
     "stake_pct": null,
     "stake_amount": null,
-    "status": "pending",
-    "result": null
+    "status": "loss",
+    "result": {
+      "home_runs": 2,
+      "away_runs": 6
+    }
   },
   {
     "date": "2026-10-14",
@@ -31987,6 +31990,50 @@
     },
     "stake_pct": 0.0124,
     "stake_amount": 6.2,
+    "status": "loss",
+    "result": {
+      "home_runs": 2,
+      "away_runs": 6
+    }
+  },
+  {
+    "date": "2026-10-15",
+    "game_pk": 849810,
+    "matchup": "Milwaukee Brewers @ Los Angeles Dodgers",
+    "market_type": "moneyline",
+    "selection": "Milwaukee Brewers gana (ML)",
+    "model_prob": 0.5498,
+    "implied_prob": 0.4156,
+    "risk": "🟢 Riesgo bajo",
+    "model_version": "v5",
+    "extra": {
+      "side": "away",
+      "price": 135,
+      "run_diff": -0.4,
+      "uncalibrated_prob": 0.4502
+    },
+    "stake_pct": 0.02,
+    "stake_amount": 10.0,
+    "status": "pending",
+    "result": null
+  },
+  {
+    "date": "2026-10-15",
+    "game_pk": 849810,
+    "matchup": "Milwaukee Brewers @ Los Angeles Dodgers",
+    "market_type": "total_under",
+    "selection": "Under 7.5",
+    "model_prob": 0.5013,
+    "implied_prob": 0.4892,
+    "risk": "🔴 Riesgo alto",
+    "model_version": "v5",
+    "extra": {
+      "line": 7.5,
+      "price": -105,
+      "projected_total": 7.66
+    },
+    "stake_pct": null,
+    "stake_amount": null,
     "status": "pending",
     "result": null
   }
