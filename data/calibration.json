@@ -10,9 +10,9 @@
     "predicted_sum": 4.758
   },
   "moneyline:50-60": {
-    "n": 536,
-    "hits": 268,
-    "predicted_sum": 291.92039999999974
+    "n": 537,
+    "hits": 269,
+    "predicted_sum": 292.51069999999976
   },
   "total_under:60-70": {
     "n": 194,
@@ -45,9 +45,9 @@
     "predicted_sum": 42.39300000000001
   },
   "total_over:60-70": {
-    "n": 73,
-    "hits": 45,
-    "predicted_sum": 46.945800000000006
+    "n": 74,
+    "hits": 46,
+    "predicted_sum": 47.56380000000001
   },
   "moneyline:80-90": {
     "n": 34,
