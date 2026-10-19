@@ -1485,3 +1485,5 @@ date,matchup,market_type,selection,model_prob,implied_prob,edge,risk,model_versi
 2026-10-17,Tampa Bay Rays @ Cleveland Guardians,total_over,Over 6.5,0.618,0.5,0.118,🟡 Riesgo medio,v5,win,7-3,7.67,10,,,0.02,10.0
 2026-10-18,Tampa Bay Rays @ Cleveland Guardians,moneyline,Tampa Bay Rays gana (ML),0.5037,0.5446,-0.0409,🔴 Riesgo alto,v5,pending,,,,-0.03,0.4963,,
 2026-10-18,Tampa Bay Rays @ Cleveland Guardians,total_under,Under 6.5,0.6111,0.5193,0.0918,🟡 Riesgo medio,v5,pending,,5.97,,,,0.02,10.0
+2026-10-19,Cleveland Guardians @ Tampa Bay Rays,moneyline,Tampa Bay Rays gana (ML),0.5392,0.5848,-0.0456,🔴 Riesgo alto,v5,pending,,,,0.67,0.583,,
+2026-10-19,Cleveland Guardians @ Tampa Bay Rays,total_under,Under 6.5,0.5586,0.4669,0.0917,🟡 Riesgo medio,v5,pending,,8.35,,,,0.02,10.0

@@ -32171,5 +32171,46 @@
     "stake_amount": 10.0,
     "status": "pending",
     "result": null
+  },
+  {
+    "date": "2026-10-19",
+    "game_pk": 849815,
+    "matchup": "Cleveland Guardians @ Tampa Bay Rays",
+    "market_type": "moneyline",
+    "selection": "Tampa Bay Rays gana (ML)",
+    "model_prob": 0.5392,
+    "implied_prob": 0.5848,
+    "risk": "🔴 Riesgo alto",
+    "model_version": "v5",
+    "extra": {
+      "side": "home",
+      "price": -148,
+      "run_diff": 0.67,
+      "uncalibrated_prob": 0.583
+    },
+    "stake_pct": null,
+    "stake_amount": null,
+    "status": "pending",
+    "result": null
+  },
+  {
+    "date": "2026-10-19",
+    "game_pk": 849815,
+    "matchup": "Cleveland Guardians @ Tampa Bay Rays",
+    "market_type": "total_under",
+    "selection": "Under 6.5",
+    "model_prob": 0.5586,
+    "implied_prob": 0.4669,
+    "risk": "🟡 Riesgo medio",
+    "model_version": "v5",
+    "extra": {
+      "line": 6.5,
+      "price": 107,
+      "projected_total": 8.35
+    },
+    "stake_pct": 0.02,
+    "stake_amount": 10.0,
+    "status": "pending",
+    "result": null
   }
 ]

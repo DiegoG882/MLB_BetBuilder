@@ -1,117 +1,5 @@
 [
   {
-    "game_pk": 824252,
-    "date": "2026-07-10",
-    "home_team_id": 116,
-    "away_team_id": 143,
-    "home_runs": 10,
-    "away_runs": 2
-  },
-  {
-    "game_pk": 822709,
-    "date": "2026-07-10",
-    "home_team_id": 120,
-    "away_team_id": 147,
-    "home_runs": 3,
-    "away_runs": 5
-  },
-  {
-    "game_pk": 824817,
-    "date": "2026-07-10",
-    "home_team_id": 110,
-    "away_team_id": 118,
-    "home_runs": 5,
-    "away_runs": 3
-  },
-  {
-    "game_pk": 824493,
-    "date": "2026-07-10",
-    "home_team_id": 113,
-    "away_team_id": 112,
-    "home_runs": 4,
-    "away_runs": 0
-  },
-  {
-    "game_pk": 822955,
-    "date": "2026-07-10",
-    "home_team_id": 139,
-    "away_team_id": 136,
-    "home_runs": 7,
-    "away_runs": 2
-  },
-  {
-    "game_pk": 823845,
-    "date": "2026-07-10",
-    "home_team_id": 146,
-    "away_team_id": 114,
-    "home_runs": 2,
-    "away_runs": 3
-  },
-  {
-    "game_pk": 823604,
-    "date": "2026-07-10",
-    "home_team_id": 121,
-    "away_team_id": 111,
-    "home_runs": 2,
-    "away_runs": 6
-  },
-  {
-    "game_pk": 824575,
-    "date": "2026-07-10",
-    "home_team_id": 145,
-    "away_team_id": 133,
-    "home_runs": 14,
-    "away_runs": 1
-  },
-  {
-    "game_pk": 822878,
-    "date": "2026-07-10",
-    "home_team_id": 140,
-    "away_team_id": 117,
-    "home_runs": 7,
-    "away_runs": 3
-  },
-  {
-    "game_pk": 823685,
-    "date": "2026-07-10",
-    "home_team_id": 142,
-    "away_team_id": 108,
-    "home_runs": 3,
-    "away_runs": 4
-  },
-  {
-    "game_pk": 823033,
-    "date": "2026-07-10",
-    "home_team_id": 138,
-    "away_team_id": 144,
-    "home_runs": 2,
-    "away_runs": 1
-  },
-  {
-    "game_pk": 823278,
-    "date": "2026-07-10",
-    "home_team_id": 135,
-    "away_team_id": 141,
-    "home_runs": 3,
-    "away_runs": 5
-  },
-  {
-    "game_pk": 823927,
-    "date": "2026-07-10",
-    "home_team_id": 119,
-    "away_team_id": 109,
-    "home_runs": 3,
-    "away_runs": 9
-  },
-  {
-    "game_pk": 823200,
-    "date": "2026-07-10",
-    "home_team_id": 137,
-    "away_team_id": 115,
-    "home_runs": 3,
-    "away_runs": 4
-  },
-  {
     "game_pk": 823357,
     "date": "2026-07-11",
     "home_team_id": 134,
@@ -8510,5 +8398,13 @@
     "away_team_id": 139,
     "home_runs": 3,
     "away_runs": 7
+  },
+  {
+    "game_pk": 849817,
+    "date": "2026-10-18",
+    "home_team_id": 114,
+    "away_team_id": 139,
+    "home_runs": 1,
+    "away_runs": 3
   }
 ]
