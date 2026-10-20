@@ -32061,7 +32061,7 @@
     },
     "stake_pct": 0.02,
     "stake_amount": 10.0,
-    "status": "pending",
+    "status": "no_data",
     "result": null
   },
   {
@@ -32081,7 +32081,7 @@
     },
     "stake_pct": 0.02,
     "stake_amount": 10.0,
-    "status": "pending",
+    "status": "no_data",
     "result": null
   },
   {
@@ -32190,8 +32190,11 @@
     },
     "stake_pct": null,
     "stake_amount": null,
-    "status": "pending",
-    "result": null
+    "status": "win",
+    "result": {
+      "home_runs": 7,
+      "away_runs": 3
+    }
   },
   {
     "date": "2026-10-19",
@@ -32210,7 +32213,10 @@
     },
     "stake_pct": 0.02,
     "stake_amount": 10.0,
-    "status": "pending",
-    "result": null
+    "status": "loss",
+    "result": {
+      "home_runs": 7,
+      "away_runs": 3
+    }
   }
 ]
