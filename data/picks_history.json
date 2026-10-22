@@ -32149,7 +32149,7 @@
     },
     "stake_pct": null,
     "stake_amount": null,
-    "status": "pending",
+    "status": "no_data",
     "result": null
   },
   {
@@ -32169,7 +32169,7 @@
     },
     "stake_pct": 0.02,
     "stake_amount": 10.0,
-    "status": "pending",
+    "status": "no_data",
     "result": null
   },
   {
