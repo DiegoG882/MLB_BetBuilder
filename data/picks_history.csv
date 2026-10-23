@@ -1479,11 +1479,13 @@ date,matchup,market_type,selection,model_prob,implied_prob,edge,risk,model_versi
 2026-10-14,Milwaukee Brewers @ Los Angeles Dodgers,total_under,Under 7.5,0.5719,0.5236,0.0483,🔴 Riesgo alto,v5,loss,6-2,7.18,8,,,0.0124,6.2
 2026-10-15,Milwaukee Brewers @ Los Angeles Dodgers,moneyline,Milwaukee Brewers gana (ML),0.5498,0.4156,0.1342,🟢 Riesgo bajo,v5,win,6-4,,10,-0.4,0.4502,0.02,10.0
 2026-10-15,Milwaukee Brewers @ Los Angeles Dodgers,total_under,Under 7.5,0.5013,0.4892,0.0121,🔴 Riesgo alto,v5,loss,6-4,7.66,10,,,,
-2026-10-16,Tampa Bay Rays @ Cleveland Guardians,moneyline,Tampa Bay Rays gana (ML),0.5903,0.5105,0.0798,🟡 Riesgo medio,v5,pending,,,,-0.73,0.4097,0.02,10.0
-2026-10-16,Tampa Bay Rays @ Cleveland Guardians,total_over,Over 6.5,0.618,0.5032,0.1148,🟡 Riesgo medio,v5,pending,,7.67,,,,0.02,10.0
+2026-10-16,Tampa Bay Rays @ Cleveland Guardians,moneyline,Tampa Bay Rays gana (ML),0.5903,0.5105,0.0798,🟡 Riesgo medio,v5,no_data,,,,-0.73,0.4097,0.02,10.0
+2026-10-16,Tampa Bay Rays @ Cleveland Guardians,total_over,Over 6.5,0.618,0.5032,0.1148,🟡 Riesgo medio,v5,no_data,,7.67,,,,0.02,10.0
 2026-10-17,Tampa Bay Rays @ Cleveland Guardians,moneyline,Tampa Bay Rays gana (ML),0.5903,0.5083,0.082,🟡 Riesgo medio,v5,win,7-3,,10,-0.73,0.4097,0.02,10.0
 2026-10-17,Tampa Bay Rays @ Cleveland Guardians,total_over,Over 6.5,0.618,0.5,0.118,🟡 Riesgo medio,v5,win,7-3,7.67,10,,,0.02,10.0
-2026-10-18,Tampa Bay Rays @ Cleveland Guardians,moneyline,Tampa Bay Rays gana (ML),0.5037,0.5446,-0.0409,🔴 Riesgo alto,v5,pending,,,,-0.03,0.4963,,
-2026-10-18,Tampa Bay Rays @ Cleveland Guardians,total_under,Under 6.5,0.6111,0.5193,0.0918,🟡 Riesgo medio,v5,pending,,5.97,,,,0.02,10.0
-2026-10-19,Cleveland Guardians @ Tampa Bay Rays,moneyline,Tampa Bay Rays gana (ML),0.5392,0.5848,-0.0456,🔴 Riesgo alto,v5,pending,,,,0.67,0.583,,
-2026-10-19,Cleveland Guardians @ Tampa Bay Rays,total_under,Under 6.5,0.5586,0.4669,0.0917,🟡 Riesgo medio,v5,pending,,8.35,,,,0.02,10.0
+2026-10-18,Tampa Bay Rays @ Cleveland Guardians,moneyline,Tampa Bay Rays gana (ML),0.5037,0.5446,-0.0409,🔴 Riesgo alto,v5,no_data,,,,-0.03,0.4963,,
+2026-10-18,Tampa Bay Rays @ Cleveland Guardians,total_under,Under 6.5,0.6111,0.5193,0.0918,🟡 Riesgo medio,v5,no_data,,5.97,,,,0.02,10.0
+2026-10-19,Cleveland Guardians @ Tampa Bay Rays,moneyline,Tampa Bay Rays gana (ML),0.5392,0.5848,-0.0456,🔴 Riesgo alto,v5,win,3-7,,10,0.67,0.583,,
+2026-10-19,Cleveland Guardians @ Tampa Bay Rays,total_under,Under 6.5,0.5586,0.4669,0.0917,🟡 Riesgo medio,v5,loss,3-7,8.35,10,,,0.02,10.0
+2026-10-23,Tampa Bay Rays @ Milwaukee Brewers,moneyline,Tampa Bay Rays gana (ML),0.5624,0.3604,0.202,⚠️ Edge sospechoso,v5,pending,,,,0.96,0.6177,,
+2026-10-23,Tampa Bay Rays @ Milwaukee Brewers,total_under,Under 6.5,0.5751,0.4892,0.0859,🟡 Riesgo medio,v5,pending,,6.9,,,,0.02,10.0

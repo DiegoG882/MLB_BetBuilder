@@ -32218,5 +32218,46 @@
       "home_runs": 7,
       "away_runs": 3
     }
+  },
+  {
+    "date": "2026-10-23",
+    "game_pk": 849805,
+    "matchup": "Tampa Bay Rays @ Milwaukee Brewers",
+    "market_type": "moneyline",
+    "selection": "Tampa Bay Rays gana (ML)",
+    "model_prob": 0.5624,
+    "implied_prob": 0.3604,
+    "risk": "⚠️ Edge sospechoso",
+    "model_version": "v5",
+    "extra": {
+      "side": "away",
+      "price": 175,
+      "run_diff": 0.96,
+      "uncalibrated_prob": 0.6177
+    },
+    "stake_pct": null,
+    "stake_amount": null,
+    "status": "pending",
+    "result": null
+  },
+  {
+    "date": "2026-10-23",
+    "game_pk": 849805,
+    "matchup": "Tampa Bay Rays @ Milwaukee Brewers",
+    "market_type": "total_under",
+    "selection": "Under 6.5",
+    "model_prob": 0.5751,
+    "implied_prob": 0.4892,
+    "risk": "🟡 Riesgo medio",
+    "model_version": "v5",
+    "extra": {
+      "line": 6.5,
+      "price": -105,
+      "projected_total": 6.9
+    },
+    "stake_pct": 0.02,
+    "stake_amount": 10.0,
+    "status": "pending",
+    "result": null
   }
 ]
