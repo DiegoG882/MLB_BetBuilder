@@ -1491,5 +1491,7 @@ date,matchup,market_type,selection,model_prob,implied_prob,edge,risk,model_versi
 2026-10-23,Tampa Bay Rays @ Milwaukee Brewers,total_under,Under 6.5,0.5751,0.4892,0.0859,🟡 Riesgo medio,v5,win,2-3,6.9,5,,,0.02,10.0
 2026-10-24,Tampa Bay Rays @ Milwaukee Brewers,moneyline,Milwaukee Brewers gana (ML),0.5392,0.5254,0.0138,🔴 Riesgo alto,v5,win,4-5,,9,0.67,0.583,0.0023,1.15
 2026-10-24,Tampa Bay Rays @ Milwaukee Brewers,total_under,Under 6.5,0.5187,0.5181,0.0006,🔴 Riesgo alto,v5,loss,4-5,6.55,9,,,,
-2026-10-26,Milwaukee Brewers @ Tampa Bay Rays,moneyline,Milwaukee Brewers gana (ML),0.5854,0.4847,0.1007,🟡 Riesgo medio,v5,pending,,,,-0.69,0.4146,0.02,10.0
-2026-10-26,Milwaukee Brewers @ Tampa Bay Rays,total_over,Over 7.5,0.5789,0.4486,0.1303,🟢 Riesgo bajo,v5,pending,,8.39,,,,0.02,10.0
+2026-10-26,Milwaukee Brewers @ Tampa Bay Rays,moneyline,Milwaukee Brewers gana (ML),0.5854,0.4847,0.1007,🟡 Riesgo medio,v5,win,10-1,,11,-0.69,0.4146,0.02,10.0
+2026-10-26,Milwaukee Brewers @ Tampa Bay Rays,total_over,Over 7.5,0.5789,0.4486,0.1303,🟢 Riesgo bajo,v5,win,10-1,8.39,11,,,0.02,10.0
+2026-10-27,Milwaukee Brewers @ Tampa Bay Rays,moneyline,Milwaukee Brewers gana (ML),0.5818,0.5242,0.0576,🔴 Riesgo alto,v5,pending,,,,-0.66,0.4182,0.02,10.0
+2026-10-27,Milwaukee Brewers @ Tampa Bay Rays,total_under,Under 7.5,0.5071,0.546,-0.0389,🔴 Riesgo alto,v5,pending,,7.62,,,,,
