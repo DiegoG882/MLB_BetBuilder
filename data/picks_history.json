@@ -32425,8 +32425,11 @@
     },
     "stake_pct": 0.02,
     "stake_amount": 10.0,
-    "status": "pending",
-    "result": null
+    "status": "win",
+    "result": {
+      "home_runs": 1,
+      "away_runs": 4
+    }
   },
   {
     "date": "2026-10-28",
@@ -32445,7 +32448,10 @@
     },
     "stake_pct": 0.0134,
     "stake_amount": 6.7,
-    "status": "pending",
-    "result": null
+    "status": "win",
+    "result": {
+      "home_runs": 1,
+      "away_runs": 4
+    }
   }
 ]
